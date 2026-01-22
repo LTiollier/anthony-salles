@@ -60,7 +60,7 @@ export default function Features() {
                         <h3 className="text-base font-medium text-gray-900">
                             {feature.title}
                         </h3>
-                        <p className="text-gray-700 line-clamp-2 pb-2">
+                        <p className="text-gray-700 pb-2">
                             {feature.description}
                         </p>
                     </motion.div>

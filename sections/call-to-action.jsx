@@ -25,7 +25,7 @@ export default function CallToAction() {
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 200, damping: 70, mass: 1 }}
             >
-                Contactez Anthony Salles pour une consultation personnalisée et commencez votre chemin vers un mieux-être durable.
+                Contactez-moi pour une consultation personnalisée et commencez votre chemin vers un mieux-être durable.
             </motion.p>
             <motion.div
                 initial={{ y: 80, opacity: 0 }}

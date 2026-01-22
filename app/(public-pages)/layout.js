@@ -2,10 +2,15 @@ import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 
 export const metadata = {
-    title: 'Genesis - PrebuiltUI',
-    description: 'Design AI assistants that research, plan, and execute tasks — all powered by your prompts.',
+    title: 'Anthony Salles - Kinésithérapeute | Médecine Chinoise & Thérapie Viscérale',
+    description: 'Cabinet de kinésithérapie d\'Anthony Salles. Spécialisé en médecine chinoise, thérapie viscérale et soin holistique.',
+    icons: {
+        icon: '/logo.png',
+        shortcut: '/logo.png',
+        apple: '/logo.png',
+    },
     appleWebApp: {
-        title: 'Genesis - PrebuiltUI',
+        title: 'Anthony Salles',
     },
 };
 

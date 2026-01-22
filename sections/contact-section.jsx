@@ -2,12 +2,16 @@ import { motion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import dynamic from 'next/dynamic';
+
+// Leaflet needs to be dynamically imported with ssr: false
+const LeafletMap = dynamic(() => import('@/components/leaflet-map'), { ssr: false });
 
 export default function ContactSection() {
     return (
         <section className="mt-32 max-w-5xl mx-auto px-4">
             <SectionTitle
-                title="Contactez Anthony Salles"
+                title="Contactez-moi"
                 description="N'hésitez pas à me contacter pour toute question ou pour prendre rendez-vous."
             />
             <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10">
@@ -23,7 +27,7 @@ export default function ContactSection() {
                     </h3>
                     <div className="flex items-center space-x-4">
                         <FontAwesomeIcon icon={faPhone} className="size-6 text-blue-500" />
-                        <p className="text-gray-700">+33 6 12 34 56 78</p>
+                        <p className="text-gray-700">04 78 72 42 80</p>
                     </div>
                     <div className="flex items-center space-x-4">
                         <FontAwesomeIcon icon={faEnvelope} className="size-6 text-blue-500" />
@@ -31,11 +35,11 @@ export default function ContactSection() {
                     </div>
                     <div className="flex items-center space-x-4">
                         <FontAwesomeIcon icon={faMapMarkerAlt} className="size-6 text-blue-500" />
-                        <p className="text-gray-700">123 Rue de la Santé, 75001 Paris, France</p>
+                        <p className="text-gray-700">46 Rue de la Madeleine, 69007 Lyon</p>
                     </div>
-                    {/* Placeholder for a map */}
-                    <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 mt-8">
-                        Carte
+
+                    <div className="w-full h-80 mt-8 shadow-lg rounded-lg overflow-hidden relative z-0">
+                        <LeafletMap />
                     </div>
                 </motion.div>
                 <motion.div

@@ -5,8 +5,8 @@ export default function AboutSection() {
     return (
         <section className="mt-32 max-w-5xl mx-auto px-4">
             <SectionTitle
-                title="À propos d'Anthony Salles"
-                description="Découvrez le parcours professionnel et la philosophie de traitement d'Anthony Salles, kinésithérapeute passionné."
+                title="Qui suis-je ?"
+                description="Découvrez mon parcours professionnel et ma philosophie de traitement."
             />
             <motion.div className="flex flex-col md:flex-row items-center gap-12 mt-10">
                 <motion.div
@@ -20,11 +20,27 @@ export default function AboutSection() {
                         Mon parcours et ma passion
                     </h3>
                     <p className="text-gray-700 leading-relaxed mb-4">
-                        Kinésithérapeute diplômé, j'ai toujours été fasciné par la complexité du corps humain et sa capacité à se régénérer. Mon approche combine les techniques de kinésithérapie traditionnelles avec des méthodes complémentaires pour une prise en charge globale.
+                        Masseur-kinésithérapeute diplômé d'État, je suis passionné par la santé et le mouvement. J'exerce dans mon cabinet situé à Lyon 7e, où je propose une approche basée sur l'écoute active et des techniques éprouvées pour garantir des résultats durables.
                     </p>
-                    <p className="text-gray-700 leading-relaxed">
-                        Fort de plusieurs années d'expérience, je me suis spécialisé en médecine chinoise et en thérapie viscérale, des domaines qui m'ont permis d'élargir ma compréhension des liens entre le corps et l'esprit.
+                    <p className="text-gray-700 leading-relaxed mb-6">
+                        J'adapte mes traitements sur-mesure pour chaque patient, qu'il s'agisse de rééducation post-opératoire, de kinésithérapie du sport ou de soins spécifiques.
                     </p>
+
+                    <h4 className="text-lg font-medium text-gray-900 mb-3">Compétences clés</h4>
+                    <ul className="list-disc list-outside ml-5 text-gray-700 space-y-1 mb-6">
+                        <li><strong>Rééducation posturale</strong> : Correction et amélioration de la posture.</li>
+                        <li><strong>Pathologies musculo-squelettiques</strong> : Prise en charge des troubles des muscles, os et articulations.</li>
+                        <li><strong>Mobilisations articulaires</strong> : Techniques ciblées pour restaurer la fonction articulaire et réduire la douleur.</li>
+                        <li><strong>Anatomie humaine</strong> : Expertise approfondie pour des traitements précis.</li>
+                    </ul>
+
+                    <h4 className="text-lg font-medium text-gray-900 mb-3">Formations</h4>
+                    <ul className="space-y-2 text-gray-700">
+                        <li><span className="font-semibold text-blue-600">2025</span> - Thérapie viscérale niveau 1 et 2 (Kiné Formation)</li>
+                        <li><span className="font-semibold text-blue-600">2024</span> - Médecine traditionnelle chinoise (FLETC)</li>
+                        <li><span className="font-semibold text-blue-600">2023</span> - Chaîne musculaire GDS (CFPC)</li>
+                        <li><span className="font-semibold text-blue-600">2021</span> - Diplôme d'État de Masseur-Kinésithérapeute (IFMKDV)</li>
+                    </ul>
                 </motion.div>
                 <motion.div
                     className="md:w-1/2 flex justify-center"
@@ -35,7 +51,7 @@ export default function AboutSection() {
                 >
                     {/* Placeholder for an image of Anthony Salles */}
                     <div className="size-80 bg-gray-200 rounded-full flex items-center justify-center text-gray-500">
-                        Image d'Anthony Salles
+                        Ma photo
                     </div>
                 </motion.div>
             </motion.div>

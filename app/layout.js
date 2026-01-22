@@ -1,3 +1,4 @@
+import BackgroundGradient from '@/components/background-gradient';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import LenisScroll from '@/components/lenis-scroll';
@@ -12,7 +13,10 @@ export default function RootLayout({ children }) {
     return (
         <html lang='en'>
             <LenisScroll />
-            <body>{children}</body>
+            <body>
+                <BackgroundGradient />
+                {children}
+            </body>
         </html>
     );
 }

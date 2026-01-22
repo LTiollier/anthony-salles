@@ -45,9 +45,10 @@ export default function Navbar() {
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 250, damping: 70, mass: 1 }}
             >
-                <a href='/'>
-                    <Image src='/assets/logo.svg' alt='logo' className='h-8.5 w-auto' width={205} height={48} />
-                </a>
+                <Link href='/' className="flex items-center gap-3">
+                    <Image src='/logo.png' alt='Anthony Salles Logo' className='size-10 object-contain rounded-full' width={40} height={40} />
+                    <span className="text-lg font-semibold text-gray-900 tracking-tight">Anthony Salles</span>
+                </Link>
 
                 <div className='hidden items-center space-x-10 md:flex'>
                     {links.map((link) => (
