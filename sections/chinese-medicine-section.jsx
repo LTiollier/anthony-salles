@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYinYang, faDroplet, faLeaf } from '@fortawesome/free-solid-svg-icons';
-import Image from "next/image";
+import EnergyFlow from "@/components/energy-flow";
 
 export default function ChineseMedicineSection() {
     const principles = [
@@ -58,13 +58,7 @@ export default function ChineseMedicineSection() {
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 >
-                    <Image
-                        src="/images/chinese-medicine.png"
-                        alt="Médecine Chinoise"
-                        width={400}
-                        height={400}
-                        className="size-80 object-cover rounded-2xl shadow-lg border-4 border-white"
-                    />
+                    <EnergyFlow />
                 </motion.div>
             </motion.div>
 
