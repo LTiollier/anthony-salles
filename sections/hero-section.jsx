@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import BackgroundGlow from "@/components/background-glow";
 
 export default function HeroSection() {
     const title = "Votre expert en kinésithérapie, médecine chinoise et thérapie viscérale.";
@@ -33,8 +32,6 @@ export default function HeroSection() {
 
     return (
         <section className="relative flex flex-col items-center py-20 overflow-visible">
-            <BackgroundGlow />
-
             <motion.div
                 className="flex flex-col items-center max-w-4xl"
                 variants={containerVariants}

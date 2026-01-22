@@ -1,69 +1,122 @@
 import SectionTitle from "@/components/section-title";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUniversalAccess, faYinYang, faHandshake } from '@fortawesome/free-solid-svg-icons';
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
+function FeatureCard({ feature, index }) {
+    const cardRef = useRef(null);
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseXSpring = useSpring(x);
+    const mouseYSpring = useSpring(y);
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+    const handleMouseMove = (e) => {
+        const rect = cardRef.current.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+
+        const xPct = mouseX / width - 0.5;
+        const yPct = mouseY / height - 0.5;
+
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
+
+    return (
+        <motion.div
+            ref={cardRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{
+                rotateX,
+                rotateY,
+                transformStyle: "preserve-3d",
+            }}
+            className="group relative p-6 rounded-2xl glass max-w-80 w-full transition-shadow duration-500 hover:shadow-2xl hover:shadow-blue-500/10"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 200,
+                damping: 20,
+            }}
+        >
+            <div style={{ transform: "translateZ(50px)" }} className="space-y-4">
+                <div className="size-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white duration-300">
+                    <FontAwesomeIcon icon={feature.icon} className="size-6" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                    {feature.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                </p>
+                <div className="pt-2">
+                    <div className="h-1 w-0 bg-blue-500 transition-all duration-300 group-hover:w-12 rounded-full" />
+                </div>
+            </div>
+
+            {/* Subtle internal glow */}
+            <motion.div
+                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{
+                    background: useTransform(
+                        [mouseXSpring, mouseYSpring],
+                        ([latestX, latestY]) => {
+                            const xPct = (latestX + 0.5) * 100;
+                            const yPct = (latestY + 0.5) * 100;
+                            return `radial-gradient(circle at ${xPct}% ${yPct}%, rgba(59, 130, 246, 0.15), transparent)`;
+                        }
+                    ),
+                }}
+            />
+        </motion.div>
+    );
+}
+
 export default function Features() {
-
-    const refs = useRef([]);
-
     const featuresData = [
         {
-            icon: faUniversalAccess, // Changed icon
-            title: "Kinésithérapie", // Changed title
-            description: "Rééducation fonctionnelle, gestion de la douleur, et accompagnement post-opératoire pour retrouver votre mobilité.", // Changed description
+            icon: faUniversalAccess,
+            title: "Kinésithérapie",
+            description: "Rééducation fonctionnelle, gestion de la douleur, et accompagnement post-opératoire pour retrouver votre mobilité.",
         },
         {
-            icon: faYinYang, // Changed icon
-            title: "Médecine Chinoise", // Changed title
-            description: "Approche ancestrale pour l'équilibre du corps et de l'esprit, incluant acupuncture et phytothérapie.", // Changed description
+            icon: faYinYang,
+            title: "Médecine Chinoise",
+            description: "Approche ancestrale pour l'équilibre du corps et de l'esprit, incluant acupuncture et phytothérapie.",
         },
         {
-            icon: faHandshake, // Changed icon
-            title: "Thérapie Viscérale", // Changed title
-            description: "Soulagement des tensions des organes internes pour améliorer la fonction et réduire les douleurs chroniques.", // Changed description
+            icon: faHandshake,
+            title: "Thérapie Viscérale",
+            description: "Soulagement des tensions des organes internes pour améliorer la fonction et réduire les douleurs chroniques.",
         }
     ];
 
     return (
-        <section className="mt-32">
+        <section className="mt-32 pb-20">
             <SectionTitle
-                title="Mes Services" // Changed title
-                description="Découvrez l'éventail de mes services dédiés à votre bien-être et à votre santé." // Changed description
+                title="Mes Services"
+                description="Découvrez l'éventail de mes services dédiés à votre bien-être et à votre santé."
             />
 
-            <div className="flex flex-wrap items-center justify-center gap-6 mt-10 px-6">
+            <div className="flex flex-wrap items-center justify-center gap-8 mt-16 px-6 perspective-1000">
                 {featuresData.map((feature, index) => (
-                    <motion.div
-                        key={index}
-                        ref={(el) => (refs.current[index] = el)}
-                        className="hover:-translate-y-0.5 p-6 rounded-xl space-y-4 glass max-w-80 w-full"
-                        initial={{ y: 150, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{
-                            delay: index * 0.15,
-                            type: "spring",
-                            stiffness: 320,
-                            damping: 70,
-                            mass: 1
-                        }}
-                        onAnimationComplete={() => {
-                            const card = refs.current[index];
-                            if (card) {
-                                card.classList.add("transition", "duration-300");
-                            }
-                        }}
-                    >
-                        <FontAwesomeIcon icon={feature.icon} className="size-8.5" />
-                        <h3 className="text-base font-medium text-gray-900">
-                            {feature.title}
-                        </h3>
-                        <p className="text-gray-700 pb-2">
-                            {feature.description}
-                        </p>
-                    </motion.div>
+                    <FeatureCard key={index} feature={feature} index={index} />
                 ))}
             </div>
         </section>
