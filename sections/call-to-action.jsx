@@ -1,5 +1,6 @@
 import { ArrowRightIcon } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link"; // Import Link component
 
 export default function CallToAction() {
     return (
@@ -9,31 +10,32 @@ export default function CallToAction() {
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
         >
-            <motion.h2 className="text-2xl md:text-4xl font-medium mt-2"
+            <motion.h2 className="text-2xl md:text-4xl font-medium mt-2 text-gray-900"
                 initial={{ y: 80, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 280, damping: 70, mass: 1 }}
             >
-                Ready to build?
+                Prêt à prendre soin de votre santé ?
             </motion.h2>
-            <motion.p className="mt-4 text-sm/7 max-w-md"
+            <motion.p className="mt-4 text-sm/7 max-w-md text-gray-700"
                 initial={{ y: 80, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 200, damping: 70, mass: 1 }}
             >
-                See how fast you can turn your ideas into reality. Get started for free, no credit card required.
+                Contactez Anthony Salles pour une consultation personnalisée et commencez votre chemin vers un mieux-être durable.
             </motion.p>
-            <motion.button className="btn glass transition-none flex items-center gap-2 mt-8"
+            <Link href="/contact"
                 initial={{ y: 80, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 280, damping: 70, mass: 1 }}
+                className="btn bg-blue-500 transition-none flex items-center gap-2 mt-8"
             >
-                Try now
+                Prendre rendez-vous
                 <ArrowRightIcon className="size-4" />
-            </motion.button>
+            </Link>
         </motion.div>
     );
 };

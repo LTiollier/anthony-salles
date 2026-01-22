@@ -1,5 +1,5 @@
 import SectionTitle from "@/components/section-title";
-import { BotIcon, BrainIcon, ZapIcon } from "lucide-react";
+import { AccessibilityIcon, YinYangIcon, HandshakeIcon } from "lucide-react"; // Updated imports
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
@@ -9,27 +9,27 @@ export default function Features() {
 
     const featuresData = [
         {
-            icon: BotIcon,
-            title: "Autonomous Agents",
-            description: "Agents that plan, execute & think step-by-step.",
+            icon: AccessibilityIcon, // Changed icon
+            title: "Kinésithérapie", // Changed title
+            description: "Rééducation fonctionnelle, gestion de la douleur, et accompagnement post-opératoire pour retrouver votre mobilité.", // Changed description
         },
         {
-            icon: BrainIcon,
-            title: "Memory & Learning",
-            description: "Agents retain memory and improve over time.",
+            icon: YinYangIcon, // Changed icon
+            title: "Médecine Chinoise", // Changed title
+            description: "Approche ancestrale pour l'équilibre du corps et de l'esprit, incluant acupuncture et phytothérapie.", // Changed description
         },
         {
-            icon: ZapIcon,
-            title: "Real-time Execution",
-            description: "Fast responses with async task processing.",
+            icon: HandshakeIcon, // Changed icon
+            title: "Thérapie Viscérale", // Changed title
+            description: "Soulagement des tensions des organes internes pour améliorer la fonction et réduire les douleurs chroniques.", // Changed description
         }
     ];
 
     return (
         <section className="mt-32">
             <SectionTitle
-                title="Agent features"
-                description="Design AI assistants that research, plan, and execute tasks — all powered by your prompts."
+                title="Mes Services" // Changed title
+                description="Découvrez l'éventail de mes services dédiés à votre bien-être et à votre santé." // Changed description
             />
 
             <div className="flex flex-wrap items-center justify-center gap-6 mt-10 px-6">
@@ -56,10 +56,10 @@ export default function Features() {
                         }}
                     >
                         <feature.icon className="size-8.5" />
-                        <h3 className="text-base font-medium text-white">
+                        <h3 className="text-base font-medium text-gray-900">
                             {feature.title}
                         </h3>
-                        <p className="text-gray-100 line-clamp-2 pb-2">
+                        <p className="text-gray-700 line-clamp-2 pb-2">
                             {feature.description}
                         </p>
                     </motion.div>

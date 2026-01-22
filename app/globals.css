@@ -5,12 +5,12 @@
 }
 
 body {
-    @apply bg-black text-white text-sm antialiased;
+    @apply bg-white text-gray-800 text-sm antialiased;
 }
 
 @layer components {
     .glass {
-        @apply bg-white/10 border border-white/20;
+        @apply bg-gray-100/60 border border-gray-200/80 backdrop-blur;
     }
 
     .btn {
