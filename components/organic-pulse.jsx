@@ -8,13 +8,12 @@ import { motion } from 'framer-motion';
  */
 export default function OrganicPulse() {
     return (
-        <div className="relative size-80 md:size-96 flex items-center justify-center overflow-hidden">
+        <div className="relative size-80 md:size-96 flex items-center justify-center">
             {/* Background Soft Glow */}
             <div className="absolute inset-0 bg-orange-100/20 blur-[100px] rounded-full" />
 
-            {/* Blob 1: Soft Coral */}
             <motion.div
-                className="absolute size-48 md:size-64 bg-gradient-to-br from-coral-400/40 to-orange-300/40 rounded-full mix-blend-multiply filter blur-xl"
+                className="absolute size-48 md:size-64 bg-gradient-to-br from-coral-400/40 to-orange-300/40 rounded-full mix-blend-multiply filter blur-3xl"
                 animate={{
                     scale: [1, 1.2, 1],
                     x: [0, 20, 0],
@@ -28,9 +27,8 @@ export default function OrganicPulse() {
                 style={{ backgroundColor: '#F87171' }} // Coral-like
             />
 
-            {/* Blob 2: Soft Ochre */}
             <motion.div
-                className="absolute size-48 md:size-64 bg-gradient-to-tr from-amber-200/40 to-yellow-400/40 rounded-full mix-blend-multiply filter blur-xl"
+                className="absolute size-48 md:size-64 bg-gradient-to-tr from-amber-200/40 to-yellow-400/40 rounded-full mix-blend-multiply filter blur-3xl"
                 animate={{
                     scale: [1.2, 1, 1.2],
                     x: [0, -30, 0],
@@ -44,9 +42,8 @@ export default function OrganicPulse() {
                 style={{ backgroundColor: '#FCD34D' }} // Ochre-like
             />
 
-            {/* Blob 3: Soft Pink/Peach */}
             <motion.div
-                className="absolute size-40 md:size-56 bg-gradient-to-bl from-rose-200/40 to-orange-200/40 rounded-full mix-blend-multiply filter blur-xl"
+                className="absolute size-40 md:size-56 bg-gradient-to-bl from-rose-200/40 to-orange-200/40 rounded-full mix-blend-multiply filter blur-3xl"
                 animate={{
                     scale: [1, 1.1, 1],
                     x: [20, -10, 20],
