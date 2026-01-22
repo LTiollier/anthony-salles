@@ -58,7 +58,7 @@ export default function AboutSection() {
                         height={400}
                         className="size-80 object-cover"
                         style={{
-                            clipPath: "path('M 160,310 C 120,280 20,120 20,60 C 20,30 50,20 80,20 L 240,20 C 270,20 300,30 300,60 C 300,120 200,280 160,310 Z')"
+                            clipPath: "path('M 100,20 L 220,20 C 260,20 300,60 300,100 C 300,150 200,270 180,290 C 170,300 150,300 140,290 C 120,270 20,150 20,100 C 20,60 60,20 100,20 Z')"
                         }}
                     />
                 </motion.div>
