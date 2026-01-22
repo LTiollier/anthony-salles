@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStethoscope, faHandRock, faHeart } from '@fortawesome/free-solid-svg-icons';
-import Image from "next/image";
+import OrganicPulse from "@/components/organic-pulse";
 
 export default function VisceralTherapySection() {
     const benefits = [
@@ -59,13 +59,7 @@ export default function VisceralTherapySection() {
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 >
-                    <Image
-                        src="/images/visceral-therapy.png"
-                        alt="Thérapie Viscérale"
-                        width={400}
-                        height={400}
-                        className="size-80 object-cover rounded-2xl shadow-lg border-4 border-white"
-                    />
+                    <OrganicPulse />
                 </motion.div>
             </motion.div>
 
