@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpa, faDroplet, faLeaf } from '@fortawesome/free-solid-svg-icons';
+import { faYinYang, faDroplet, faLeaf } from '@fortawesome/free-solid-svg-icons';
+import Image from "next/image";
 
 export default function ChineseMedicineSection() {
     const principles = [
         {
-            icon: faSpa,
+            icon: faYinYang,
             title: "Équilibre du Yin et du Yang",
             description: "La recherche de l'harmonie entre les forces opposées pour une santé optimale.",
         },
@@ -56,10 +57,13 @@ export default function ChineseMedicineSection() {
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 >
-                    {/* Placeholder for an image related to Chinese Medicine */}
-                    <div className="size-80 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
-                        Image Médecine Chinoise
-                    </div>
+                    <Image
+                        src="/images/chinese-medicine.png"
+                        alt="Médecine Chinoise"
+                        width={400}
+                        height={400}
+                        className="size-80 object-cover rounded-2xl shadow-lg border-4 border-white"
+                    />
                 </motion.div>
             </motion.div>
 

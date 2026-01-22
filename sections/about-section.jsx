@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
+import Image from "next/image";
 
 export default function AboutSection() {
     return (
@@ -49,10 +50,13 @@ export default function AboutSection() {
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 >
-                    {/* Placeholder for an image of Anthony Salles */}
-                    <div className="size-80 bg-gray-200 rounded-full flex items-center justify-center text-gray-500">
-                        Ma photo
-                    </div>
+                    <Image
+                        src="/images/about.png"
+                        alt="Mon cabinet"
+                        width={400}
+                        height={400}
+                        className="size-80 object-cover rounded-full shadow-lg border-4 border-white"
+                    />
                 </motion.div>
             </motion.div>
         </section>
