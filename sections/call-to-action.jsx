@@ -34,7 +34,13 @@ export default function CallToAction() {
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 280, damping: 70, mass: 1 }}
             >
-                <a href="https://www.doctolib.fr/masseur-kinesitherapeute/lyon/anthony-salles-lyon" target="_blank" rel="noopener noreferrer" className="btn bg-blue-500 transition-none flex items-center gap-2 mt-8">
+                <a
+                    href="https://www.doctolib.fr/masseur-kinesitherapeute/lyon/anthony-salles-lyon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn bg-blue-500 transition-none flex items-center gap-2 mt-8"
+                    aria-label="Prendre rendez-vous sur Doctolib (s'ouvre dans un nouvel onglet)"
+                >
                     Prendre rendez-vous
                     <FontAwesomeIcon icon={faArrowRight} className="size-4" />
                 </a>

@@ -31,19 +31,23 @@ export default function HeroSection() {
     };
 
     return (
-        <section className="relative flex flex-col items-center py-20 overflow-visible">
+        <section id="main-content" className="relative flex flex-col items-center py-20 overflow-visible">
             <motion.div
                 className="flex flex-col items-center max-w-4xl"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
             >
-                <motion.h1 className="text-center text-4xl/13 md:text-6xl/19 mt-4 font-semibold tracking-tight text-gray-900 flex flex-wrap justify-center gap-x-[0.3em]">
+                <motion.h1
+                    className="text-center text-4xl/13 md:text-6xl/19 mt-4 font-semibold tracking-tight text-gray-900 flex flex-wrap justify-center gap-x-[0.3em]"
+                    aria-label={title}
+                >
                     {words.map((word, i) => (
                         <motion.span
                             key={i}
                             variants={wordVariants}
                             className="inline-block"
+                            aria-hidden="true"
                         >
                             {word}
                         </motion.span>
@@ -65,7 +69,13 @@ export default function HeroSection() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 1, duration: 0.5 }}
                 >
-                    <a href='https://www.doctolib.fr/masseur-kinesitherapeute/lyon/anthony-salles-lyon' target='_blank' rel='noopener noreferrer' className="btn max-md:w-full bg-blue-500 shadow-lg shadow-blue-500/20">
+                    <a
+                        href='https://www.doctolib.fr/masseur-kinesitherapeute/lyon/anthony-salles-lyon'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className="btn max-md:w-full bg-blue-500 shadow-lg shadow-blue-500/20"
+                        aria-label="Prendre rendez-vous sur Doctolib (ouvre un nouvel onglet)"
+                    >
                         Prendre rendez-vous
                     </a>
                     <Link href='/a-propos' className="btn max-md:w-full glass flex items-center justify-center gap-2 py-3 text-gray-900 border border-white/40">

@@ -47,6 +47,12 @@ export default function RootLayout({ children }) {
     return (
         <html lang='fr' suppressHydrationWarning>
             <body>
+                <a
+                    href="#main-content"
+                    className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-blue-600 focus:text-white focus:rounded-full focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                >
+                    Aller au contenu principal
+                </a>
                 <LenisScroll />
                 <BackgroundGradient />
                 {children}

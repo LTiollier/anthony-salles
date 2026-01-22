@@ -46,6 +46,8 @@ function FeatureCard({ feature, index }) {
                 transformStyle: "preserve-3d",
             }}
             className="group relative p-6 rounded-2xl glass max-w-80 w-full transition-shadow duration-500 hover:shadow-2xl hover:shadow-blue-500/10"
+            role="article"
+            aria-labelledby={`feature-title-${index}`}
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -58,9 +60,9 @@ function FeatureCard({ feature, index }) {
         >
             <div style={{ transform: "translateZ(50px)" }} className="space-y-4">
                 <div className="size-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white duration-300">
-                    <FontAwesomeIcon icon={feature.icon} className="size-6" />
+                    <FontAwesomeIcon icon={feature.icon} className="size-6" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 id={`feature-title-${index}`} className="text-lg font-semibold text-gray-900">
                     {feature.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">

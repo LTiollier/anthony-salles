@@ -66,7 +66,7 @@ export default function AboutSection() {
                     >
                         <Image
                             src="/images/about.png"
-                            alt="Mon cabinet"
+                            alt="Anthony Salles dans son cabinet à Lyon 7"
                             width={400}
                             height={400}
                             className="size-80 object-cover"

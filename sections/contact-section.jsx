@@ -27,26 +27,27 @@ export default function ContactSection() {
                         Informations de contact
                     </h3>
                     <div className="flex items-center space-x-4">
-                        <FontAwesomeIcon icon={faPhone} className="size-6 text-blue-500" />
-                        <a href="tel:0478724280" className="text-gray-700 hover:text-blue-600 transition-colors">04 78 72 42 80</a>
+                        <FontAwesomeIcon icon={faPhone} className="size-6 text-blue-500" aria-hidden="true" />
+                        <a href="tel:0478724280" className="text-gray-700 hover:text-blue-600 transition-colors" aria-label="Appeler le cabinet au 04 78 72 42 80">04 78 72 42 80</a>
                     </div>
                     <div className="flex items-center space-x-4">
-                        <FontAwesomeIcon icon={faEnvelope} className="size-6 text-blue-500" />
-                        <a href="mailto:contact@anthonysalles.com" className="text-gray-700 hover:text-blue-600 transition-colors">contact@anthonysalles.com</a>
+                        <FontAwesomeIcon icon={faEnvelope} className="size-6 text-blue-500" aria-hidden="true" />
+                        <a href="mailto:contact@anthonysalles.com" className="text-gray-700 hover:text-blue-600 transition-colors" aria-label="Envoyer un email à contact@anthonysalles.com">contact@anthonysalles.com</a>
                     </div>
                     <div className="flex items-center space-x-4">
-                        <FontAwesomeIcon icon={faMapMarkerAlt} className="size-6 text-blue-500" />
+                        <FontAwesomeIcon icon={faMapMarkerAlt} className="size-6 text-blue-500" aria-hidden="true" />
                         <a
                             href="https://www.google.com/maps/place/Anthony+SALLES/@45.7477683,4.8448419,17z/data=!3m1!5s0x47f4ea41dd2764ff:0x4218a02dbae9f3ee!4m6!3m5!1s0x47f4eb1834469583:0xbfdb9316deb2b1be!8m2!3d45.7477646!4d4.8474168!16s%2Fg%2F11s974tf19?entry=ttu&g_ep=EgoyMDI2MDEyMC4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-gray-700 hover:text-blue-600 transition-colors"
+                            aria-label="Voir l'adresse sur Google Maps (ouvre un nouvel onglet)"
                         >
                             46 Rue de la Madeleine, 69007 Lyon
                         </a>
                     </div>
 
-                    <div className="w-full h-80 mt-8 shadow-lg rounded-lg overflow-hidden relative z-0">
+                    <div className="w-full h-80 mt-8 shadow-lg rounded-lg overflow-hidden relative z-0" aria-label="Plan d'accès interactif">
                         <LeafletMap />
                     </div>
                 </motion.div>
@@ -62,31 +63,37 @@ export default function ContactSection() {
                     </h3>
                     <form className="space-y-4">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nom</label>
+                            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nom <span className="text-red-500" aria-hidden="true">*</span></label>
                             <input
                                 type="text"
                                 id="name"
                                 name="name"
+                                required
+                                aria-required="true"
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2"
                                 placeholder="Votre nom"
                             />
                         </div>
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email <span className="text-red-500" aria-hidden="true">*</span></label>
                             <input
                                 type="email"
                                 id="email"
                                 name="email"
+                                required
+                                aria-required="true"
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2"
                                 placeholder="Votre adresse email"
                             />
                         </div>
                         <div>
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                            <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message <span className="text-red-500" aria-hidden="true">*</span></label>
                             <textarea
                                 id="message"
                                 name="message"
                                 rows="4"
+                                required
+                                aria-required="true"
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2"
                                 placeholder="Votre message"
                             ></textarea>

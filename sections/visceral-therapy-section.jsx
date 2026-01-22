@@ -71,6 +71,8 @@ export default function VisceralTherapySection() {
                     <motion.div
                         key={index}
                         className="p-6 rounded-xl space-y-4 glass max-w-80 w-full flex flex-col items-center text-center"
+                        role="article"
+                        aria-labelledby={`benefit-title-${index}`}
                         initial={{ y: 150, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
@@ -82,8 +84,8 @@ export default function VisceralTherapySection() {
                             mass: 1
                         }}
                     >
-                        <FontAwesomeIcon icon={benefit.icon} className="size-8.5 text-blue-500" />
-                        <h4 className="text-lg font-medium text-gray-900">
+                        <FontAwesomeIcon icon={benefit.icon} className="size-8.5 text-blue-500" aria-hidden="true" />
+                        <h4 id={`benefit-title-${index}`} className="text-lg font-medium text-gray-900">
                             {benefit.title}
                         </h4>
                         <p className="text-gray-700 pb-2">
