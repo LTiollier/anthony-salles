@@ -56,9 +56,9 @@ export default function Navbar() {
                             {link.name}
                         </Link>
                     ))}
-                    <Link href='/contact' className='btn bg-blue-500'>
+                    <a href='https://www.doctolib.fr/masseur-kinesitherapeute/lyon/anthony-salles-lyon' target='_blank' rel='noopener noreferrer' className='btn bg-blue-500'>
                         Prendre rendez-vous
-                    </Link>
+                    </a>
                 </div>
 
                 <button onClick={() => setIsOpen(true)} className='transition active:scale-90 md:hidden'>
@@ -74,9 +74,9 @@ export default function Navbar() {
                 ))}
 
 
-                <Link href='/contact' className='btn bg-blue-500' onClick={() => setIsOpen(false)}>
+                <a href='https://www.doctolib.fr/masseur-kinesitherapeute/lyon/anthony-salles-lyon' target='_blank' rel='noopener noreferrer' className='btn bg-blue-500' onClick={() => setIsOpen(false)}>
                     Prendre rendez-vous
-                </Link>
+                </a>
 
                 <button onClick={() => setIsOpen(false)} className='rounded-md p-2 glass'>
                     <FontAwesomeIcon icon={faXmark} />

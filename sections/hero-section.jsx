@@ -30,9 +30,9 @@ export default function HeroSection() {
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
                 >
-                    <Link href='/contact' className="btn max-md:w-full bg-blue-500">
+                    <a href='https://www.doctolib.fr/masseur-kinesitherapeute/lyon/anthony-salles-lyon' target='_blank' rel='noopener noreferrer' className="btn max-md:w-full bg-blue-500">
                         Prendre rendez-vous
-                    </Link>
+                    </a>
                     <Link href='/a-propos' className="btn max-md:w-full glass flex items-center justify-center gap-2 py-3 text-gray-900">
                         Découvrir mes services
                     </Link>
