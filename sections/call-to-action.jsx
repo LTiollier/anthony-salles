@@ -27,16 +27,17 @@ export default function CallToAction() {
             >
                 Contactez Anthony Salles pour une consultation personnalisée et commencez votre chemin vers un mieux-être durable.
             </motion.p>
-            <Link href="/contact"
+            <motion.div
                 initial={{ y: 80, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 280, damping: 70, mass: 1 }}
-                className="btn bg-blue-500 transition-none flex items-center gap-2 mt-8"
             >
-                Prendre rendez-vous
-                <FontAwesomeIcon icon={faArrowRight} className="size-4" />
-            </Link>
+                <Link href="/contact" className="btn bg-blue-500 transition-none flex items-center gap-2 mt-8">
+                    Prendre rendez-vous
+                    <FontAwesomeIcon icon={faArrowRight} className="size-4" />
+                </Link>
+            </motion.div>
         </motion.div>
     );
 };
