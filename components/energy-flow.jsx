@@ -63,9 +63,9 @@ export default function EnergyFlow() {
                             <motion.circle
                                 r="1.5"
                                 fill="#3b82f6"
-                                initial={{ offsetDistance: "0%", opacity: 0 }}
+                                initial={{ opacity: 0, "--offset-distance": "0%" }}
                                 animate={{
-                                    offsetDistance: "100%",
+                                    "--offset-distance": "100%",
                                     opacity: [0, 1, 1, 0]
                                 }}
                                 transition={{
@@ -76,6 +76,7 @@ export default function EnergyFlow() {
                                 }}
                                 style={{
                                     offsetPath: `path("${meridian.d}")`,
+                                    offsetDistance: "var(--offset-distance)",
                                     boxShadow: "0 0 10px #3b82f6"
                                 }}
                             />
@@ -86,9 +87,9 @@ export default function EnergyFlow() {
                             <motion.circle
                                 r="1"
                                 fill="#60a5fa"
-                                initial={{ offsetDistance: "0%", opacity: 0 }}
+                                initial={{ opacity: 0, "--offset-distance": "0%" }}
                                 animate={{
-                                    offsetDistance: "100%",
+                                    "--offset-distance": "100%",
                                     opacity: [0, 0.5, 0.5, 0]
                                 }}
                                 transition={{
@@ -99,6 +100,7 @@ export default function EnergyFlow() {
                                 }}
                                 style={{
                                     offsetPath: `path("${meridian.d}")`,
+                                    offsetDistance: "var(--offset-distance)",
                                 }}
                             />
                         )}
