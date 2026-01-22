@@ -1,3 +1,4 @@
+'use client';
 import SectionTitle from "@/components/section-title";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUniversalAccess, faYinYang, faHandshake } from '@fortawesome/free-solid-svg-icons';
