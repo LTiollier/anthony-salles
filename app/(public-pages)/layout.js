@@ -28,13 +28,8 @@ export const metadata = {
 export default function Layout({ children }) {
     return (
         <>
-            <a href="#main-content" className="skip-link">
-                Passer au contenu principal
-            </a>
             <Navbar />
-            <main id="main-content">
-                {children}
-            </main>
+            {children}
             <Footer />
         </>
     );
