@@ -24,6 +24,19 @@ export const metadata = {
         shortcut: '/logo.png',
         apple: '/logo.png',
     },
+    openGraph: {
+        title: 'Anthony Salles - Kinésithérapeute à Lyon 7',
+        description: 'Expertise en kinésithérapie, médecine chinoise et thérapie viscérale. Accompagnement holistique et personnalisé.',
+        url: 'https://anthonysalles.com',
+        siteName: 'Anthony Salles',
+        locale: 'fr_FR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Anthony Salles - Kinésithérapeute',
+        description: 'Kinésithérapie, Médecine Chinoise & Thérapie Viscérale à Lyon 7.',
+    },
     robots: {
         index: true,
         follow: true,
