@@ -28,15 +28,22 @@ export default function ContactSection() {
                     </h3>
                     <div className="flex items-center space-x-4">
                         <FontAwesomeIcon icon={faPhone} className="size-6 text-blue-500" />
-                        <p className="text-gray-700">04 78 72 42 80</p>
+                        <a href="tel:0478724280" className="text-gray-700 hover:text-blue-600 transition-colors">04 78 72 42 80</a>
                     </div>
                     <div className="flex items-center space-x-4">
                         <FontAwesomeIcon icon={faEnvelope} className="size-6 text-blue-500" />
-                        <p className="text-gray-700">contact@anthonysalles.com</p>
+                        <a href="mailto:contact@anthonysalles.com" className="text-gray-700 hover:text-blue-600 transition-colors">contact@anthonysalles.com</a>
                     </div>
                     <div className="flex items-center space-x-4">
                         <FontAwesomeIcon icon={faMapMarkerAlt} className="size-6 text-blue-500" />
-                        <p className="text-gray-700">46 Rue de la Madeleine, 69007 Lyon</p>
+                        <a
+                            href="https://www.google.com/maps/place/Anthony+SALLES/@45.7477683,4.8448419,17z/data=!3m1!5s0x47f4ea41dd2764ff:0x4218a02dbae9f3ee!4m6!3m5!1s0x47f4eb1834469583:0xbfdb9316deb2b1be!8m2!3d45.7477646!4d4.8474168!16s%2Fg%2F11s974tf19?entry=ttu&g_ep=EgoyMDI2MDEyMC4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-700 hover:text-blue-600 transition-colors"
+                        >
+                            46 Rue de la Madeleine, 69007 Lyon
+                        </a>
                     </div>
 
                     <div className="w-full h-80 mt-8 shadow-lg rounded-lg overflow-hidden relative z-0">

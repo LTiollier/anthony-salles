@@ -72,9 +72,16 @@ export default function Footer() {
                                 contact@anthonysalles.com
                             </a>
                         </li>
-                        <li className="flex items-start gap-3 text-gray-600">
-                            <FontAwesomeIcon icon={faMapMarkerAlt} className="size-4 text-blue-500 mt-1" />
-                            <span>Lyon, France</span>
+                        <li>
+                            <a
+                                href="https://www.google.com/maps/place/Anthony+SALLES/@45.7477683,4.8448419,17z/data=!3m1!5s0x47f4ea41dd2764ff:0x4218a02dbae9f3ee!4m6!3m5!1s0x47f4eb1834469583:0xbfdb9316deb2b1be!8m2!3d45.7477646!4d4.8474168!16s%2Fg%2F11s974tf19?entry=ttu&g_ep=EgoyMDI2MDEyMC4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start gap-3 text-gray-600 hover:text-blue-600 transition-colors"
+                            >
+                                <FontAwesomeIcon icon={faMapMarkerAlt} className="size-4 text-blue-500 mt-1" />
+                                <span>46 Rue de la Madeleine, 69007 Lyon</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
