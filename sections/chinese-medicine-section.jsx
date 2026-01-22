@@ -1,21 +1,22 @@
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
-import { LotusIcon, DropletIcon, LeafIcon } from "lucide-react"; // Example icons for Chinese medicine
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpa, faDroplet, faLeaf } from '@fortawesome/free-solid-svg-icons';
 
 export default function ChineseMedicineSection() {
     const principles = [
         {
-            icon: LotusIcon,
+            icon: faSpa,
             title: "Équilibre du Yin et du Yang",
             description: "La recherche de l'harmonie entre les forces opposées pour une santé optimale.",
         },
         {
-            icon: DropletIcon,
+            icon: faDroplet,
             title: "Circulation du Qi",
             description: "L'énergie vitale qui parcourt le corps, essentielle à son bon fonctionnement.",
         },
         {
-            icon: LeafIcon,
+            icon: faLeaf,
             title: "Les Cinq Éléments",
             description: "Bois, Feu, Terre, Métal, Eau : une interaction constante influençant notre physiologie.",
         },
@@ -81,7 +82,7 @@ export default function ChineseMedicineSection() {
                             mass: 1
                         }}
                     >
-                        <principle.icon className="size-8.5 text-blue-500" />
+                        <FontAwesomeIcon icon={principle.icon} className="size-8.5 text-blue-500" />
                         <h4 className="text-lg font-medium text-gray-900">
                             {principle.title}
                         </h4>

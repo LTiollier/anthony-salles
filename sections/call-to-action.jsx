@@ -1,4 +1,5 @@
-import { ArrowRightIcon } from "lucide-react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { motion } from "framer-motion";
 import Link from "next/link"; // Import Link component
 
@@ -34,7 +35,7 @@ export default function CallToAction() {
                 className="btn bg-blue-500 transition-none flex items-center gap-2 mt-8"
             >
                 Prendre rendez-vous
-                <ArrowRightIcon className="size-4" />
+                <FontAwesomeIcon icon={faArrowRight} className="size-4" />
             </Link>
         </motion.div>
     );

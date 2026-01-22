@@ -1,21 +1,22 @@
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
-import { StethoscopeIcon, HandMetalIcon, HeartIcon } from "lucide-react"; // Example icons for Visceral Therapy
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStethoscope, faHandRock, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 export default function VisceralTherapySection() {
     const benefits = [
         {
-            icon: StethoscopeIcon,
+            icon: faStethoscope,
             title: "Amélioration de la fonction organique",
             description: "Aide à restaurer la mobilité naturelle et le fonctionnement optimal des organes internes.",
         },
         {
-            icon: HandMetalIcon,
+            icon: faHandRock,
             title: "Soulagement des douleurs chroniques",
             description: "Réduit les tensions et les adhérences pouvant causer des douleurs au dos, au cou ou à la tête.",
         },
         {
-            icon: HeartIcon,
+            icon: faHeart,
             title: "Réduction du stress et de l'anxiété",
             description: "Contribue à une meilleure relaxation et à un équilibre émotionnel en agissant sur le système nerveux autonome.",
         },
@@ -81,7 +82,7 @@ export default function VisceralTherapySection() {
                             mass: 1
                         }}
                     >
-                        <benefit.icon className="size-8.5 text-blue-500" />
+                        <FontAwesomeIcon icon={benefit.icon} className="size-8.5 text-blue-500" />
                         <h4 className="text-lg font-medium text-gray-900">
                             {benefit.title}
                         </h4>

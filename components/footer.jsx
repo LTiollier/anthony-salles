@@ -1,5 +1,6 @@
 'use client';
-import { DribbbleIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDribbble, faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";

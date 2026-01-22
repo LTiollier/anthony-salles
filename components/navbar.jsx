@@ -1,6 +1,7 @@
 'use client';
 
-import { MenuIcon, XIcon } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -60,7 +61,7 @@ export default function Navbar() {
                 </div>
 
                 <button onClick={() => setIsOpen(true)} className='transition active:scale-90 md:hidden'>
-                    <MenuIcon className='size-6.5' />
+                    <FontAwesomeIcon icon={faBars} className='size-6.5' />
                 </button>
             </motion.nav>
 
@@ -77,7 +78,7 @@ export default function Navbar() {
                 </Link>
 
                 <button onClick={() => setIsOpen(false)} className='rounded-md p-2 glass'>
-                    <XIcon />
+                    <FontAwesomeIcon icon={faXmark} />
                 </button>
             </div >
         </>

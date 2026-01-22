@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
-import { PhoneIcon, MailIcon, MapPinIcon } from "lucide-react"; // Example icons for Contact
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default function ContactSection() {
     return (
@@ -21,15 +22,15 @@ export default function ContactSection() {
                         Informations de contact
                     </h3>
                     <div className="flex items-center space-x-4">
-                        <PhoneIcon className="size-6 text-blue-500" />
+                        <FontAwesomeIcon icon={faPhone} className="size-6 text-blue-500" />
                         <p className="text-gray-700">+33 6 12 34 56 78</p>
                     </div>
                     <div className="flex items-center space-x-4">
-                        <MailIcon className="size-6 text-blue-500" />
+                        <FontAwesomeIcon icon={faEnvelope} className="size-6 text-blue-500" />
                         <p className="text-gray-700">contact@anthonysalles.com</p>
                     </div>
                     <div className="flex items-center space-x-4">
-                        <MapPinIcon className="size-6 text-blue-500" />
+                        <FontAwesomeIcon icon={faMapMarkerAlt} className="size-6 text-blue-500" />
                         <p className="text-gray-700">123 Rue de la Santé, 75001 Paris, France</p>
                     </div>
                     {/* Placeholder for a map */}

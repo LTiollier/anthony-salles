@@ -1,5 +1,6 @@
 import SectionTitle from "@/components/section-title";
-import { AccessibilityIcon, YinYangIcon, HandshakeIcon } from "lucide-react"; // Updated imports
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUniversalAccess, faYinYang, faHandshake } from '@fortawesome/free-solid-svg-icons';
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
@@ -9,17 +10,17 @@ export default function Features() {
 
     const featuresData = [
         {
-            icon: AccessibilityIcon, // Changed icon
+            icon: faUniversalAccess, // Changed icon
             title: "Kinésithérapie", // Changed title
             description: "Rééducation fonctionnelle, gestion de la douleur, et accompagnement post-opératoire pour retrouver votre mobilité.", // Changed description
         },
         {
-            icon: YinYangIcon, // Changed icon
+            icon: faYinYang, // Changed icon
             title: "Médecine Chinoise", // Changed title
             description: "Approche ancestrale pour l'équilibre du corps et de l'esprit, incluant acupuncture et phytothérapie.", // Changed description
         },
         {
-            icon: HandshakeIcon, // Changed icon
+            icon: faHandshake, // Changed icon
             title: "Thérapie Viscérale", // Changed title
             description: "Soulagement des tensions des organes internes pour améliorer la fonction et réduire les douleurs chroniques.", // Changed description
         }
@@ -55,7 +56,7 @@ export default function Features() {
                             }
                         }}
                     >
-                        <feature.icon className="size-8.5" />
+                        <FontAwesomeIcon icon={feature.icon} className="size-8.5" />
                         <h3 className="text-base font-medium text-gray-900">
                             {feature.title}
                         </h3>
