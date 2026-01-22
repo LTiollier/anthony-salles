@@ -3,6 +3,14 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import LenisScroll from '@/components/lenis-scroll';
 
+export const metadata = {
+    icons: {
+        icon: '/logo.png',
+        shortcut: '/logo.png',
+        apple: '/logo.png',
+    },
+};
+
 const poppins = Poppins({
     subsets: ['latin'],
     variable: '--font-sans',

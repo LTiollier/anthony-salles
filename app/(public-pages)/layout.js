@@ -4,11 +4,6 @@ import Navbar from '@/components/navbar';
 export const metadata = {
     title: 'Anthony Salles - Kinésithérapeute | Médecine Chinoise & Thérapie Viscérale',
     description: 'Cabinet de kinésithérapie d\'Anthony Salles. Spécialisé en médecine chinoise, thérapie viscérale et soin holistique.',
-    icons: {
-        icon: '/logo.png',
-        shortcut: '/logo.png',
-        apple: '/logo.png',
-    },
     appleWebApp: {
         title: 'Anthony Salles',
     },
