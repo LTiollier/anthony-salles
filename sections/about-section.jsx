@@ -1,3 +1,4 @@
+'use client';
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
 import Image from "next/image";

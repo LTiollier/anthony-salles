@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 const nextConfig = {
 
     turbopack: {
-        root: __dirname,
+        root: process.cwd(),
     },
     images: {
         unoptimized: true,
