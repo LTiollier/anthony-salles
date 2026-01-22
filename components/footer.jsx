@@ -1,6 +1,5 @@
 'use client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faEnvelope, faMapMarkerAlt, faClock } from '@fortawesome/free-solid-svg-icons';
 import Image from "next/image";
 import Link from "next/link";
@@ -13,11 +12,6 @@ export default function Footer() {
         { name: 'Kinésithérapie', href: '/#features' },
     ];
 
-    const socials = [
-        { icon: faLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-        { icon: faInstagram, href: 'https://instagram.com', label: 'Instagram' },
-        { icon: faFacebook, href: 'https://facebook.com', label: 'Facebook' },
-    ];
 
     return (
         <motion.footer
@@ -42,20 +36,6 @@ export default function Footer() {
                     <p className="text-gray-600 leading-relaxed text-sm">
                         Expertise en kinésithérapie, médecine chinoise et thérapie viscérale pour un accompagnement holistique et personnalisé.
                     </p>
-                    <div className="flex gap-4">
-                        {socials.map((social, index) => (
-                            <a
-                                key={index}
-                                href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="size-10 flex items-center justify-center rounded-full bg-white/50 border border-white/80 shadow-sm text-gray-700 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all duration-300"
-                                aria-label={social.label}
-                            >
-                                <FontAwesomeIcon icon={social.icon} className="size-5" />
-                            </a>
-                        ))}
-                    </div>
                 </div>
 
                 {/* Services */}
