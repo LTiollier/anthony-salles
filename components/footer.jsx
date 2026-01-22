@@ -1,42 +1,134 @@
 'use client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDribbble, faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faPhone, faEnvelope, faMapMarkerAlt, faClock } from '@fortawesome/free-solid-svg-icons';
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Footer() {
-    const links = [
-        { name: 'Mentions Légales', href: '#' },
-        { name: 'Politique de Confidentialité', href: '#' },
+    const services = [
+        { name: 'Médecine Chinoise', href: '/medecine-chinoise' },
+        { name: 'Thérapie Viscérale', href: '/therapie-viscerale' },
+        { name: 'Kinésithérapie', href: '/#features' },
     ];
+
+    const socials = [
+        { icon: faLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+        { icon: faInstagram, href: 'https://instagram.com', label: 'Instagram' },
+        { icon: faFacebook, href: 'https://facebook.com', label: 'Facebook' },
+    ];
+
     return (
-        <motion.footer className="flex flex-col items-center px-4 md:px-16 lg:px-24 justify-center w-full pt-16 mt-40 glass border-0"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+        <motion.footer
+            className="relative w-full pt-20 pb-10 px-4 md:px-16 lg:px-24 mt-20 border-t border-white/20 bg-white/5 backdrop-blur-md overflow-hidden"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8 }}
         >
-            <Link href="/" className="flex items-center gap-3">
-                <Image src='/logo.png' alt='Anthony Salles Logo' className='size-10 object-contain rounded-full' width={40} height={40} />
-                <span className="text-lg font-semibold text-gray-900 tracking-tight">Anthony Salles</span>
-            </Link>
+            {/* Background Decorative Element */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent" />
 
-            <div className="flex flex-col items-center gap-2 mt-6 text-gray-600">
-                <a href="tel:0478724280" className="hover:text-blue-600 transition">04 78 72 42 80</a>
-                <a href="mailto:contact@anthonysalles.com" className="hover:text-blue-600 transition">contact@anthonysalles.com</a>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-8 py-8">
-                {links.map((link, index) => (
-                    <Link key={index} href={link.href} className='transition hover:text-blue-500'>
-                        {link.name}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                {/* Brand & Info */}
+                <div className="flex flex-col gap-6">
+                    <Link href="/" className="flex items-center gap-3 group">
+                        <div className="overflow-hidden rounded-full border-2 border-white/50 shadow-md group-hover:scale-105 transition-transform duration-300">
+                            <Image src='/logo.png' alt='Anthony Salles Logo' className='size-12 object-contain' width={48} height={48} />
+                        </div>
+                        <span className="text-xl font-bold text-gray-900 tracking-tight">Anthony Salles</span>
                     </Link>
-                ))}
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                        Expertise en kinésithérapie, médecine chinoise et thérapie viscérale pour un accompagnement holistique et personnalisé.
+                    </p>
+                    <div className="flex gap-4">
+                        {socials.map((social, index) => (
+                            <a
+                                key={index}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="size-10 flex items-center justify-center rounded-full bg-white/50 border border-white/80 shadow-sm text-gray-700 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all duration-300"
+                                aria-label={social.label}
+                            >
+                                <FontAwesomeIcon icon={social.icon} className="size-5" />
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Services */}
+                <div>
+                    <h4 className="text-gray-900 font-bold mb-6">Services</h4>
+                    <ul className="flex flex-col gap-4">
+                        {services.map((service, index) => (
+                            <li key={index}>
+                                <Link
+                                    href={service.href}
+                                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center gap-2"
+                                >
+                                    <span className="size-1 bg-blue-400 rounded-full" />
+                                    {service.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                {/* Direct Contact */}
+                <div>
+                    <h4 className="text-gray-900 font-bold mb-6">Contact Direct</h4>
+                    <ul className="flex flex-col gap-4 text-sm">
+                        <li>
+                            <a href="tel:0478724280" className="flex items-center gap-3 text-gray-600 hover:text-blue-600 transition-colors">
+                                <FontAwesomeIcon icon={faPhone} className="size-4 text-blue-500" />
+                                04 78 72 42 80
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:contact@anthonysalles.com" className="flex items-center gap-3 text-gray-600 hover:text-blue-600 transition-colors">
+                                <FontAwesomeIcon icon={faEnvelope} className="size-4 text-blue-500" />
+                                contact@anthonysalles.com
+                            </a>
+                        </li>
+                        <li className="flex items-start gap-3 text-gray-600">
+                            <FontAwesomeIcon icon={faMapMarkerAlt} className="size-4 text-blue-500 mt-1" />
+                            <span>Lyon, France</span>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* Opening Hours */}
+                <div>
+                    <h4 className="text-gray-900 font-bold mb-6">Horaires</h4>
+                    <ul className="flex flex-col gap-3 text-sm text-gray-600">
+                        <li className="flex items-center gap-2">
+                            <FontAwesomeIcon icon={faClock} className="size-4 text-blue-500" />
+                            <span>Lun - Ven: 08:30 - 19:30</span>
+                        </li>
+                        <li className="flex items-center gap-2 opacity-50">
+                            <FontAwesomeIcon icon={faClock} className="size-4" />
+                            <span>Sam - Dim: Fermé</span>
+                        </li>
+                    </ul>
+                    <a
+                        href="https://www.doctolib.fr/masseur-kinesitherapeute/lyon/anthony-salles-lyon"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20 active:scale-95 text-xs uppercase tracking-wider"
+                    >
+                        Prendre RDV
+                    </a>
+                </div>
             </div>
-            <hr className="w-full border-gray-200 mt-6" />
-            <div className="flex flex-col md:flex-row items-center w-full justify-between gap-4 py-4">
-                <p>Copyright © 2026 Anthony Salles. Tous droits réservés.</p>
+
+            <div className="pt-8 border-t border-gray-200/50 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+                <p>Copyright © {new Date().getFullYear()} Anthony Salles. Tous droits réservés.</p>
+                <div className="flex gap-8">
+                    <Link href="#" className="hover:text-gray-900 transition-colors">Mentions Légales</Link>
+                    <Link href="#" className="hover:text-gray-900 transition-colors">Confidentialité</Link>
+                </div>
             </div>
         </motion.footer>
     );
