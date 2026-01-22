@@ -56,7 +56,10 @@ export default function AboutSection() {
                         alt="Mon cabinet"
                         width={400}
                         height={400}
-                        className="size-80 object-cover rounded-full shadow-lg border-4 border-white"
+                        className="size-80 object-cover"
+                        style={{
+                            clipPath: "path('M 40,20 C 120,0 280,0 360,40 C 400,100 380,320 280,380 C 180,440 40,400 20,280 C 0,160 0,40 40,20 Z')"
+                        }}
                     />
                 </motion.div>
             </motion.div>
