@@ -51,16 +51,30 @@ export default function AboutSection() {
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 >
-                    <Image
-                        src="/images/about.png"
-                        alt="Mon cabinet"
-                        width={400}
-                        height={400}
-                        className="size-80 object-cover"
-                        style={{
-                            clipPath: "path('M 100,20 L 220,20 C 260,20 300,60 300,100 C 300,150 200,270 180,290 C 170,300 150,300 140,290 C 120,270 20,150 20,100 C 20,60 60,20 100,20 Z')"
+                    <motion.div
+                        className="relative"
+                        animate={{
+                            y: [0, -15, 0],
+                            rotate: [0, 2, 0]
                         }}
-                    />
+                        transition={{
+                            duration: 6,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                        whileHover={{ scale: 1.05, rotate: -2 }}
+                    >
+                        <Image
+                            src="/images/about.png"
+                            alt="Mon cabinet"
+                            width={400}
+                            height={400}
+                            className="size-80 object-cover"
+                            style={{
+                                clipPath: "path('M 150,20 C 220,20 300,80 300,150 C 300,220 220,300 150,300 C 80,300 20,220 20,150 C 20,80 80,20 150,20 Z')"
+                            }}
+                        />
+                    </motion.div>
                 </motion.div>
             </motion.div>
         </section>
