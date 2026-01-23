@@ -95,7 +95,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Panel */}
       <div
-        className={`fixed inset-y-0 right-0 w-[280px] bg-white shadow-2xl z-[70] p-8 flex flex-col gap-8 transition-transform duration-500 ease-out md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed inset-y-0 right-0 w-[280px] bg-white shadow-2xl z-[70] p-8 flex flex-col gap-8 transition-transform duration-500 ease-out md:hidden pointer-events-auto ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <div className="flex items-center justify-between">
