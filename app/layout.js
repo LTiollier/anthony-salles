@@ -88,9 +88,7 @@ export default function RootLayout({ children }) {
         <FloatingShapes />
         <BackgroundGradient />
         <Navbar />
-        <main id="main-content">
-          {children}
-        </main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

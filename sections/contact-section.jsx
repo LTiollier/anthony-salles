@@ -61,14 +61,18 @@ export default function ContactSection() {
                   key={idx}
                   href={info.href}
                   target={info.icon === faMapMarkerAlt ? "_blank" : undefined}
-                  rel={info.icon === faMapMarkerAlt ? "noopener noreferrer" : undefined}
+                  rel={
+                    info.icon === faMapMarkerAlt
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   className="flex items-center gap-4 p-5 glass border-white/50 hover:bg-white/60 transition-all group"
                   initial={{ opacity: 0, y: 0 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                 >
-                  <div className="size-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  <div className="size-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
                     <FontAwesomeIcon icon={info.icon} className="size-5" />
                   </div>
                   <div>
@@ -112,7 +116,10 @@ export default function ContactSection() {
 
           <form className="space-y-6">
             <div className="space-y-2">
-              <label htmlFor="name" className="text-sm font-semibold text-slate-700 ml-1">
+              <label
+                htmlFor="name"
+                className="text-sm font-semibold text-slate-700 ml-1"
+              >
                 Nom <span className="text-blue-500">*</span>
               </label>
               <input
@@ -126,7 +133,10 @@ export default function ContactSection() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-semibold text-slate-700 ml-1">
+              <label
+                htmlFor="email"
+                className="text-sm font-semibold text-slate-700 ml-1"
+              >
                 Email <span className="text-blue-500">*</span>
               </label>
               <input
@@ -140,7 +150,10 @@ export default function ContactSection() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-semibold text-slate-700 ml-1">
+              <label
+                htmlFor="message"
+                className="text-sm font-semibold text-slate-700 ml-1"
+              >
                 Message <span className="text-blue-500">*</span>
               </label>
               <textarea

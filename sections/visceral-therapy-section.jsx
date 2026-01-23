@@ -15,17 +15,20 @@ export default function VisceralTherapySection() {
     {
       icon: faStethoscope,
       title: "Fonction Organique",
-      description: "Aide à restaurer la mobilité naturelle et le fonctionnement optimal des organes internes.",
+      description:
+        "Aide à restaurer la mobilité naturelle et le fonctionnement optimal des organes internes.",
     },
     {
       icon: faHandRock,
       title: "Douleurs Chroniques",
-      description: "Réduit les tensions et les adhérences pouvant causer des douleurs au dos, au cou ou à la tête.",
+      description:
+        "Réduit les tensions et les adhérences pouvant causer des douleurs au dos, au cou ou à la tête.",
     },
     {
       icon: faHeart,
       title: "Équilibre Nerveux",
-      description: "Contribue à une meilleure relaxation en agissant sur le système nerveux autonome (SNA).",
+      description:
+        "Contribue à une meilleure relaxation en agissant sur le système nerveux autonome (SNA).",
     },
   ];
 
@@ -46,17 +49,26 @@ export default function VisceralTherapySection() {
         >
           <div className="space-y-6">
             <h3 className="text-3xl font-bold text-slate-900 leading-tight">
-              L'harmonie intérieure par <br /><span className="text-blue-600">le mouvement viscéral</span>
+              L'harmonie intérieure par <br />
+              <span className="text-blue-600">le mouvement viscéral</span>
             </h3>
             <p className="text-slate-600 text-lg leading-relaxed">
-              La thérapie viscérale est une méthode manuelle douce qui évalue et traite les restrictions de mouvement des organes internes (viscères) et de leurs tissus conjonctifs. Ces restrictions peuvent être à l'origine de divers troubles fonctionnels et douleurs.
+              La thérapie viscérale est une méthode manuelle douce qui évalue et
+              traite les restrictions de mouvement des organes internes
+              (viscères) et de leurs tissus conjonctifs. Ces restrictions
+              peuvent être à l'origine de divers troubles fonctionnels et
+              douleurs.
             </p>
             <p className="text-slate-600 text-lg leading-relaxed">
-              Mon objectif est de restaurer la mobilité naturelle des viscères, d'améliorer leur vascularisation et innervation, et de libérer les tensions qui peuvent impacter l'ensemble de votre structure.
+              Mon objectif est de restaurer la mobilité naturelle des viscères,
+              d'améliorer leur vascularisation et innervation, et de libérer les
+              tensions qui peuvent impacter l'ensemble de votre structure.
             </p>
             <div className="p-6 glass border-green-100 bg-green-50/30">
               <p className="text-slate-700 leading-relaxed italic">
-                Cette thérapie est indiquée pour une large gamme de déséquilibres, allant des problèmes digestifs et gynécologiques aux douleurs musculo-squelettiques chroniques.
+                Cette thérapie est indiquée pour une large gamme de
+                déséquilibres, allant des problèmes digestifs et gynécologiques
+                aux douleurs musculo-squelettiques chroniques.
               </p>
             </div>
           </div>

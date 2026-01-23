@@ -12,19 +12,50 @@ export default function MuscularChainsAnimation() {
 
   // Simplified Human Silhouette Path data
   const silhouettePaths = [
-    { d: "M 50,15 C 45,15 42,18 42,23 C 42,28 45,31 50,31 C 55,31 58,28 58,23 C 58,18 55,15 50,15 Z", opacity: 0.15 }, // Head
-    { d: "M 35,35 C 40,32 60,32 65,35 C 70,38 75,55 75,75 L 70,80 L 30,80 L 25,75 C 25,55 30,38 35,35 Z", opacity: 0.1 }, // Torso
+    {
+      d: "M 50,15 C 45,15 42,18 42,23 C 42,28 45,31 50,31 C 55,31 58,28 58,23 C 58,18 55,15 50,15 Z",
+      opacity: 0.15,
+    }, // Head
+    {
+      d: "M 35,35 C 40,32 60,32 65,35 C 70,38 75,55 75,75 L 70,80 L 30,80 L 25,75 C 25,55 30,38 35,35 Z",
+      opacity: 0.1,
+    }, // Torso
     { d: "M 35,35 Q 30,35 25,45 Q 20,55 15,65", opacity: 0.05 }, // Left Arm
     { d: "M 65,35 Q 70,35 75,45 Q 80,55 85,65", opacity: 0.05 }, // Right Arm
   ];
 
   // GDS Meridian paths (SVG coordinates 0-100)
   const meridians = [
-    { d: "M 50,25 C 50,25 50,55 50,85", duration: 3, delay: 0, color: "text-blue-400" }, // Central (PM / AM)
-    { d: "M 25,45 C 40,40 60,40 75,45", duration: 4, delay: 0.5, color: "text-blue-300" }, // Horizontal 1 (PA)
-    { d: "M 75,55 C 60,60 40,60 25,55", duration: 4, delay: 1, color: "text-blue-300" }, // Horizontal 2 (AP)
-    { d: "M 35,32 C 45,45 45,65 35,78", duration: 5, delay: 1.5, color: "text-blue-400" }, // Lateral Left
-    { d: "M 65,32 C 55,45 55,65 65,78", duration: 5, delay: 2, color: "text-blue-400" }, // Lateral Right
+    {
+      d: "M 50,25 C 50,25 50,55 50,85",
+      duration: 3,
+      delay: 0,
+      color: "text-blue-400",
+    }, // Central (PM / AM)
+    {
+      d: "M 25,45 C 40,40 60,40 75,45",
+      duration: 4,
+      delay: 0.5,
+      color: "text-blue-300",
+    }, // Horizontal 1 (PA)
+    {
+      d: "M 75,55 C 60,60 40,60 25,55",
+      duration: 4,
+      delay: 1,
+      color: "text-blue-300",
+    }, // Horizontal 2 (AP)
+    {
+      d: "M 35,32 C 45,45 45,65 35,78",
+      duration: 5,
+      delay: 1.5,
+      color: "text-blue-400",
+    }, // Lateral Left
+    {
+      d: "M 65,32 C 55,45 55,65 65,78",
+      duration: 5,
+      delay: 2,
+      color: "text-blue-400",
+    }, // Lateral Right
   ];
 
   const pathVariants = {

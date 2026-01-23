@@ -5,10 +5,24 @@ import Image from "next/image";
 
 export default function AboutSection() {
   const skills = [
-    { title: "Rééducation posturale", description: "Correction et amélioration de la posture globale." },
-    { title: "Pathologies musculo-squelettiques", description: "Prise en charge des troubles des muscles et articulations." },
-    { title: "Mobilisations articulaires", description: "Techniques ciblées pour restaurer la fonction et réduire la douleur." },
-    { title: "Approche Holistique", description: "Considération globale du patient pour un bien-être durable." },
+    {
+      title: "Rééducation posturale",
+      description: "Correction et amélioration de la posture globale.",
+    },
+    {
+      title: "Pathologies musculo-squelettiques",
+      description: "Prise en charge des troubles des muscles et articulations.",
+    },
+    {
+      title: "Mobilisations articulaires",
+      description:
+        "Techniques ciblées pour restaurer la fonction et réduire la douleur.",
+    },
+    {
+      title: "Approche Holistique",
+      description:
+        "Considération globale du patient pour un bien-être durable.",
+    },
   ];
 
   return (
@@ -31,10 +45,15 @@ export default function AboutSection() {
               Mon parcours et ma passion pour le mouvement
             </h3>
             <p className="text-slate-600 text-lg leading-relaxed">
-              Masseur-kinésithérapeute diplômé d'État, je suis passionné par la complexité du corps humain et sa capacité de résilience. J'exerce à Lyon 7e, où je propose une approche basée sur l'écoute active et des techniques précises.
+              Masseur-kinésithérapeute diplômé d'État, je suis passionné par la
+              complexité du corps humain et sa capacité de résilience. J'exerce
+              à Lyon 7e, où je propose une approche basée sur l'écoute active et
+              des techniques précises.
             </p>
             <p className="text-slate-600 text-lg leading-relaxed">
-              Mon objectif est de vous aider à retrouver votre mobilité et votre vitalité grâce à une prise en charge personnalisée qui va au-delà du symptôme.
+              Mon objectif est de vous aider à retrouver votre mobilité et votre
+              vitalité grâce à une prise en charge personnalisée qui va au-delà
+              du symptôme.
             </p>
           </div>
 
@@ -64,13 +83,27 @@ export default function AboutSection() {
             </h4>
             <div className="space-y-4">
               {[
-                { year: "2025", title: "Thérapie viscérale niveau 1 et 2", org: "Kiné Formation" },
-                { year: "2024", title: "Médecine traditionnelle chinoise", org: "FLETC" },
+                {
+                  year: "2025",
+                  title: "Thérapie viscérale niveau 1 et 2",
+                  org: "Kiné Formation",
+                },
+                {
+                  year: "2024",
+                  title: "Médecine traditionnelle chinoise",
+                  org: "FLETC",
+                },
                 { year: "2023", title: "Chaînes Musculaires GDS", org: "CFPC" },
-                { year: "2021", title: "Diplôme d'État de Kinésithérapeute", org: "IFMKDV" },
+                {
+                  year: "2021",
+                  title: "Diplôme d'État de Kinésithérapeute",
+                  org: "IFMKDV",
+                },
               ].map((edu, i) => (
                 <div key={i} className="flex items-start gap-4">
-                  <span className="shrink-0 w-16 text-blue-600 font-bold">{edu.year}</span>
+                  <span className="shrink-0 w-16 text-blue-600 font-bold">
+                    {edu.year}
+                  </span>
                   <div>
                     <p className="font-semibold text-slate-900">{edu.title}</p>
                     <p className="text-slate-500 text-sm">{edu.org}</p>

@@ -14,17 +14,20 @@ export default function MuscularGDSSection() {
     {
       icon: faPersonWalking,
       title: "Posture et Mouvement",
-      description: "Analyse de la posture globale pour libérer le mouvement et réduire les contraintes articulaires.",
+      description:
+        "Analyse de la posture globale pour libérer le mouvement et réduire les contraintes articulaires.",
     },
     {
       icon: faCompass,
       title: "Approche Typologique",
-      description: "Compréhension de votre terrain par l'étude des 6 familles de chaînes musculaires et articulaires.",
+      description:
+        "Compréhension de votre terrain par l'étude des 6 familles de chaînes musculaires et articulaires.",
     },
     {
       icon: faDna,
       title: "Globalité du Corps",
-      description: "Un traitement qui relie le psychisme, le comportement et le geste moteur pour un équilibre durable.",
+      description:
+        "Un traitement qui relie le psychisme, le comportement et le geste moteur pour un équilibre durable.",
     },
   ];
 
@@ -45,18 +48,28 @@ export default function MuscularGDSSection() {
         >
           <div className="space-y-6">
             <h3 className="text-3xl font-bold text-slate-900 leading-tight">
-              Le corps comme un langage, <br /><span className="text-blue-600">la posture comme expression</span>
+              Le corps comme un langage, <br />
+              <span className="text-blue-600">la posture comme expression</span>
             </h3>
             <p className="text-slate-600 text-lg leading-relaxed">
-              La méthode GDS (Godelieve Denys-Struyf) est une approche thérapeutique et préventive qui considère le corps comme un ensemble de chaînes musculaires et articulaires interdépendantes. Ces chaînes sont l'expression de notre mode de fonctionnement et de nos émotions.
+              La méthode GDS (Godelieve Denys-Struyf) est une approche
+              thérapeutique et préventive qui considère le corps comme un
+              ensemble de chaînes musculaires et articulaires interdépendantes.
+              Ces chaînes sont l'expression de notre mode de fonctionnement et
+              de nos émotions.
             </p>
             <div className="p-6 glass border-blue-100 bg-blue-50/30">
               <p className="text-slate-700 leading-relaxed italic">
-                Par des massages spécifiques, des étirements posturales et des prises de conscience corporelle, nous travaillons à libérer les tensions excessives qui emprisonnent le corps dans des schémas douloureux.
+                Par des massages spécifiques, des étirements posturales et des
+                prises de conscience corporelle, nous travaillons à libérer les
+                tensions excessives qui emprisonnent le corps dans des schémas
+                douloureux.
               </p>
             </div>
             <p className="text-slate-600 text-lg leading-relaxed">
-              L'objectif est de retrouver une alternance naturelle entre les différentes chaînes, gage de souplesse, de force et d'adaptabilité face aux contraintes du quotidien.
+              L'objectif est de retrouver une alternance naturelle entre les
+              différentes chaînes, gage de souplesse, de force et d'adaptabilité
+              face aux contraintes du quotidien.
             </p>
           </div>
         </motion.div>

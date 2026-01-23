@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function HeroSection() {
-  const title = "Votre expert en kinésithérapie, méthode GDS et thérapie viscérale.";
+  const title =
+    "Votre expert en kinésithérapie, méthode GDS et thérapie viscérale.";
   const words = title.split(" ");
 
   const containerVariants = {
