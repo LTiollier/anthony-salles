@@ -43,15 +43,6 @@ export default function HeroSection() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="mb-8 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold tracking-wider uppercase"
-        >
-          Cabinet de Kinésithérapie & Soins Holistiques
-        </motion.div>
-
         <motion.h1
           className="text-center text-5xl/14 md:text-7xl/20 font-bold tracking-tight text-gray-900 flex flex-wrap justify-center gap-x-[0.25em]"
           aria-label={title}

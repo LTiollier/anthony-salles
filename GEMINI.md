@@ -36,7 +36,7 @@ Create a professional, modern multipage website to present Anthony Salles' exper
 
 ## 🧪 Development & Testing
 
-- **Dev Server:** Use `nohup npm run dev &` to launch the development server in background
+- **Dev Server:** Use `nohup npm run dev &` to launch the development server in background but always kill the process at the end
 - **Visual Testing:** Use MCP Chromium tool to visually test the website during development
 - **Testing Workflow:**
   1. Launch dev server with nohup
