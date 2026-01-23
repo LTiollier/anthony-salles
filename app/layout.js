@@ -70,10 +70,14 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 
+import FloatingShapes from "@/components/floating-shapes";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" suppressHydrationWarning>
-      <body>
+      <body className={poppins.variable}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-blue-600 focus:text-white focus:rounded-full focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
@@ -81,8 +85,13 @@ export default function RootLayout({ children }) {
           Aller au contenu principal
         </a>
         <LenisScroll />
+        <FloatingShapes />
         <BackgroundGradient />
-        {children}
+        <Navbar />
+        <main id="main-content">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

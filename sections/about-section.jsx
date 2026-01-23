@@ -4,111 +4,118 @@ import SectionTitle from "@/components/section-title";
 import Image from "next/image";
 
 export default function AboutSection() {
+  const skills = [
+    { title: "Rééducation posturale", description: "Correction et amélioration de la posture globale." },
+    { title: "Pathologies musculo-squelettiques", description: "Prise en charge des troubles des muscles et articulations." },
+    { title: "Mobilisations articulaires", description: "Techniques ciblées pour restaurer la fonction et réduire la douleur." },
+    { title: "Approche Holistique", description: "Considération globale du patient pour un bien-être durable." },
+  ];
+
   return (
-    <section className="mt-32 max-w-5xl mx-auto px-4">
+    <section className="py-24 md:py-32 max-w-6xl mx-auto px-6 overflow-hidden">
       <SectionTitle
         title="Qui suis-je ?"
-        description="Découvrez mon parcours professionnel et ma philosophie de traitement."
+        description="Découvrez mon parcours professionnel et ma philosophie de traitement centrée sur l'humain."
       />
-      <motion.div className="flex flex-col md:flex-row items-center gap-12 mt-10">
+
+      <div className="flex flex-col lg:flex-row items-center gap-16 mt-16">
         <motion.div
-          className="md:w-1/2"
+          className="lg:w-1/2 space-y-8"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
         >
-          <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-            Mon parcours et ma passion
-          </h3>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Masseur-kinésithérapeute diplômé d'État, je suis passionné par la
-            santé et le mouvement. J'exerce dans mon cabinet situé à Lyon 7e, où
-            je propose une approche basée sur l'écoute active et des techniques
-            éprouvées pour garantir des résultats durables.
-          </p>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            J'adapte mes traitements sur-mesure pour chaque patient, qu'il
-            s'agisse de rééducation post-opératoire, de kinésithérapie du sport
-            ou de soins spécifiques.
-          </p>
+          <div className="space-y-4">
+            <h3 className="text-3xl font-bold text-slate-900 leading-tight">
+              Mon parcours et ma passion pour le mouvement
+            </h3>
+            <p className="text-slate-600 text-lg leading-relaxed">
+              Masseur-kinésithérapeute diplômé d'État, je suis passionné par la complexité du corps humain et sa capacité de résilience. J'exerce à Lyon 7e, où je propose une approche basée sur l'écoute active et des techniques précises.
+            </p>
+            <p className="text-slate-600 text-lg leading-relaxed">
+              Mon objectif est de vous aider à retrouver votre mobilité et votre vitalité grâce à une prise en charge personnalisée qui va au-delà du symptôme.
+            </p>
+          </div>
 
-          <h4 className="text-lg font-medium text-gray-900 mb-3">
-            Compétences clés
-          </h4>
-          <ul className="list-disc list-outside ml-5 text-gray-700 space-y-1 mb-6">
-            <li>
-              <strong>Rééducation posturale</strong> : Correction et
-              amélioration de la posture.
-            </li>
-            <li>
-              <strong>Pathologies musculo-squelettiques</strong> : Prise en
-              charge des troubles des muscles, os et articulations.
-            </li>
-            <li>
-              <strong>Mobilisations articulaires</strong> : Techniques ciblées
-              pour restaurer la fonction articulaire et réduire la douleur.
-            </li>
-            <li>
-              <strong>Anatomie humaine</strong> : Expertise approfondie pour des
-              traitements précis.
-            </li>
-          </ul>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={index}
+                className="p-5 glass border-white/40 group hover:border-blue-200 transition-colors"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <h4 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  {skill.title}
+                </h4>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  {skill.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
 
-          <h4 className="text-lg font-medium text-gray-900 mb-3">Formations</h4>
-          <ul className="space-y-2 text-gray-700">
-            <li>
-              <span className="font-semibold text-blue-600">2025</span> -
-              Thérapie viscérale niveau 1 et 2 (Kiné Formation)
-            </li>
-            <li>
-              <span className="font-semibold text-blue-600">2024</span> -
-              Médecine traditionnelle chinoise (FLETC)
-            </li>
-            <li>
-              <span className="font-semibold text-blue-600">2023</span> - Chaîne
-              Musculaire GDS (CFPC)
-            </li>
-            <li>
-              <span className="font-semibold text-blue-600">2021</span> -
-              Diplôme d'État de Masseur-Kinésithérapeute (IFMKDV)
-            </li>
-          </ul>
+          <div className="space-y-6 pt-4">
+            <h4 className="text-xl font-bold text-slate-900 border-l-4 border-blue-500 pl-4">
+              Formations & Expertises
+            </h4>
+            <div className="space-y-4">
+              {[
+                { year: "2025", title: "Thérapie viscérale niveau 1 et 2", org: "Kiné Formation" },
+                { year: "2024", title: "Médecine traditionnelle chinoise", org: "FLETC" },
+                { year: "2023", title: "Chaînes Musculaires GDS", org: "CFPC" },
+                { year: "2021", title: "Diplôme d'État de Kinésithérapeute", org: "IFMKDV" },
+              ].map((edu, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <span className="shrink-0 w-16 text-blue-600 font-bold">{edu.year}</span>
+                  <div>
+                    <p className="font-semibold text-slate-900">{edu.title}</p>
+                    <p className="text-slate-500 text-sm">{edu.org}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.div>
+
         <motion.div
-          className="md:w-1/2 flex justify-center"
+          className="lg:w-1/2 relative"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
         >
-          <motion.div
-            className="relative"
-            animate={{
-              y: [0, -15, 0],
-              rotate: [0, 2, 0],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            whileHover={{ scale: 1.05, rotate: -2 }}
-          >
-            <Image
-              src="/images/about.png"
-              alt="Anthony Salles dans son cabinet à Lyon 7"
-              width={400}
-              height={400}
-              className="size-80 object-cover"
-              style={{
-                clipPath:
-                  "path('M 150,20 C 220,20 300,80 300,150 C 300,220 220,300 150,300 C 80,300 20,220 20,150 C 20,80 80,20 150,20 Z')",
+          <div className="relative z-10">
+            <motion.div
+              animate={{
+                y: [0, -20, 0],
+                rotate: [0, 1, 0],
               }}
-            />
-          </motion.div>
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="relative rounded-[2rem] overflow-hidden shadow-2xl"
+            >
+              <Image
+                src="/images/about.png"
+                alt="Anthony Salles dans son cabinet à Lyon 7"
+                width={600}
+                height={700}
+                className="w-full h-auto object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
+              />
+            </motion.div>
+
+            {/* Decorative elements */}
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse delay-700" />
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

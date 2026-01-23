@@ -9,6 +9,8 @@ import {
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
+import Link from "next/link";
+
 function FeatureCard({ feature, index }) {
   const cardRef = useRef(null);
   const x = useMotionValue(0);
@@ -62,25 +64,27 @@ function FeatureCard({ feature, index }) {
         damping: 20,
       }}
     >
-      <div style={{ transform: "translateZ(50px)" }} className="space-y-4">
-        <div className="size-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white duration-300">
-          <FontAwesomeIcon
-            icon={feature.icon}
-            className="size-6"
-            aria-hidden="true"
-          />
+      <Link href={feature.href} className="block cursor-pointer">
+        <div style={{ transform: "translateZ(50px)" }} className="space-y-4">
+          <div className="size-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white duration-300">
+            <FontAwesomeIcon
+              icon={feature.icon}
+              className="size-6"
+              aria-hidden="true"
+            />
+          </div>
+          <h3
+            id={`feature-title-${index}`}
+            className="text-lg font-semibold text-gray-900"
+          >
+            {feature.title}
+          </h3>
+          <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+          <div className="pt-2">
+            <div className="h-1 w-0 bg-blue-500 transition-all duration-300 group-hover:w-12 rounded-full" />
+          </div>
         </div>
-        <h3
-          id={`feature-title-${index}`}
-          className="text-lg font-semibold text-gray-900"
-        >
-          {feature.title}
-        </h3>
-        <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-        <div className="pt-2">
-          <div className="h-1 w-0 bg-blue-500 transition-all duration-300 group-hover:w-12 rounded-full" />
-        </div>
-      </div>
+      </Link>
 
       {/* Subtle internal glow */}
       <motion.div
@@ -107,23 +111,26 @@ export default function Features() {
       title: "Kinésithérapie",
       description:
         "Rééducation fonctionnelle, gestion de la douleur, et accompagnement post-opératoire pour retrouver votre mobilité.",
+      href: "/contact",
     },
     {
       icon: faUniversalAccess,
       title: "Méthode GDS",
       description:
         "Approche globale basée sur les chaînes musculaires et articulaires pour rééquilibrer la posture et le mouvement.",
+      href: "/musculaire-gds",
     },
     {
       icon: faHandshake,
       title: "Thérapie Viscérale",
       description:
         "Soulagement des tensions des organes internes pour améliorer la fonction et réduire les douleurs chroniques.",
+      href: "/therapie-viscerale",
     },
   ];
 
   return (
-    <section className="mt-32 pb-20">
+    <section id="features" className="mt-32 pb-20">
       <SectionTitle
         title="Mes Services"
         description="Découvrez l'éventail de mes services dédiés à votre bien-être et à votre santé."
