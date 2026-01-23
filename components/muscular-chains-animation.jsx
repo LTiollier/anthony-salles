@@ -10,20 +10,28 @@ import { useReducedMotion } from "framer-motion";
 export default function MuscularChainsAnimation() {
   const shouldReduceMotion = useReducedMotion();
 
-  // Meridian paths (SVG coordinates 0-100)
+  // Simplified Human Silhouette Path data
+  const silhouettePaths = [
+    { d: "M 50,15 C 45,15 42,18 42,23 C 42,28 45,31 50,31 C 55,31 58,28 58,23 C 58,18 55,15 50,15 Z", opacity: 0.15 }, // Head
+    { d: "M 35,35 C 40,32 60,32 65,35 C 70,38 75,55 75,75 L 70,80 L 30,80 L 25,75 C 25,55 30,38 35,35 Z", opacity: 0.1 }, // Torso
+    { d: "M 35,35 Q 30,35 25,45 Q 20,55 15,65", opacity: 0.05 }, // Left Arm
+    { d: "M 65,35 Q 70,35 75,45 Q 80,55 85,65", opacity: 0.05 }, // Right Arm
+  ];
+
+  // GDS Meridian paths (SVG coordinates 0-100)
   const meridians = [
-    { d: "M 50,10 C 50,10 50,50 50,90", duration: 3, delay: 0 }, // Central vertical
-    { d: "M 20,40 C 40,40 60,60 80,60", duration: 4, delay: 0.5 }, // Curved horizontal 1
-    { d: "M 80,40 C 60,40 40,60 20,60", duration: 4, delay: 1 }, // Curved horizontal 2
-    { d: "M 30,20 C 40,30 40,70 30,80", duration: 5, delay: 1.5 }, // Left curve
-    { d: "M 70,20 C 60,30 60,70 70,80", duration: 5, delay: 2 }, // Right curve
+    { d: "M 50,25 C 50,25 50,55 50,85", duration: 3, delay: 0, color: "text-blue-400" }, // Central (PM / AM)
+    { d: "M 25,45 C 40,40 60,40 75,45", duration: 4, delay: 0.5, color: "text-blue-300" }, // Horizontal 1 (PA)
+    { d: "M 75,55 C 60,60 40,60 25,55", duration: 4, delay: 1, color: "text-blue-300" }, // Horizontal 2 (AP)
+    { d: "M 35,32 C 45,45 45,65 35,78", duration: 5, delay: 1.5, color: "text-blue-400" }, // Lateral Left
+    { d: "M 65,32 C 55,45 55,65 65,78", duration: 5, delay: 2, color: "text-blue-400" }, // Lateral Right
   ];
 
   const pathVariants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: (i) => ({
       pathLength: 1,
-      opacity: 0.3,
+      opacity: 0.6,
       transition: {
         pathLength: { delay: i * 0.2, duration: 2, ease: "easeInOut" },
         opacity: { delay: i * 0.2, duration: 1 },
@@ -42,15 +50,45 @@ export default function MuscularChainsAnimation() {
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
       >
+        {/* Human Silhouette Background */}
+        {silhouettePaths.map((path, i) => (
+          <motion.path
+            key={`silhouette-${i}`}
+            d={path.d}
+            stroke="currentColor"
+            strokeWidth="0.5"
+            fill="none"
+            className="text-blue-900/40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: path.opacity }}
+            transition={{ duration: 2, delay: 0.5 }}
+          />
+        ))}
+
         {meridians.map((meridian, i) => (
           <g key={i}>
-            {/* Static Meridian Path (Faint) */}
+            {/* Outer Glow Path */}
             <motion.path
               d={meridian.d}
               stroke="currentColor"
-              strokeWidth="0.5"
+              strokeWidth="2"
               strokeLinecap="round"
-              className="text-blue-200"
+              className={`${meridian.color} opacity-10`}
+              filter="blur(4px)"
+              custom={i}
+              variants={pathVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            />
+
+            {/* Static Meridian Path */}
+            <motion.path
+              d={meridian.d}
+              stroke="currentColor"
+              strokeWidth="0.8"
+              strokeLinecap="round"
+              className={meridian.color}
               custom={i}
               variants={pathVariants}
               initial="hidden"
@@ -61,12 +99,13 @@ export default function MuscularChainsAnimation() {
             {/* Animated Energy Particle (Qi) */}
             {!shouldReduceMotion && (
               <motion.circle
-                r="1.5"
-                fill="#3b82f6"
+                r="1.8"
+                fill="#60a5fa"
                 initial={{ opacity: 0, "--offset-distance": "0%" }}
                 animate={{
                   "--offset-distance": "100%",
                   opacity: [0, 1, 1, 0],
+                  scale: [1, 1.2, 1],
                 }}
                 transition={{
                   duration: meridian.duration,
@@ -77,7 +116,7 @@ export default function MuscularChainsAnimation() {
                 style={{
                   offsetPath: `path("${meridian.d}")`,
                   offsetDistance: "var(--offset-distance)",
-                  boxShadow: "0 0 10px #3b82f6",
+                  filter: "drop-shadow(0 0 5px #3b82f6)",
                 }}
               />
             )}
