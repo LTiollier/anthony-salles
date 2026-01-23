@@ -13,7 +13,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://anthony-salles.vercel.app/medecine-chinoise</loc>
+    <loc>https://anthony-salles.vercel.app/musculaire-gds</loc>
     <lastmod>2026-01-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -25,9 +25,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://anthony-salles.vercel.app/tarif</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://anthony-salles.vercel.app/contact</loc>
     <lastmod>2026-01-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
+

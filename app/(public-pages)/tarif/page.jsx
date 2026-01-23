@@ -1,9 +1,9 @@
 import PricingSection from "@/sections/pricing-section";
 
 export const metadata = {
-    title: "Tarifs",
+    title: "Tarifs et Remboursements | Anthony Salles",
     description:
-        "Découvrez les tarifs des consultations d'Anthony Salles, kinésithérapeute à Lyon 7. Thérapie viscérale et séances conventionnées.",
+        "Découvrez les tarifs et modalités de remboursement d'Anthony Salles, kinésithérapeute à Lyon 7. Thérapie viscérale et séances conventionnées.",
 };
 
 export default function PricingPage() {
