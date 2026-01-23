@@ -33,10 +33,11 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 pointer-events-none">
       <motion.nav
-        className={`mx-auto max-w-7xl pointer-events-auto flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 ${isScrolled
+        className={`mx-auto max-w-7xl pointer-events-auto flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 ${
+          isScrolled
             ? "bg-white/70 backdrop-blur-xl shadow-lg border border-white/50"
             : "bg-transparent"
-          }`}
+        }`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
@@ -63,8 +64,9 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-sm font-semibold transition-colors hover:text-blue-600 ${pathname === link.href ? "text-blue-600" : "text-slate-600"
-                }`}
+              className={`text-sm font-semibold transition-colors hover:text-blue-600 ${
+                pathname === link.href ? "text-blue-600" : "text-slate-600"
+              }`}
             >
               {link.name}
             </Link>
@@ -91,17 +93,19 @@ export default function Navbar() {
 
       {/* Mobile Menu Backdrop */}
       <div
-        className={`fixed inset-0 bg-slate-900/10 backdrop-blur-md z-[60] transition-opacity duration-300 md:hidden ${isOpen
+        className={`fixed inset-0 bg-slate-900/10 backdrop-blur-md z-[60] transition-opacity duration-300 md:hidden ${
+          isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
-          }`}
+        }`}
         onClick={() => setIsOpen(false)}
       />
 
       {/* Mobile Menu Panel */}
       <div
-        className={`fixed inset-y-0 right-0 w-[280px] bg-white shadow-2xl z-[70] p-8 flex flex-col gap-8 transition-transform duration-500 ease-out md:hidden pointer-events-auto ${isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+        className={`fixed inset-y-0 right-0 w-[280px] bg-white shadow-2xl z-[70] p-8 flex flex-col gap-8 transition-transform duration-500 ease-out md:hidden pointer-events-auto ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <div className="flex items-center justify-between">
           <span className="font-bold text-slate-900">Menu</span>
@@ -119,8 +123,9 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className={`text-lg font-bold transition-colors ${pathname === link.href ? "text-blue-600" : "text-slate-600"
-                }`}
+              className={`text-lg font-bold transition-colors ${
+                pathname === link.href ? "text-blue-600" : "text-slate-600"
+              }`}
             >
               {link.name}
             </Link>
