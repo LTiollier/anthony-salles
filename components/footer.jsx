@@ -15,6 +15,7 @@ export default function Footer() {
     { name: "Méthode GDS", href: "/musculaire-gds" },
     { name: "Thérapie Viscérale", href: "/therapie-viscerale" },
     { name: "Kinésithérapie", href: "/#features" },
+    { name: "Tarifs", href: "/tarif" },
   ];
 
   return (
