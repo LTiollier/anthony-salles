@@ -63,7 +63,7 @@ export default function ContactSection() {
                   target={info.icon === faMapMarkerAlt ? "_blank" : undefined}
                   rel={info.icon === faMapMarkerAlt ? "noopener noreferrer" : undefined}
                   className="flex items-center gap-4 p-5 glass border-white/50 hover:bg-white/60 transition-all group"
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 0 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
