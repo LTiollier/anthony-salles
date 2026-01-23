@@ -73,6 +73,30 @@ export default function ConfidentialitePage() {
               demandes de renseignements ou de prestations. Sans ces données, il
               ne sera pas possible de traiter votre demande.
             </p>
+            <p className="text-slate-600 leading-relaxed mt-4">
+              <strong>Service tiers utilisé :</strong> Le formulaire de contact
+              utilise{" "}
+              <a
+                href="https://www.emailjs.com/"
+                className="text-blue-600 hover:text-blue-700 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                EmailJS
+              </a>
+              , un service d'envoi d'emails. Vos données transitent par ce
+              service uniquement pour l'envoi du message. EmailJS s'engage à
+              respecter le RGPD. Pour plus d'informations, consultez leur{" "}
+              <a
+                href="https://www.emailjs.com/legal/privacy-policy/"
+                className="text-blue-600 hover:text-blue-700 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                politique de confidentialité
+              </a>
+              .
+            </p>
           </section>
 
           <section>
@@ -112,10 +136,26 @@ export default function ConfidentialitePage() {
             </h2>
             <p className="text-slate-600 leading-relaxed">
               Les données sont uniquement destinées à Anthony SALLES. Elles ne
-              sont jamais vendues, louées ou cédées à des tiers. L'hébergeur du
-              site (Vercel) peut traiter des métadonnées de connexion (comme
-              l'adresse IP) pour assurer la sécurité technique du service,
-              conformément à ses propres obligations de sécurité.
+              sont jamais vendues, louées ou cédées à des tiers.
+            </p>
+            <p className="text-slate-600 leading-relaxed mt-4">
+              Les prestataires techniques suivants peuvent traiter vos données
+              dans le cadre de leurs services :
+            </p>
+            <ul className="text-slate-600 leading-relaxed space-y-2 mt-4 list-disc list-inside">
+              <li>
+                <strong>EmailJS</strong> : Service d'envoi d'emails pour le
+                formulaire de contact
+              </li>
+              <li>
+                <strong>Vercel</strong> : Hébergeur du site, peut traiter des
+                métadonnées de connexion (comme l'adresse IP) pour assurer la
+                sécurité technique du service
+              </li>
+            </ul>
+            <p className="text-slate-600 leading-relaxed mt-4">
+              Ces prestataires agissent conformément à leurs propres obligations
+              de sécurité et au RGPD.
             </p>
           </section>
 

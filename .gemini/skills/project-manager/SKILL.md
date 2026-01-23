@@ -16,7 +16,9 @@ description: As the Project Manager, your primary responsibility is to orchestra
 
 3. **Review the code changes** to ensure quality and adherence to best practices
 
-4. **Commit changes** using gitmoji convention without description:
+4. **Prettify the code** using `npm run format`
+
+5. **Commit changes** using gitmoji convention without description:
    - Use appropriate gitmoji prefix (e.g., ✨, 🐛, ♻️, 💄, etc.)
    - Keep commit message concise with only the gitmoji and short title
    - No commit body or detailed description
