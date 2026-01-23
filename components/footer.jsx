@@ -150,10 +150,16 @@ export default function Footer() {
         <div className="pt-10 border-t border-slate-200/50 flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-semibold text-slate-400 uppercase tracking-widest">
           <p>© {new Date().getFullYear()} Anthony Salles</p>
           <nav className="flex gap-10">
-            <Link href="#" className="hover:text-blue-600 transition-colors">
+            <Link
+              href="/mentions-legales"
+              className="hover:text-blue-600 transition-colors"
+            >
               Mentions Légales
             </Link>
-            <Link href="#" className="hover:text-blue-600 transition-colors">
+            <Link
+              href="/confidentialite"
+              className="hover:text-blue-600 transition-colors"
+            >
               Confidentialité
             </Link>
           </nav>
