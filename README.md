@@ -7,6 +7,7 @@ Modern, professional showcase website for Anthony Salles, a physiotherapist spec
 This website presents Anthony Salles' expertise, treatment philosophy, and services in a modern, accessible multipage format.
 
 ### Pages
+
 - **Accueil (Home):** Landing page with navigation blocks
 - **À propos (About):** Professional background and treatment philosophy
 - **Médecine chinoise (Chinese Medicine):** Explanation and application
@@ -24,11 +25,13 @@ This website presents Anthony Salles' expertise, treatment philosophy, and servi
 ## 🚀 Getting Started
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Run the development server:
+
 ```bash
 npm run dev
 ```

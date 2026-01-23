@@ -18,46 +18,52 @@ This skill provides comprehensive guidelines for optimizing Next.js applications
 ## 🛠️ Implementation Patterns
 
 ### 1. Static Metadata
+
 Defining core SEO tags in a layout or page.
+
 ```javascript
 export const metadata = {
-  title: 'Anthony Salles | Kinésithérapeute à Lyon 7',
-  description: 'Expertise en kinésithérapie, médecine chinoise et thérapie viscérale. Prenez rendez-vous en ligne.',
+  title: "Anthony Salles | Kinésithérapeute à Lyon 7",
+  description:
+    "Expertise en kinésithérapie, médecine chinoise et thérapie viscérale. Prenez rendez-vous en ligne.",
   openGraph: {
-    title: 'Anthony Salles - Kinésithérapeute',
-    description: 'Accompagnement holistique et personnalisé à Lyon.',
-    url: 'https://anthonysalles.com',
-    siteName: 'Anthony Salles',
-    locale: 'fr_FR',
-    type: 'website',
+    title: "Anthony Salles - Kinésithérapeute",
+    description: "Accompagnement holistique et personnalisé à Lyon.",
+    url: "https://anthonysalles.com",
+    siteName: "Anthony Salles",
+    locale: "fr_FR",
+    type: "website",
   },
 };
 ```
 
 ### 2. JSON-LD Structured Data
+
 Adding a schema to a page.
+
 ```javascript
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Physician',
-  'name': 'Anthony Salles',
-  'address': {
-    '@type': 'PostalAddress',
-    'streetAddress': '46 Rue de la Madeleine',
-    'addressLocality': 'Lyon',
-    'postalCode': '69007',
-    'addressCountry': 'FR'
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  name: "Anthony Salles",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "46 Rue de la Madeleine",
+    addressLocality: "Lyon",
+    postalCode: "69007",
+    addressCountry: "FR",
   },
-  'telephone': '0478724280'
+  telephone: "0478724280",
 };
 
 <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-/>
+/>;
 ```
 
 ## 📋 SEO Checklist
+
 - [ ] Unique title tags for every page.
 - [ ] Descriptive meta descriptions (150-160 characters).
 - [ ] Proper `alt` text for all informative images.

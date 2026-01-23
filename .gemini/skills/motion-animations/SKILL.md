@@ -18,42 +18,47 @@ This skill provides deep expertise in creating modern, premium animations using 
 ## 🛠️ Implementation Patterns
 
 ### 1. The "Premium Reveal"
+
 Default entrance for sections or cards.
+
 ```jsx
 const revealVariants = {
-    hidden: { y: 40, opacity: 0 },
-    visible: { 
-        y: 0, 
-        opacity: 1,
-        transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            mass: 1
-        }
-    }
+  hidden: { y: 40, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 20,
+      mass: 1,
+    },
+  },
 };
 ```
 
 ### 2. Staggered Lists
+
 ```jsx
 const container = {
-    visible: {
-        transition: {
-            staggerChildren: 0.1,
-            delayChildren: 0.3
-        }
-    }
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
 };
 
 const item = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
 };
 ```
 
 ### 3. Shared Element Transitions (layoutId)
+
 Ensures a smooth transition when moving items between different UI states.
+
 ```jsx
 <motion.div layoutId={`item-${id}`} />
 ```
@@ -66,6 +71,7 @@ Ensures a smooth transition when moving items between different UI states.
 - **Natural Fluid**: `stiffness: 120, damping: 14`
 
 ## ⚠️ Important Considerations
+
 - **'use client'**: Always ensure components using motion are marked as client components in Next.js.
 - **Accessibility**: Use `useReducedMotion` hook to respect user preferences.
 - **Execution Cost**: Use `whileInView={{ once: true }}` for entrance animations to avoid overworking the main thread.

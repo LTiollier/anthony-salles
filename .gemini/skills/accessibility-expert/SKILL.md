@@ -18,11 +18,13 @@ This skill provides essential guidelines for building inclusive web applications
 ## 🛠️ Implementation Patterns
 
 ### 1. Accessible Buttons & Links
+
 Ensuring screen readers have enough context.
+
 ```jsx
 // Use aria-label if the text content alone isn't descriptive enough
-<button 
-  aria-label="Prendre rendez-vous sur Doctolib" 
+<button
+  aria-label="Prendre rendez-vous sur Doctolib"
   onClick={...}
 >
   Prendre RDV
@@ -33,7 +35,9 @@ Ensuring screen readers have enough context.
 ```
 
 ### 2. High Contrast & Readable Type
+
 Guidelines for styling.
+
 ```css
 /* Ensure minimum contrast ratio of 4.5:1 for normal text */
 .text-body {
@@ -49,10 +53,12 @@ button:focus-visible {
 ```
 
 ### 3. Image Alt Text Rules
+
 - **Informative images**: Describe the content accurately.
 - **Decorative images**: Use `alt=""` or `role="presentation"`.
 
 ## 📋 Accessibility Checklist
+
 - [ ] Skip to Content link for keyboard users.
 - [ ] Logical tab order.
 - [ ] Sufficient color contrast (WCAG AA).

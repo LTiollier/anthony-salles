@@ -75,4 +75,4 @@ jobs:
         run: npm ci
       
       - name: 💅 Check formatting
-        run: npx prettier --check "**/*.{js,jsx,json,css,md}"
+        run: npm run format:check

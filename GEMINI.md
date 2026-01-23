@@ -1,12 +1,15 @@
 # Project: Vitrine Anthony Salles (Physiotherapist Showcase)
 
 ## 📋 Project Overview
+
 Modern showcase website for Anthony Salles, a physiotherapist specializing in Chinese medicine and visceral therapy.
 
 ## 🎯 Objectives
+
 Create a professional, modern multipage website to present Anthony Salles' expertise, treatment philosophy, and services to potential patients.
 
 ## 🏗️ Architecture
+
 - **Type:** Multipage website
 - **Pages:**
   - **Accueil (Home):** Landing page with navigation blocks redirecting to other pages
@@ -16,19 +19,23 @@ Create a professional, modern multipage website to present Anthony Salles' exper
   - **Contact:** Contact information and appointment booking
 
 ## 🛠️ Tech Stack
+
 - **Framework:** Next.js
 - **Language:** JavaScript
 - **Styling:** Tailwind CSS
 - **Build Tool:** Vite (if applicable) / Next.js built-in
 
 ## 🌐 Languages
+
 - **Code:** English (variables, functions, comments)
 - **Content:** French (website content for users)
 
 ## ⚙️ Workflow Orchestration
+
 - **Project Manager Skill:** Always activate the `project-manager` skill at the beginning of every task to ensure structured workflow, development, code review, and final commit with gitmoji convention.
 
 ## 🧪 Development & Testing
+
 - **Dev Server:** Use `nohup npm run dev &` to launch the development server in background
 - **Visual Testing:** Use MCP Chromium tool to visually test the website during development
 - **Testing Workflow:**
@@ -37,6 +44,7 @@ Create a professional, modern multipage website to present Anthony Salles' exper
   3. Validate visual rendering and responsive behavior
 
 ## 📝 Content Structure
+
 - Modern, clean design focusing on professionalism and accessibility
 - Clear navigation between pages
 - Educational content about treatment methods

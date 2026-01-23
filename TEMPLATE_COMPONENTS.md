@@ -3,7 +3,9 @@
 This document lists all available components and sections from the current template to help plan the migration to the Anthony Salles physiotherapist website.
 
 ## 🎨 Global Styles
+
 **File:** `app/globals.css`
+
 - **Glass effect:** `.glass` - White/10 background with white/20 border for glassmorphism
 - **Button style:** `.btn` - Rounded full buttons with hover/active states
 - **Theme:** Dark background (#000) with white text, Poppins font
@@ -14,6 +16,7 @@ This document lists all available components and sections from the current templ
 ## 🧩 Reusable Components
 
 ### 1. **Navbar** (`components/navbar.jsx`)
+
 - Sticky top navigation with scroll-based backdrop blur
 - Mobile hamburger menu with full-screen overlay
 - Logo display
@@ -23,6 +26,7 @@ This document lists all available components and sections from the current templ
 - **Status:** Can be adapted - needs French text and new navigation structure
 
 ### 2. **Footer** (`components/footer.jsx`)
+
 - Logo display
 - Footer links (Terms, Privacy, Security, Sitemap)
 - Social media icons (Dribbble, LinkedIn, Twitter, GitHub)
@@ -31,12 +35,14 @@ This document lists all available components and sections from the current templ
 - **Status:** Can be adapted - needs French text and appropriate links
 
 ### 3. **Section Title** (`components/section-title.jsx`)
+
 - Reusable title + description component
 - Centered layout with animation
 - Max width constraints for readability
 - **Status:** Highly reusable - just needs French content
 
 ### 4. **Lenis Scroll** (`components/lenis-scroll.jsx`)
+
 - Smooth scrolling functionality
 - **Status:** Can be kept as-is
 
@@ -45,6 +51,7 @@ This document lists all available components and sections from the current templ
 ## 📦 Section Components
 
 ### 1. **Hero Section** (`sections/hero-section.jsx`)
+
 - Large title with subtitle
 - Two CTA buttons
 - Colorful gradient blur effects in background (pink, purple, orange)
@@ -52,11 +59,13 @@ This document lists all available components and sections from the current templ
 - **Adaptation needed:** New hero for physiotherapist (professional, calming)
 
 ### 2. **Trusted Companies** (`sections/trusted-companies.jsx`)
+
 - Logo carousel/grid
 - Simple text intro
 - **Potential use:** Could display certifications, professional affiliations, or partner clinics
 
 ### 3. **Features** (`sections/features.jsx`)
+
 - 3-column grid of feature cards
 - Icon + title + description per card
 - Glass effect cards with hover lift
@@ -64,6 +73,7 @@ This document lists all available components and sections from the current templ
 - **Adaptation needed:** Perfect for highlighting treatment specialties or services
 
 ### 4. **Workflow Steps** (`sections/workflow-steps.jsx`)
+
 - 3-step visual process with images
 - Alternating left-right layout
 - Numbered indicators with connecting lines
@@ -71,12 +81,14 @@ This document lists all available components and sections from the current templ
 - **Adaptation needed:** Could show patient journey or treatment process
 
 ### 5. **Testimonials** (`sections/testimonials.jsx`)
+
 - 3-column responsive grid
 - Cards with quote + name + role + image
 - 6 testimonials included
 - **Adaptation needed:** Perfect for patient testimonials (with privacy considerations)
 
 ### 6. **Pricing Plans** (`sections/pricing-plans.jsx`)
+
 - 3-tier pricing cards
 - Features list with checkmarks
 - Icon badges (RocketIcon, ZapIcon, CrownIcon)
@@ -84,12 +96,14 @@ This document lists all available components and sections from the current templ
 - **Potential use:** Could be adapted for service packages or consultation types
 
 ### 7. **FAQ Section** (`sections/faq-section.jsx`)
+
 - Accordion-style questions
 - Smooth expand/collapse animations
 - Glass effect styling
 - **Status:** Highly reusable - needs relevant healthcare/treatment FAQs
 
 ### 8. **Call to Action** (`sections/call-to-action.jsx`)
+
 - Centered CTA block
 - Title + description + button
 - Glass effect container
@@ -100,6 +114,7 @@ This document lists all available components and sections from the current templ
 ## 🔧 Technical Features
 
 ### Animation Library
+
 - **Framer Motion** used throughout
 - Common patterns:
   - `initial={{ y: 150, opacity: 0 }}`
@@ -108,10 +123,12 @@ This document lists all available components and sections from the current templ
   - Staggered delays for list items
 
 ### Icons
+
 - **Lucide React** icons throughout
 - Easy to swap for healthcare-related icons
 
 ### Responsive Design
+
 - Mobile-first approach
 - Breakpoints: `md:` and `lg:`
 - Flexible grids and flex layouts
@@ -121,6 +138,7 @@ This document lists all available components and sections from the current templ
 ## ✅ Recommendation for Adaptation
 
 ### Can Be Reused With Minor Changes:
+
 - ✅ Navbar (update links, text)
 - ✅ Footer (update links, text, social media)
 - ✅ Section Title component
@@ -128,12 +146,14 @@ This document lists all available components and sections from the current templ
 - ✅ Call to Action
 
 ### Needs Significant Adaptation:
+
 - 🔄 Hero Section (new design for professional physiotherapist)
 - 🔄 Features (adapt for treatment types)
 - 🔄 Testimonials (patient reviews with privacy)
 - 🔄 Workflow Steps (patient journey)
 
 ### May Not Be Needed:
+
 - ❌ Pricing Plans (unless offering service packages)
 - ❌ Trusted Companies (unless showing certifications/affiliations)
 

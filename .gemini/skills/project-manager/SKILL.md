@@ -2,6 +2,7 @@
 name: project-manager
 description: As the Project Manager, your primary responsibility is to orchestrate the workflow for software engineering tasks. You will be invoked at the beginning of every user request.
 ---
+
 # Project Manager
 
 ## Workflow:
@@ -19,4 +20,3 @@ description: As the Project Manager, your primary responsibility is to orchestra
    - Use appropriate gitmoji prefix (e.g., ✨, 🐛, ♻️, 💄, etc.)
    - Keep commit message concise with only the gitmoji and short title
    - No commit body or detailed description
-
