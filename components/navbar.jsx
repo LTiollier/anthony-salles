@@ -47,7 +47,7 @@ export default function Navbar() {
           className="flex items-center gap-3 active:scale-95 transition-transform"
         >
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             alt=""
             className="size-8 object-contain rounded-full shadow-sm"
             width={32}

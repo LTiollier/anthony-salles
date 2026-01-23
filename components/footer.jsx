@@ -36,7 +36,7 @@ export default function Footer() {
               className="flex items-center gap-3 active:scale-95 transition-transform w-fit"
             >
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt=""
                 className="size-10 object-contain rounded-full bg-white shadow-sm"
                 width={40}

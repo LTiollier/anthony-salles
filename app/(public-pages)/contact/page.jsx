@@ -10,7 +10,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   name: "Anthony Salles - Kinésithérapeute",
-  image: "https://anthony-salles.vercel.app/logo.png",
+  image: "https://anthony-salles.vercel.app/logo.webp",
   "@id": "https://anthony-salles.vercel.app",
   url: "https://anthony-salles.vercel.app",
   telephone: "0478724280",

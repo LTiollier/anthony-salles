@@ -30,9 +30,9 @@ export const metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logo.webp",
+    shortcut: "/logo.webp",
+    apple: "/logo.webp",
   },
   openGraph: {
     title: "Anthony Salles - Kinésithérapeute à Lyon 7",

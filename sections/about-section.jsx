@@ -135,7 +135,7 @@ export default function AboutSection() {
               className="relative rounded-[2rem] overflow-hidden shadow-2xl"
             >
               <Image
-                src="/images/about.png"
+                src="/images/about.webp"
                 alt="Anthony Salles dans son cabinet à Lyon 7"
                 width={600}
                 height={700}
