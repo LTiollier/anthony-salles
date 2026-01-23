@@ -67,7 +67,7 @@ export default function AboutSection() {
             </li>
             <li>
               <span className="font-semibold text-blue-600">2023</span> - Chaîne
-              musculaire GDS (CFPC)
+              Musculaire GDS (CFPC)
             </li>
             <li>
               <span className="font-semibold text-blue-600">2021</span> -

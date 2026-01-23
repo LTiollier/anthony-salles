@@ -1,6 +1,6 @@
 # Anthony Salles – Physiotherapist Showcase Website
 
-Modern, professional showcase website for Anthony Salles, a physiotherapist specializing in Chinese medicine and visceral therapy.
+Modern, professional showcase website for Anthony Salles, a physiotherapist specializing in GDS muscular chains and visceral therapy.
 
 ## 🎯 Project Overview
 
@@ -10,7 +10,7 @@ This website presents Anthony Salles' expertise, treatment philosophy, and servi
 
 - **Accueil (Home):** Landing page with navigation blocks
 - **À propos (About):** Professional background and treatment philosophy
-- **Médecine chinoise (Chinese Medicine):** Explanation and application
+- **Méthode GDS (Muscular Chains):** Explanation and application
 - **Thérapie viscérale (Visceral Therapy):** Explanation and application
 - **Contact:** Contact information and appointment booking
 

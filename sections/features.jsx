@@ -109,10 +109,10 @@ export default function Features() {
         "Rééducation fonctionnelle, gestion de la douleur, et accompagnement post-opératoire pour retrouver votre mobilité.",
     },
     {
-      icon: faYinYang,
-      title: "Médecine Chinoise",
+      icon: faUniversalAccess,
+      title: "Méthode GDS",
       description:
-        "Approche ancestrale pour l'équilibre du corps et de l'esprit, incluant acupuncture et phytothérapie.",
+        "Approche globale basée sur les chaînes musculaires et articulaires pour rééquilibrer la posture et le mouvement.",
     },
     {
       icon: faHandshake,

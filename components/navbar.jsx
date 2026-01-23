@@ -16,7 +16,7 @@ export default function Navbar() {
   const links = [
     { name: "Accueil", href: "/" },
     { name: "À propos", href: "/a-propos" },
-    { name: "Médecine chinoise", href: "/medecine-chinoise" },
+    { name: "Méthode GDS", href: "/musculaire-gds" },
     { name: "Thérapie viscérale", href: "/therapie-viscerale" },
     { name: "Contact", href: "/contact" },
   ];

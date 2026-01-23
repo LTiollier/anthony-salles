@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { useReducedMotion } from "framer-motion";
 
 /**
- * EnergyFlow Component
- * Represents the flow of Qi through meridians using SVG and Framer Motion.
+ * MuscularChainsAnimation Component
+ * Represents the flow of energy through muscular chains using SVG and Framer Motion.
  */
-export default function EnergyFlow() {
+export default function MuscularChainsAnimation() {
   const shouldReduceMotion = useReducedMotion();
 
   // Meridian paths (SVG coordinates 0-100)

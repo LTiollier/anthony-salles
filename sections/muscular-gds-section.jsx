@@ -3,39 +3,39 @@ import { motion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faYinYang,
-  faDroplet,
-  faLeaf,
+  faPersonWalking,
+  faCompass,
+  faDna,
 } from "@fortawesome/free-solid-svg-icons";
-import EnergyFlow from "@/components/energy-flow";
+import MuscularChainsAnimation from "@/components/muscular-chains-animation";
 
-export default function ChineseMedicineSection() {
+export default function MuscularGDSSection() {
   const principles = [
     {
-      icon: faYinYang,
-      title: "Équilibre du Yin et du Yang",
+      icon: faPersonWalking,
+      title: "Posture et Mouvement",
       description:
-        "La recherche de l'harmonie entre les forces opposées pour une santé optimale.",
+        "Analyse de la posture globale pour libérer le mouvement et réduire les contraintes articulaires.",
     },
     {
-      icon: faDroplet,
-      title: "Circulation du Qi",
+      icon: faCompass,
+      title: "Approche Typologique",
       description:
-        "L'énergie vitale qui parcourt le corps, essentielle à son bon fonctionnement.",
+        "Compréhension de votre terrain par l'étude des 6 familles de chaînes musculaires et articulaires.",
     },
     {
-      icon: faLeaf,
-      title: "Les Cinq Éléments",
+      icon: faDna,
+      title: "Globalité du Corps",
       description:
-        "Bois, Feu, Terre, Métal, Eau : une interaction constante influençant notre physiologie.",
+        "Un traitement qui relie le psychisme, le comportement et le geste moteur pour un équilibre durable.",
     },
   ];
 
   return (
     <section className="mt-32 max-w-5xl mx-auto px-4">
       <SectionTitle
-        title="La Médecine Chinoise"
-        description="Découvrez les fondements et les bienfaits de cette approche thérapeutique millénaire."
+        title="La Méthode GDS"
+        description="Une approche globale basée sur les chaînes musculaires et articulaires pour rééquilibrer votre corps."
       />
       <motion.div className="flex flex-col md:flex-row items-center gap-12 mt-10">
         <motion.div
@@ -46,25 +46,24 @@ export default function ChineseMedicineSection() {
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
         >
           <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-            Une approche holistique pour votre santé
+            Le corps comme un langage
           </h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            La Médecine Traditionnelle Chinoise (MTC) est un système médical
-            complet, vieux de plusieurs millénaires, qui vise à rétablir
-            l'équilibre énergétique du corps. Elle considère l'être humain dans
-            sa globalité, en prenant en compte les aspects physiques,
-            émotionnels et environnementaux.
+            La méthode GDS (Godelieve Denys-Struyf) est une approche
+            thérapeutique et préventive qui considère le corps comme un ensemble
+            de chaînes musculaires et articulaires interdépendantes. Ces chaînes
+            sont l'expression de notre mode de fonctionnement et de nos émotions.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Mes traitements s'appuient sur des techniques telles que
-            l'acupuncture, la moxibustion, la diététique chinoise et la
-            pharmacopée, afin de stimuler les capacités d'auto-guérison de votre
-            organisme.
+            Par des massages spécifiques, des étirements posturales et des
+            prises de conscience corporelle, nous travaillons à libérer les
+            tensions excessives qui emprisonnent le corps dans des schémas
+            douloureux.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            Que ce soit pour soulager des douleurs chroniques, gérer le stress,
-            améliorer votre digestion ou renforcer votre immunité, la MTC offre
-            des solutions personnalisées.
+            L'objectif est de retrouver une alternance naturelle entre les
+            différentes chaînes, gage de souplesse, de force et d'adaptabilité
+            face aux contraintes du quotidien.
           </p>
         </motion.div>
         <motion.div
@@ -74,12 +73,12 @@ export default function ChineseMedicineSection() {
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
         >
-          <EnergyFlow />
+          <MuscularChainsAnimation />
         </motion.div>
       </motion.div>
 
       <h3 className="text-2xl font-semibold text-gray-900 mb-8 mt-16 text-center">
-        Principes fondamentaux
+        Les piliers du traitement
       </h3>
       <div className="flex flex-wrap items-stretch justify-center gap-6 mt-10 px-6">
         {principles.map((principle, index) => (

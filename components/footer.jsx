@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   const services = [
-    { name: "Médecine Chinoise", href: "/medecine-chinoise" },
+    { name: "Méthode GDS", href: "/musculaire-gds" },
     { name: "Thérapie Viscérale", href: "/therapie-viscerale" },
     { name: "Kinésithérapie", href: "/#features" },
   ];
@@ -51,7 +51,7 @@ export default function Footer() {
             </span>
           </Link>
           <p className="text-gray-600 leading-relaxed text-sm">
-            Expertise en kinésithérapie, médecine chinoise et thérapie viscérale
+            Expertise en kinésithérapie, chaînes musculaires GDS et thérapie viscérale
             pour un accompagnement holistique et personnalisé.
           </p>
         </div>
