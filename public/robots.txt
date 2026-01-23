@@ -1,5 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://anthonysalles.com/sitemap.xml
+Sitemap: https://anthony-salles.vercel.app/sitemap.xml

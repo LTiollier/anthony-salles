@@ -4,7 +4,7 @@ import "./globals.css";
 import LenisScroll from "@/components/lenis-scroll";
 
 export const metadata = {
-  metadataBase: new URL("https://anthonysalles.com"),
+  metadataBase: new URL("https://anthony-salles.vercel.app"),
   title: {
     default: "Anthony Salles - Kinésithérapeute | Lyon 7",
     template: "%s | Anthony Salles",
@@ -38,7 +38,7 @@ export const metadata = {
     title: "Anthony Salles - Kinésithérapeute à Lyon 7",
     description:
       "Expertise en kinésithérapie, médecine chinoise et thérapie viscérale. Accompagnement holistique et personnalisé.",
-    url: "https://anthonysalles.com",
+    url: "https://anthony-salles.vercel.app",
     siteName: "Anthony Salles",
     locale: "fr_FR",
     type: "website",
@@ -50,11 +50,13 @@ export const metadata = {
       "Kinésithérapie, Médecine Chinoise & Thérapie Viscérale à Lyon 7.",
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
+    noindex: true,
+    nofollow: true,
     googleBot: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
