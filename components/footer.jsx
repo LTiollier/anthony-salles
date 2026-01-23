@@ -84,13 +84,13 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:contact@anthonysalles.com"
+                  href="mailto:anthony.salles@protonmail.com"
                   className="flex items-center gap-3 text-slate-500 hover:text-blue-600 transition-colors font-medium group"
                 >
                   <div className="size-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                     <FontAwesomeIcon icon={faEnvelope} className="size-3.5" />
                   </div>
-                  contact@anthonysalles.com
+                  anthony.salles@protonmail.com
                 </a>
               </li>
               <li>

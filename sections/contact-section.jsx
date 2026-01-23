@@ -25,8 +25,8 @@ export default function ContactSection() {
     {
       icon: faEnvelope,
       label: "Email",
-      value: "contact@anthonysalles.com",
-      href: "mailto:contact@anthonysalles.com",
+      value: "anthony.salles@protonmail.com",
+      href: "mailto:anthony.salles@protonmail.com",
     },
     {
       icon: faMapMarkerAlt,
