@@ -65,7 +65,10 @@ function FeatureCard({ feature, index }) {
       }}
     >
       <Link href={feature.href} className="block cursor-pointer">
-        <div style={{ transform: "translateZ(50px)" }} className="space-y-4">
+        <div
+          style={{ transform: "translateZ(50px)" }}
+          className="flex flex-col items-center text-center space-y-4"
+        >
           <div className="size-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white duration-300">
             <FontAwesomeIcon
               icon={feature.icon}
