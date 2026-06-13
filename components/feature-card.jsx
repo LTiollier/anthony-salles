@@ -1,7 +1,13 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { m, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
+import {
+  m,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  useReducedMotion,
+} from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -41,7 +47,7 @@ export default function FeatureCard({ feature, index }) {
       const xPct = (latestX + 0.5) * 100;
       const yPct = (latestY + 0.5) * 100;
       return `radial-gradient(circle at ${xPct}% ${yPct}%, rgba(59, 130, 246, 0.15), transparent)`;
-    }
+    },
   );
 
   const handleMouseMove = (e) => {
@@ -98,7 +104,9 @@ export default function FeatureCard({ feature, index }) {
     >
       <Link href={feature.href} className="block cursor-pointer">
         <div
-          style={{ transform: reduce || isMobile ? "none" : "translateZ(50px)" }}
+          style={{
+            transform: reduce || isMobile ? "none" : "translateZ(50px)",
+          }}
           className="flex flex-col items-center text-center space-y-4"
         >
           <div className="size-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white duration-300">

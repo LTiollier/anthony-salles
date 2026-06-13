@@ -15,11 +15,15 @@ export default function OrganicPulse() {
 
       <m.div
         className="absolute size-48 md:size-64 bg-gradient-to-br from-coral-400/40 to-orange-300/40 rounded-full mix-blend-multiply filter blur-3xl"
-        animate={reduce ? undefined : {
-          scale: [1, 1.2, 1],
-          x: [0, 20, 0],
-          y: [0, -20, 0],
-        }}
+        animate={
+          reduce
+            ? undefined
+            : {
+                scale: [1, 1.2, 1],
+                x: [0, 20, 0],
+                y: [0, -20, 0],
+              }
+        }
         transition={{
           duration: 8,
           repeat: Infinity,
@@ -30,11 +34,15 @@ export default function OrganicPulse() {
 
       <m.div
         className="absolute size-48 md:size-64 bg-gradient-to-tr from-amber-200/40 to-yellow-400/40 rounded-full mix-blend-multiply filter blur-3xl"
-        animate={reduce ? undefined : {
-          scale: [1.2, 1, 1.2],
-          x: [0, -30, 0],
-          y: [0, 20, 0],
-        }}
+        animate={
+          reduce
+            ? undefined
+            : {
+                scale: [1.2, 1, 1.2],
+                x: [0, -30, 0],
+                y: [0, 20, 0],
+              }
+        }
         transition={{
           duration: 10,
           repeat: Infinity,
@@ -52,7 +60,9 @@ export default function OrganicPulse() {
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
       >
         <div className="space-y-2">
-          <div className={`size-2 bg-orange-400 rounded-full mx-auto ${reduce ? "" : "animate-pulse"}`} />
+          <div
+            className={`size-2 bg-orange-400 rounded-full mx-auto ${reduce ? "" : "animate-pulse"}`}
+          />
           <p className="text-gray-800 font-medium italic">Harmonie viscérale</p>
           <p className="text-xs text-gray-500 max-w-[150px] mx-auto">
             Mouvement capturé des tissus profonds
@@ -66,10 +76,14 @@ export default function OrganicPulse() {
           key={i}
           className="absolute w-full h-full border border-orange-200/30 rounded-full"
           initial={{ scale: 0, opacity: 0.5 }}
-          animate={reduce ? undefined : {
-            scale: 1.5,
-            opacity: 0,
-          }}
+          animate={
+            reduce
+              ? undefined
+              : {
+                  scale: 1.5,
+                  opacity: 0,
+                }
+          }
           transition={{
             duration: 4,
             repeat: Infinity,

@@ -64,7 +64,11 @@ export default function VisceralTherapySection() {
           </div>
         </Reveal>
 
-        <Reveal y={50} delay={0.2} className="lg:w-1/2 flex justify-center relative">
+        <Reveal
+          y={50}
+          delay={0.2}
+          className="lg:w-1/2 flex justify-center relative"
+        >
           <div className="relative group">
             <div className="absolute inset-0 bg-green-400 rounded-full blur-[100px] opacity-20 group-hover:opacity-30 transition-opacity" />
             <OrganicPulse />
@@ -78,25 +82,22 @@ export default function VisceralTherapySection() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
           {benefits.map((benefit, index) => (
-            <Reveal
-              key={index}
-              y={0}
-              delay={index * 0.1}
-              className="p-8 rounded-3xl glass flex flex-col items-center text-center group hover:-translate-y-2 transition-all duration-300"
-            >
-              <div className="size-16 rounded-2xl bg-green-50 flex items-center justify-center text-green-600 mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
-                <FontAwesomeIcon
-                  icon={benefit.icon}
-                  className="size-8"
-                  aria-hidden="true"
-                />
+            <Reveal key={index} y={0} delay={index * 0.1} className="h-full">
+              <div className="p-8 rounded-3xl glass flex flex-col items-center text-center group hover:-translate-y-2 transition-all duration-300 h-full">
+                <div className="size-16 rounded-2xl bg-green-50 flex items-center justify-center text-green-600 mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
+                  <FontAwesomeIcon
+                    icon={benefit.icon}
+                    className="size-8"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h4 className="text-xl font-bold text-slate-900 mb-4">
+                  {benefit.title}
+                </h4>
+                <p className="text-slate-500 leading-relaxed">
+                  {benefit.description}
+                </p>
               </div>
-              <h4 className="text-xl font-bold text-slate-900 mb-4">
-                {benefit.title}
-              </h4>
-              <p className="text-slate-500 leading-relaxed">
-                {benefit.description}
-              </p>
             </Reveal>
           ))}
         </div>

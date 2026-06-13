@@ -4,7 +4,10 @@ import Reveal from "@/components/reveal";
 
 export default function CallToAction() {
   return (
-    <Reveal y={50} className="flex flex-col max-w-5xl mt-40 px-4 mx-auto items-center justify-center text-center py-16 rounded-xl glass">
+    <Reveal
+      y={50}
+      className="flex flex-col max-w-5xl mt-40 px-4 mx-auto items-center justify-center text-center py-16 rounded-xl glass"
+    >
       <h2 className="text-2xl md:text-4xl font-medium mt-2 text-gray-900">
         Prêt à prendre soin de votre santé ?
       </h2>

@@ -5,8 +5,12 @@ import Lenis from "lenis";
 
 export default function LenisScroll() {
   useEffect(() => {
-    const isReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isMobile = window.matchMedia("(pointer: coarse), (hover: none)").matches;
+    const isReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const isMobile = window.matchMedia(
+      "(pointer: coarse), (hover: none)",
+    ).matches;
 
     if (isReducedMotion || isMobile) {
       return;

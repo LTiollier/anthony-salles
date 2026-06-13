@@ -50,81 +50,80 @@ export default function PricingSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 max-w-4xl mx-auto">
         {pricingData.map((item, index) => (
-          <Reveal
-            key={index}
-            y={0}
-            delay={index * 0.1}
-            className={`relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden ${
-              item.highlight
-                ? "bg-white shadow-2xl shadow-blue-500/10 border-blue-200"
-                : "bg-white/40 backdrop-blur-sm border-slate-200 hover:border-blue-200"
-            }`}
-          >
-            {item.highlight && (
-              <div className="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-bl-xl">
-                Spécificité
-              </div>
-            )}
+          <Reveal key={index} y={0} delay={index * 0.1} className="h-full">
+            <div
+              className={`relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden h-full ${
+                item.highlight
+                  ? "bg-white shadow-2xl shadow-blue-500/10 border-blue-200"
+                  : "bg-white/40 backdrop-blur-sm border-slate-200 hover:border-blue-200"
+              }`}
+            >
+              {item.highlight && (
+                <div className="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-bl-xl">
+                  Spécificité
+                </div>
+              )}
 
-            <div className="space-y-6">
-              <div
-                className={`size-14 rounded-2xl flex items-center justify-center text-2xl ${
-                  item.highlight
-                    ? "bg-blue-600 text-white"
-                    : "bg-blue-50 text-blue-600"
-                }`}
-              >
-                <FontAwesomeIcon icon={item.icon} />
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold text-slate-900">
-                  {item.price}
-                </span>
-                {item.extra && (
-                  <span className="text-blue-600 font-semibold text-sm">
-                    {item.extra}
-                  </span>
-                )}
-              </div>
-
-              <div className="flex items-center gap-3 text-slate-600 font-medium text-sm">
-                <FontAwesomeIcon icon={faClock} className="text-blue-500" />
-                <span>{item.duration}</span>
-              </div>
-
-              <ul className="space-y-3 pt-4 border-t border-slate-100">
-                {item.details.map((detail, idx) => (
-                  <li
-                    key={idx}
-                    className="flex items-center gap-3 text-slate-600 text-sm"
-                  >
-                    <div className="size-1.5 rounded-full bg-blue-400" />
-                    {detail}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="pt-6">
-                <a
-                  href="https://www.doctolib.fr/masseur-kinesitherapeute/lyon/anthony-salles-lyon"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`btn w-full py-4 text-center justify-center ${
-                    item.highlight ? "bg-blue-600" : "bg-slate-900"
+              <div className="space-y-6">
+                <div
+                  className={`size-14 rounded-2xl flex items-center justify-center text-2xl ${
+                    item.highlight
+                      ? "bg-blue-600 text-white"
+                      : "bg-blue-50 text-blue-600"
                   }`}
                 >
-                  Prendre rendez-vous
-                </a>
+                  <FontAwesomeIcon icon={item.icon} />
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl font-extrabold text-slate-900">
+                    {item.price}
+                  </span>
+                  {item.extra && (
+                    <span className="text-blue-600 font-semibold text-sm">
+                      {item.extra}
+                    </span>
+                  )}
+                </div>
+
+                <div className="flex items-center gap-3 text-slate-600 font-medium text-sm">
+                  <FontAwesomeIcon icon={faClock} className="text-blue-500" />
+                  <span>{item.duration}</span>
+                </div>
+
+                <ul className="space-y-3 pt-4 border-t border-slate-100">
+                  {item.details.map((detail, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center gap-3 text-slate-600 text-sm"
+                    >
+                      <div className="size-1.5 rounded-full bg-blue-400" />
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="pt-6">
+                  <a
+                    href="https://www.doctolib.fr/masseur-kinesitherapeute/lyon/anthony-salles-lyon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`btn w-full py-4 text-center justify-center ${
+                      item.highlight ? "bg-blue-600" : "bg-slate-900"
+                    }`}
+                  >
+                    Prendre rendez-vous
+                  </a>
+                </div>
               </div>
             </div>
           </Reveal>
