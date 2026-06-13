@@ -52,7 +52,7 @@ export default function PricingSection() {
         {pricingData.map((item, index) => (
           <Reveal
             key={index}
-            y={24}
+            y={0}
             delay={index * 0.1}
             className={`relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden ${
               item.highlight

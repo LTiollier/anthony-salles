@@ -80,7 +80,7 @@ export default function VisceralTherapySection() {
           {benefits.map((benefit, index) => (
             <Reveal
               key={index}
-              y={24}
+              y={0}
               delay={index * 0.1}
               className="p-8 rounded-3xl glass flex flex-col items-center text-center group hover:-translate-y-2 transition-all duration-300"
             >
