@@ -3,13 +3,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPhone,
-  faEnvelope,
-  faMapMarkerAlt,
-  faCheckCircle,
-  faExclamationCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons/faMapMarkerAlt";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons/faCheckCircle";
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons/faExclamationCircle";
 import dynamic from "next/dynamic";
 import emailjs from "@emailjs/browser";
 

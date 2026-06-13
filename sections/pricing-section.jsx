@@ -1,14 +1,10 @@
-"use client";
-import { motion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHandSparkles,
-  faHandHoldingMedical,
-  faEuroSign,
-  faClock,
-  faShieldHeart,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHandSparkles } from "@fortawesome/free-solid-svg-icons/faHandSparkles";
+import { faHandHoldingMedical } from "@fortawesome/free-solid-svg-icons/faHandHoldingMedical";
+import { faClock } from "@fortawesome/free-solid-svg-icons/faClock";
+import { faShieldHeart } from "@fortawesome/free-solid-svg-icons/faShieldHeart";
+import Reveal from "@/components/reveal";
 
 export default function PricingSection() {
   const pricingData = [
@@ -54,17 +50,15 @@ export default function PricingSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 max-w-4xl mx-auto">
         {pricingData.map((item, index) => (
-          <motion.div
+          <Reveal
             key={index}
+            y={24}
+            delay={index * 0.1}
             className={`relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden ${
               item.highlight
                 ? "bg-white shadow-2xl shadow-blue-500/10 border-blue-200"
                 : "bg-white/40 backdrop-blur-sm border-slate-200 hover:border-blue-200"
             }`}
-            initial={{ opacity: 0, y: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.2, type: "spring", stiffness: 100 }}
           >
             {item.highlight && (
               <div className="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-bl-xl">
@@ -133,15 +127,14 @@ export default function PricingSection() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </Reveal>
         ))}
       </div>
 
-      <motion.div
+      <Reveal
+        y={24}
+        delay={0.2}
         className="mt-16 p-8 rounded-3xl bg-blue-50/50 border border-blue-100 max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-8"
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
       >
         <div className="size-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-2xl shrink-0">
           <FontAwesomeIcon icon={faShieldHeart} />
@@ -159,7 +152,7 @@ export default function PricingSection() {
             certaines mutuelles (hors CMU/AME).
           </p>
         </div>
-      </motion.div>
+      </Reveal>
     </section>
   );
 }

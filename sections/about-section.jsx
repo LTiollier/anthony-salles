@@ -1,10 +1,8 @@
-"use client";
-import { motion, useReducedMotion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
 import Image from "next/image";
+import Reveal from "@/components/reveal";
 
 export default function AboutSection() {
-  const reduce = useReducedMotion();
   const skills = [
     {
       title: "Rééducation posturale",
@@ -34,13 +32,7 @@ export default function AboutSection() {
       />
 
       <div className="flex flex-col lg:flex-row items-center gap-16 mt-16">
-        <motion.div
-          className="lg:w-1/2 space-y-8"
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ type: "spring", stiffness: 100, damping: 20 }}
-        >
+        <Reveal y={50} className="lg:w-1/2 space-y-8">
           <div className="space-y-4">
             <h3 className="text-3xl font-bold text-slate-900 leading-tight">
               Mon parcours et ma passion pour le mouvement
@@ -60,13 +52,9 @@ export default function AboutSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
             {skills.map((skill, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="p-5 glass border-white/40 group hover:border-blue-200 transition-colors"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
               >
                 <h4 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {skill.title}
@@ -74,7 +62,7 @@ export default function AboutSection() {
                 <p className="text-slate-500 text-sm leading-relaxed">
                   {skill.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -113,28 +101,11 @@ export default function AboutSection() {
               ))}
             </div>
           </div>
-        </motion.div>
+        </Reveal>
 
-        <motion.div
-          className="lg:w-1/2 relative"
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ type: "spring", stiffness: 100, damping: 20 }}
-        >
+        <Reveal y={50} delay={0.2} className="lg:w-1/2 relative">
           <div className="relative z-10">
-            <motion.div
-              animate={reduce ? undefined : {
-                y: [0, -20, 0],
-                rotate: [0, 1, 0],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="relative rounded-[2rem] overflow-hidden shadow-2xl"
-            >
+            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl animate-float-image">
               <Image
                 src="/images/about.webp"
                 alt="Anthony Salles dans son cabinet à Lyon 7"
@@ -142,13 +113,13 @@ export default function AboutSection() {
                 height={700}
                 className="w-full h-auto object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
               />
-            </motion.div>
+            </div>
 
             {/* Decorative elements */}
-            <div className={`absolute -bottom-6 -left-6 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 ${reduce ? "" : "animate-pulse"}`} />
-            <div className={`absolute -top-6 -right-6 w-32 h-32 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 ${reduce ? "" : "animate-pulse delay-700"}`} />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse delay-700" />
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

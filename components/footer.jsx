@@ -1,14 +1,11 @@
-"use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPhone,
-  faEnvelope,
-  faMapMarkerAlt,
-  faClock,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons/faMapMarkerAlt";
+import { faClock } from "@fortawesome/free-solid-svg-icons/faClock";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Reveal from "@/components/reveal";
 
 export default function Footer() {
   const services = [
@@ -19,15 +16,11 @@ export default function Footer() {
   ];
 
   return (
-    <motion.footer
+    <footer
       className="relative w-full pt-24 pb-12 px-6 lg:px-12 mt-32 border-t border-slate-200/50 bg-white/40 backdrop-blur-xl overflow-hidden"
       aria-label="Pied de page"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1 }}
     >
-      <div className="max-w-7xl mx-auto">
+      <Reveal y={0} className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           {/* Brand & Info */}
           <div className="flex flex-col gap-6">
@@ -164,7 +157,7 @@ export default function Footer() {
             </Link>
           </nav>
         </div>
-      </div>
-    </motion.footer>
+      </Reveal>
+    </footer>
   );
 }
