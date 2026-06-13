@@ -73,23 +73,30 @@ const poppins = Poppins({
 import FloatingShapes from "@/components/floating-shapes";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
+
+import { LazyMotion, domAnimation } from "framer-motion";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" suppressHydrationWarning>
       <body className={poppins.variable}>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-blue-600 focus:text-white focus:rounded-full focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-        >
-          Aller au contenu principal
-        </a>
-        <LenisScroll />
-        <FloatingShapes />
-        <BackgroundGradient />
-        <Navbar />
-        <main id="main-content">{children}</main>
-        <Footer />
+        <LazyMotion features={domAnimation}>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-blue-600 focus:text-white focus:rounded-full focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          >
+            Aller au contenu principal
+          </a>
+          <LenisScroll />
+          <FloatingShapes />
+          <BackgroundGradient />
+          <Navbar />
+          <main id="main-content">{children}</main>
+          <Footer />
+        </LazyMotion>
       </body>
     </html>
   );

@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 /**
  * MuscularChainsAnimation Component
@@ -83,7 +82,7 @@ export default function MuscularChainsAnimation() {
       >
         {/* Human Silhouette Background */}
         {silhouettePaths.map((path, i) => (
-          <motion.path
+          <m.path
             key={`silhouette-${i}`}
             d={path.d}
             stroke="currentColor"
@@ -99,7 +98,7 @@ export default function MuscularChainsAnimation() {
         {meridians.map((meridian, i) => (
           <g key={i}>
             {/* Outer Glow Path */}
-            <motion.path
+            <m.path
               d={meridian.d}
               stroke="currentColor"
               strokeWidth="2"
@@ -114,7 +113,7 @@ export default function MuscularChainsAnimation() {
             />
 
             {/* Static Meridian Path */}
-            <motion.path
+            <m.path
               d={meridian.d}
               stroke="currentColor"
               strokeWidth="0.8"
@@ -129,7 +128,7 @@ export default function MuscularChainsAnimation() {
 
             {/* Animated Energy Particle (Qi) */}
             {!shouldReduceMotion && (
-              <motion.circle
+              <m.circle
                 r="1.8"
                 fill="#60a5fa"
                 initial={{ opacity: 0, "--offset-distance": "0%" }}
@@ -154,7 +153,7 @@ export default function MuscularChainsAnimation() {
 
             {/* Second trailing particle for depth */}
             {!shouldReduceMotion && (
-              <motion.circle
+              <m.circle
                 r="1"
                 fill="#60a5fa"
                 initial={{ opacity: 0, "--offset-distance": "0%" }}
@@ -178,7 +177,7 @@ export default function MuscularChainsAnimation() {
         ))}
 
         {/* Central Focus Point */}
-        <motion.circle
+        <m.circle
           cx="50"
           cy="50"
           r="4"

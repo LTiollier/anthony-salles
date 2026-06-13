@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 pointer-events-none">
-      <motion.nav
+      <m.nav
         className={`mx-auto max-w-7xl pointer-events-auto flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 ${
           isScrolled
             ? "bg-white/70 backdrop-blur-xl shadow-lg border border-white/50"
@@ -90,7 +90,7 @@ export default function Navbar() {
         >
           <FontAwesomeIcon icon={faBars} className="size-5" />
         </button>
-      </motion.nav>
+      </m.nav>
 
       {/* Mobile Menu Backdrop */}
       <div

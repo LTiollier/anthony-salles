@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 const Shape = ({ color, size, top, left, duration, delay, reduce }) => (
-  <motion.div
+  <m.div
     className={`absolute rounded-full blur-3xl opacity-20 pointer-events-none ${color}`}
     style={{
       width: size,

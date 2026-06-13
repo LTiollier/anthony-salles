@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Link from "next/link";
 
 export default function HeroSection() {
@@ -38,29 +38,29 @@ export default function HeroSection() {
       id="main-content"
       className="relative flex flex-col items-center py-24 md:py-32 overflow-visible"
     >
-      <motion.div
+      <m.div
         className="flex flex-col items-center max-w-5xl"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.h1
+        <m.h1
           className="text-center text-5xl/14 md:text-7xl/20 font-bold tracking-tight text-gray-900 flex flex-wrap justify-center gap-x-[0.25em]"
           aria-label={title}
         >
           {words.map((word, i) => (
-            <motion.span
+            <m.span
               key={i}
               variants={wordVariants}
               className="inline-block"
               aria-hidden="true"
             >
               {word}
-            </motion.span>
+            </m.span>
           ))}
-        </motion.h1>
+        </m.h1>
 
-        <motion.p
+        <m.p
           className="text-center text-gray-600 text-lg/8 max-w-2xl mt-8 px-4"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -69,9 +69,9 @@ export default function HeroSection() {
           Je vous accompagne via une approche holistique pour votre bien-être,
           combinant des techniques modernes et ancestrales pour une prise en
           charge personnalisée au cœur de Lyon 7.
-        </motion.p>
+        </m.p>
 
-        <motion.div
+        <m.div
           className="flex flex-col sm:flex-row items-center gap-4 mt-12"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -92,8 +92,8 @@ export default function HeroSection() {
           >
             Découvrir mon approche
           </Link>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </section>
   );
 }

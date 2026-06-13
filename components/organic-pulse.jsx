@@ -1,5 +1,5 @@
 "use client";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 /**
  * OrganicPulse Component
@@ -13,7 +13,7 @@ export default function OrganicPulse() {
       {/* Background Soft Glow */}
       <div className="absolute inset-0 bg-orange-100/20 blur-[100px] rounded-full" />
 
-      <motion.div
+      <m.div
         className="absolute size-48 md:size-64 bg-gradient-to-br from-coral-400/40 to-orange-300/40 rounded-full mix-blend-multiply filter blur-3xl"
         animate={reduce ? undefined : {
           scale: [1, 1.2, 1],
@@ -28,7 +28,7 @@ export default function OrganicPulse() {
         style={{ backgroundColor: "#F87171" }} // Coral-like
       />
 
-      <motion.div
+      <m.div
         className="absolute size-48 md:size-64 bg-gradient-to-tr from-amber-200/40 to-yellow-400/40 rounded-full mix-blend-multiply filter blur-3xl"
         animate={reduce ? undefined : {
           scale: [1.2, 1, 1.2],
@@ -44,7 +44,7 @@ export default function OrganicPulse() {
       />
 
       {/* Main Content Area (Glassy Circle) */}
-      <motion.div
+      <m.div
         className="relative z-10 size-64 md:size-80 rounded-full border border-white/30 glass flex items-center justify-center p-8 text-center shadow-2xl"
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
@@ -58,11 +58,11 @@ export default function OrganicPulse() {
             Mouvement capturé des tissus profonds
           </p>
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Concentric rings for "Pulse" effect */}
       {[1, 2, 3].map((i) => (
-        <motion.div
+        <m.div
           key={i}
           className="absolute w-full h-full border border-orange-200/30 rounded-full"
           initial={{ scale: 0, opacity: 0.5 }}

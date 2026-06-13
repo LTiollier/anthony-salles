@@ -1,7 +1,7 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
+import { m, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -57,7 +57,7 @@ export default function FeatureCard({ feature, index }) {
   };
 
   return (
-    <motion.div
+    <m.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -106,13 +106,13 @@ export default function FeatureCard({ feature, index }) {
 
       {/* Subtle internal glow */}
       {!(reduce || isMobile) && (
-        <motion.div
+        <m.div
           className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
           style={{
             background: radialGradient,
           }}
         />
       )}
-    </motion.div>
+    </m.div>
   );
 }

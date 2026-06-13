@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import SectionTitle from "@/components/section-title";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
@@ -98,7 +98,7 @@ export default function ContactSection() {
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-16">
-        <motion.div
+        <m.div
           className="space-y-10"
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -111,7 +111,7 @@ export default function ContactSection() {
             </h3>
             <div className="grid gap-6">
               {contactInfo.map((info, idx) => (
-                <motion.a
+                <m.a
                   key={idx}
                   href={info.href}
                   target={info.icon === faMapMarkerAlt ? "_blank" : undefined}
@@ -135,7 +135,7 @@ export default function ContactSection() {
                     </p>
                     <p className="text-slate-900 font-medium">{info.value}</p>
                   </div>
-                </motion.a>
+                </m.a>
               ))}
             </div>
           </div>
@@ -144,18 +144,18 @@ export default function ContactSection() {
             <h3 className="text-2xl font-bold text-slate-900 border-l-4 border-blue-500 pl-4">
               Plan d'Accès
             </h3>
-            <motion.div
+            <m.div
               className="w-full h-80 rounded-3xl overflow-hidden shadow-xl border border-white/40 ring-1 ring-slate-200/50"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
               <LeafletMap />
-            </motion.div>
+            </m.div>
           </div>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="glass p-8 md:p-10 border-white/60 shadow-2xl relative"
           initial={{ x: 50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -237,7 +237,7 @@ export default function ContactSection() {
 
             {/* Success Message */}
             {formState.success && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-2xl text-green-700"
@@ -250,12 +250,12 @@ export default function ContactSection() {
                   Message envoyé avec succès ! Je vous répondrai dans les plus
                   brefs délais.
                 </p>
-              </motion.div>
+              </m.div>
             )}
 
             {/* Error Message */}
             {formState.error && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-2xl text-red-700"
@@ -268,7 +268,7 @@ export default function ContactSection() {
                   Une erreur est survenue. Veuillez réessayer ou me contacter
                   directement par téléphone ou email.
                 </p>
-              </motion.div>
+              </m.div>
             )}
 
             <button
@@ -282,7 +282,7 @@ export default function ContactSection() {
               Nous traitons vos données avec le plus grand soin.
             </p>
           </form>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );
