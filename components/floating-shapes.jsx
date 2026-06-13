@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
-const Shape = ({ delay, color, size, top, left, duration = 20 }) => (
+const Shape = ({ color, size, top, left, duration, delay, reduce }) => (
   <motion.div
     className={`absolute rounded-full blur-3xl opacity-20 pointer-events-none ${color}`}
     style={{
@@ -11,11 +11,8 @@ const Shape = ({ delay, color, size, top, left, duration = 20 }) => (
       top,
       left,
     }}
-    animate={{
-      x: [0, 50, -30, 0],
-      y: [0, -40, 60, 0],
-      scale: [1, 1.1, 0.9, 1],
-    }}
+    // Plus de `scale` (re-rasterisation du flou). Translate seul = composé sur GPU.
+    animate={reduce ? undefined : { x: [0, 40, 0], y: [0, -30, 0] }}
     transition={{
       duration,
       repeat: Infinity,
@@ -26,39 +23,27 @@ const Shape = ({ delay, color, size, top, left, duration = 20 }) => (
 );
 
 export default function FloatingShapes() {
+  const reduce = useReducedMotion();
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+      {/* 2 formes au lieu de 4, plus lentes */}
       <Shape
         color="bg-blue-200"
-        size="40vw"
+        size="35vw"
         top="-10%"
         left="-10%"
+        duration={40}
         delay={0}
-        duration={25}
+        reduce={reduce}
       />
       <Shape
         color="bg-green-100"
-        size="35vw"
-        top="40%"
-        left="60%"
-        delay={2}
-        duration={22}
-      />
-      <Shape
-        color="bg-stone-200"
         size="30vw"
-        top="70%"
-        left="10%"
-        delay={4}
-        duration={28}
-      />
-      <Shape
-        color="bg-blue-100"
-        size="25vw"
-        top="10%"
-        left="70%"
-        delay={1}
-        duration={30}
+        top="50%"
+        left="60%"
+        duration={45}
+        delay={3}
+        reduce={reduce}
       />
     </div>
   );
