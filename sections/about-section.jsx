@@ -1,9 +1,10 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import SectionTitle from "@/components/section-title";
 import Image from "next/image";
 
 export default function AboutSection() {
+  const reduce = useReducedMotion();
   const skills = [
     {
       title: "Rééducation posturale",
@@ -123,7 +124,7 @@ export default function AboutSection() {
         >
           <div className="relative z-10">
             <motion.div
-              animate={{
+              animate={reduce ? undefined : {
                 y: [0, -20, 0],
                 rotate: [0, 1, 0],
               }}
@@ -144,8 +145,8 @@ export default function AboutSection() {
             </motion.div>
 
             {/* Decorative elements */}
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse delay-700" />
+            <div className={`absolute -bottom-6 -left-6 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 ${reduce ? "" : "animate-pulse"}`} />
+            <div className={`absolute -top-6 -right-6 w-32 h-32 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 ${reduce ? "" : "animate-pulse delay-700"}`} />
           </div>
         </motion.div>
       </div>

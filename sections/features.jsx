@@ -6,13 +6,24 @@ import {
   faYinYang,
   faHandshake,
 } from "@fortawesome/free-solid-svg-icons";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 
 import Link from "next/link";
 
 function FeatureCard({ feature, index }) {
   const cardRef = useRef(null);
+  const reduce = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(pointer: coarse)");
+    setIsMobile(mediaQuery.matches);
+    const listener = (e) => setIsMobile(e.matches);
+    mediaQuery.addEventListener("change", listener);
+    return () => mediaQuery.removeEventListener("change", listener);
+  }, []);
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -22,7 +33,17 @@ function FeatureCard({ feature, index }) {
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
 
+  const radialGradient = useTransform(
+    [mouseXSpring, mouseYSpring],
+    ([latestX, latestY]) => {
+      const xPct = (latestX + 0.5) * 100;
+      const yPct = (latestY + 0.5) * 100;
+      return `radial-gradient(circle at ${xPct}% ${yPct}%, rgba(59, 130, 246, 0.15), transparent)`;
+    }
+  );
+
   const handleMouseMove = (e) => {
+    if (reduce || isMobile) return;
     const rect = cardRef.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
@@ -47,9 +68,9 @@ function FeatureCard({ feature, index }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
+        rotateX: reduce || isMobile ? 0 : rotateX,
+        rotateY: reduce || isMobile ? 0 : rotateY,
+        transformStyle: reduce || isMobile ? "flat" : "preserve-3d",
       }}
       className="group relative p-6 rounded-2xl glass max-w-80 w-full transition-shadow duration-500 hover:shadow-2xl hover:shadow-blue-500/10"
       role="article"
@@ -66,7 +87,7 @@ function FeatureCard({ feature, index }) {
     >
       <Link href={feature.href} className="block cursor-pointer">
         <div
-          style={{ transform: "translateZ(50px)" }}
+          style={{ transform: reduce || isMobile ? "none" : "translateZ(50px)" }}
           className="flex flex-col items-center text-center space-y-4"
         >
           <div className="size-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white duration-300">
@@ -90,19 +111,14 @@ function FeatureCard({ feature, index }) {
       </Link>
 
       {/* Subtle internal glow */}
-      <motion.div
-        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        style={{
-          background: useTransform(
-            [mouseXSpring, mouseYSpring],
-            ([latestX, latestY]) => {
-              const xPct = (latestX + 0.5) * 100;
-              const yPct = (latestY + 0.5) * 100;
-              return `radial-gradient(circle at ${xPct}% ${yPct}%, rgba(59, 130, 246, 0.15), transparent)`;
-            },
-          ),
-        }}
-      />
+      {!(reduce || isMobile) && (
+        <motion.div
+          className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+          style={{
+            background: radialGradient,
+          }}
+        />
+      )}
     </motion.div>
   );
 }
