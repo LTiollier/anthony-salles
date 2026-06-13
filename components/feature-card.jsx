@@ -9,13 +9,21 @@ export default function FeatureCard({ feature, index }) {
   const cardRef = useRef(null);
   const reduce = useReducedMotion();
   const [isMobile, setIsMobile] = useState(false);
+  const requestRef = useRef(null);
+  const targetX = useRef(0);
+  const targetY = useRef(0);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(pointer: coarse)");
+    const mediaQuery = window.matchMedia("(pointer: coarse), (hover: none)");
     setIsMobile(mediaQuery.matches);
     const listener = (e) => setIsMobile(e.matches);
     mediaQuery.addEventListener("change", listener);
-    return () => mediaQuery.removeEventListener("change", listener);
+    return () => {
+      mediaQuery.removeEventListener("change", listener);
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current);
+      }
+    };
   }, []);
 
   const x = useMotionValue(0);
@@ -44,14 +52,23 @@ export default function FeatureCard({ feature, index }) {
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
 
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
+    targetX.current = mouseX / width - 0.5;
+    targetY.current = mouseY / height - 0.5;
 
-    x.set(xPct);
-    y.set(yPct);
+    if (!requestRef.current) {
+      requestRef.current = requestAnimationFrame(() => {
+        x.set(targetX.current);
+        y.set(targetY.current);
+        requestRef.current = null;
+      });
+    }
   };
 
   const handleMouseLeave = () => {
+    if (requestRef.current) {
+      cancelAnimationFrame(requestRef.current);
+      requestRef.current = null;
+    }
     x.set(0);
     y.set(0);
   };
