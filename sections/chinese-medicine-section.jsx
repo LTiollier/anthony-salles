@@ -6,28 +6,28 @@ import { faLeaf } from "@fortawesome/free-solid-svg-icons/faLeaf";
 import EnergyFlow from "@/components/energy-flow";
 import Reveal from "@/components/reveal";
 
-export default function ChineseMedicineSection() {
-  const principles = [
-    {
-      icon: faYinYang,
-      title: "Équilibre du Yin et du Yang",
-      description:
-        "La recherche de l'harmonie entre les forces complémentaires pour maintenir une santé physique et psychique optimale.",
-    },
-    {
-      icon: faDroplet,
-      title: "Circulation du Qi",
-      description:
-        "L'énergie vitale qui parcourt les méridiens du corps, essentielle au bon fonctionnement des organes et des tissus.",
-    },
-    {
-      icon: faLeaf,
-      title: "Les Cinq Éléments",
-      description:
-        "Bois, Feu, Terre, Métal, Eau : un système d'interactions constantes influençant notre physiologie et nos émotions.",
-    },
-  ];
+const PRINCIPLES = [
+  {
+    icon: faYinYang,
+    title: "Équilibre du Yin et du Yang",
+    description:
+      "La recherche de l'harmonie entre les forces complémentaires pour maintenir une santé physique et psychique optimale.",
+  },
+  {
+    icon: faDroplet,
+    title: "Circulation du Qi",
+    description:
+      "L'énergie vitale qui parcourt les méridiens du corps, essentielle au bon fonctionnement des organes et des tissus.",
+  },
+  {
+    icon: faLeaf,
+    title: "Les Cinq Éléments",
+    description:
+      "Bois, Feu, Terre, Métal, Eau : un système d'interactions constantes influençant notre physiologie et nos émotions.",
+  },
+];
 
+export default function ChineseMedicineSection() {
   return (
     <section className="py-24 md:py-32 max-w-6xl mx-auto px-6 overflow-hidden">
       <SectionTitle
@@ -81,7 +81,7 @@ export default function ChineseMedicineSection() {
           Principes fondamentaux de la MTC
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-          {principles.map((principle, index) => (
+          {PRINCIPLES.map((principle, index) => (
             <Reveal key={index} y={0} delay={index * 0.1} className="h-full">
               <div className="p-8 rounded-3xl glass flex flex-col items-center text-center group hover:-translate-y-2 transition-all duration-300 h-full">
                 <div className="size-16 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">

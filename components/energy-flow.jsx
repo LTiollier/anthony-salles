@@ -2,33 +2,33 @@
 
 import { m, useReducedMotion } from "framer-motion";
 
+// Meridian paths (SVG coordinates 0-100) hoisted to module level to avoid re-allocation on render
+const MERIDIANS = [
+  { d: "M 50,10 C 50,10 50,50 50,90", duration: 3, delay: 0 }, // Central vertical
+  { d: "M 20,40 C 40,40 60,60 80,60", duration: 4, delay: 0.5 }, // Curved horizontal 1
+  { d: "M 80,40 C 60,40 40,60 20,60", duration: 4, delay: 1 }, // Curved horizontal 2
+  { d: "M 30,20 C 40,30 40,70 30,80", duration: 5, delay: 1.5 }, // Left curve
+  { d: "M 70,20 C 60,30 60,70 70,80", duration: 5, delay: 2 }, // Right curve
+];
+
+const PATH_VARIANTS = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: (i) => ({
+    pathLength: 1,
+    opacity: 0.4,
+    transition: {
+      pathLength: { delay: i * 0.2, duration: 2, ease: "easeInOut" },
+      opacity: { delay: i * 0.2, duration: 1 },
+    },
+  }),
+};
+
 /**
  * EnergyFlow Component
  * Represents the flow of Qi through meridians using SVG and Framer Motion.
  */
 export default function EnergyFlow() {
   const shouldReduceMotion = useReducedMotion();
-
-  // Meridian paths (SVG coordinates 0-100)
-  const meridians = [
-    { d: "M 50,10 C 50,10 50,50 50,90", duration: 3, delay: 0 }, // Central vertical
-    { d: "M 20,40 C 40,40 60,60 80,60", duration: 4, delay: 0.5 }, // Curved horizontal 1
-    { d: "M 80,40 C 60,40 40,60 20,60", duration: 4, delay: 1 }, // Curved horizontal 2
-    { d: "M 30,20 C 40,30 40,70 30,80", duration: 5, delay: 1.5 }, // Left curve
-    { d: "M 70,20 C 60,30 60,70 70,80", duration: 5, delay: 2 }, // Right curve
-  ];
-
-  const pathVariants = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: (i) => ({
-      pathLength: 1,
-      opacity: 0.4,
-      transition: {
-        pathLength: { delay: i * 0.2, duration: 2, ease: "easeInOut" },
-        opacity: { delay: i * 0.2, duration: 1 },
-      },
-    }),
-  };
 
   return (
     <div className="relative size-80 md:size-96 flex items-center justify-center">
@@ -41,7 +41,7 @@ export default function EnergyFlow() {
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full drop-shadow-[0_0_15px_rgba(16,185,129,0.4)]"
       >
-        {meridians.map((meridian, i) => (
+        {MERIDIANS.map((meridian, i) => (
           <g key={i}>
             {/* Outer Glow Path */}
             <m.path
@@ -52,7 +52,7 @@ export default function EnergyFlow() {
               className="text-emerald-400 opacity-15"
               filter="blur(4px)"
               custom={i}
-              variants={pathVariants}
+              variants={PATH_VARIANTS}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -66,7 +66,7 @@ export default function EnergyFlow() {
               strokeLinecap="round"
               className="text-emerald-500/60"
               custom={i}
-              variants={pathVariants}
+              variants={PATH_VARIANTS}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
