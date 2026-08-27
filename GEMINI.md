@@ -15,6 +15,7 @@ Create a professional, modern multipage website to present Anthony Salles' exper
   - **Accueil (Home):** Landing page with navigation blocks redirecting to other pages
   - **À propos (About):** Professional background and treatment philosophy
   - **Méthode GDS (Muscular Chains):** Explanation of GDS method and its application in treatments
+  - **Médecine chinoise (Chinese Medicine):** Explanation of Traditional Chinese Medicine (MTC) and its benefits
   - **Thérapie viscérale (Visceral Therapy):** Explanation of visceral therapy and its application in treatments
   - **Contact:** Contact information and appointment booking
 

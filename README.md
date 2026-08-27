@@ -11,6 +11,7 @@ This website presents Anthony Salles' expertise, treatment philosophy, and servi
 - **Accueil (Home):** Landing page with navigation blocks
 - **À propos (About):** Professional background and treatment philosophy
 - **Méthode GDS (Muscular Chains):** Explanation and application
+- **Médecine Chinoise (Chinese Medicine):** Explanation and application
 - **Thérapie viscérale (Visceral Therapy):** Explanation and application
 - **Contact:** Contact information and appointment booking
 

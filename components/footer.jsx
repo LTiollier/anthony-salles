@@ -10,6 +10,7 @@ import Reveal from "@/components/reveal";
 export default function Footer() {
   const services = [
     { name: "Méthode GDS", href: "/musculaire-gds" },
+    { name: "Médecine Chinoise", href: "/medecine-chinoise" },
     { name: "Thérapie Viscérale", href: "/therapie-viscerale" },
     { name: "Kinésithérapie", href: "/#features" },
     { name: "Tarifs", href: "/tarif" },

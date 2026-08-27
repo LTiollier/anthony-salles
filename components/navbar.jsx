@@ -18,6 +18,7 @@ export default function Navbar() {
     { name: "Accueil", href: "/" },
     { name: "À propos", href: "/a-propos" },
     { name: "Méthode GDS", href: "/musculaire-gds" },
+    { name: "Médecine chinoise", href: "/medecine-chinoise" },
     { name: "Thérapie viscérale", href: "/therapie-viscerale" },
     { name: "Tarifs", href: "/tarif" },
     { name: "Contact", href: "/contact" },

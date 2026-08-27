@@ -1,5 +1,6 @@
 import SectionTitle from "@/components/section-title";
 import { faUniversalAccess } from "@fortawesome/free-solid-svg-icons/faUniversalAccess";
+import { faYinYang } from "@fortawesome/free-solid-svg-icons/faYinYang";
 import { faHandshake } from "@fortawesome/free-solid-svg-icons/faHandshake";
 import FeatureCard from "@/components/feature-card";
 
@@ -18,6 +19,13 @@ export default function Features() {
       description:
         "Approche globale basée sur les chaînes musculaires et articulaires pour rééquilibrer la posture et le mouvement.",
       href: "/musculaire-gds",
+    },
+    {
+      icon: faYinYang,
+      title: "Médecine Chinoise",
+      description:
+        "Approche globale axée sur l'équilibre énergétique, la circulation du Qi et le soutien des capacités naturelles du corps.",
+      href: "/medecine-chinoise",
     },
     {
       icon: faHandshake,
