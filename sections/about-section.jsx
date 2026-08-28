@@ -107,8 +107,8 @@ export default function AboutSection() {
           <div className="relative z-10">
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl animate-float-image">
               <Image
-                src="/images/about.webp"
-                alt="Anthony Salles dans son cabinet à Lyon 7"
+                src="/images/portrait.webp"
+                alt="Portrait d'Anthony Salles, masseur-kinésithérapeute à Lyon 7"
                 width={600}
                 height={700}
                 className="w-full h-auto object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
@@ -120,6 +120,67 @@ export default function AboutSection() {
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse delay-700" />
           </div>
         </Reveal>
+      </div>
+
+      {/* Section Mon cabinet */}
+      <div className="mt-24 pt-16 border-t border-slate-200/60">
+        <Reveal y={40} className="text-center max-w-2xl mx-auto mb-12">
+          <h3 className="text-3xl font-bold text-slate-900">Mon cabinet</h3>
+          <p className="text-slate-600 text-lg mt-4">
+            Un espace accueillant et équipé à Lyon 7e, conçu pour vous
+            accompagner dans vos soins, votre rééducation et votre bien-être.
+          </p>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <Reveal
+            y={50}
+            delay={0.1}
+            className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500"
+          >
+            <div className="relative aspect-[4/3] w-full overflow-hidden">
+              <Image
+                src="/images/salle-pratique.webp"
+                alt="Salle de pratique et de soin d'Anthony Salles"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h4 className="text-xl font-semibold">Espace de soin</h4>
+                <p className="text-sm text-slate-200 mt-1">
+                  Un cadre apaisant et individuel pour les bilans et thérapies
+                  manuelles.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal
+            y={50}
+            delay={0.2}
+            className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500"
+          >
+            <div className="relative aspect-[4/3] w-full overflow-hidden">
+              <Image
+                src="/images/salle-de-sport.webp"
+                alt="Espace de rééducation et de mouvement"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h4 className="text-xl font-semibold">Espace mouvement</h4>
+                <p className="text-sm text-slate-200 mt-1">
+                  Équipements dédiés au renforcement, à la mobilité et au
+                  travail postural.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
