@@ -39,16 +39,32 @@ export default function AboutSection() {
               Mon parcours et ma passion pour le mouvement
             </h3>
             <p className="text-slate-600 text-lg leading-relaxed">
-              Masseur-kinésithérapeute diplômé d'État, je suis passionné par la
-              complexité du corps humain et sa capacité de résilience. J'exerce
-              à Lyon 8e, où je propose une approche basée sur l'écoute active et
-              des techniques précises.
+              Masseur-kinésithérapeute diplômé d'État, je vous accueille dans
+              mon cabinet situé à Lyon 8e. Passionné par la complexité du corps
+              humain et sa capacité de récupération, je place l'écoute active et
+              la précision du geste au cœur de ma pratique.
             </p>
             <p className="text-slate-600 text-lg leading-relaxed">
-              Mon objectif est de vous aider à retrouver votre mobilité et votre
-              vitalité grâce à une prise en charge personnalisée qui va au-delà
-              du symptôme.
+              Mon approche repose sur une vision globale du corps à la visée
+              préventive :
             </p>
+            <ul className="space-y-3 pt-1">
+              <li className="text-slate-600 text-lg leading-relaxed pl-4 border-l-2 border-blue-500/40">
+                <strong className="font-semibold text-slate-900">
+                  Méthode GDS (Chaînes musculaires) :
+                </strong>{" "}
+                pour analyser votre posture, comprendre vos tensions profondes
+                et prévenir les récidives.
+              </li>
+              <li className="text-slate-600 text-lg leading-relaxed pl-4 border-l-2 border-blue-500/40">
+                <strong className="font-semibold text-slate-900">
+                  Thérapie viscérale & Médecine traditionnelle chinoise :
+                </strong>{" "}
+                pour enrichir ma lecture des déséquilibres du corps et agir sur
+                l'origine de vos inconforts (tensions abdominales, douleurs
+                récurrentes, fatigue).
+              </li>
+            </ul>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
