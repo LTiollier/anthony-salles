@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStethoscope } from "@fortawesome/free-solid-svg-icons/faStethoscope";
 import { faHandRock } from "@fortawesome/free-solid-svg-icons/faHandRock";
 import { faHeart } from "@fortawesome/free-solid-svg-icons/faHeart";
-import OrganicPulse from "@/components/organic-pulse";
+import VisceralTriadAnimation from "@/components/visceral-triad-animation";
 import Reveal from "@/components/reveal";
 
 export default function VisceralTherapySection() {
@@ -70,8 +70,8 @@ export default function VisceralTherapySection() {
           className="lg:w-1/2 flex justify-center relative"
         >
           <div className="relative group">
-            <div className="absolute inset-0 bg-green-400 rounded-full blur-[100px] opacity-20 group-hover:opacity-30 transition-opacity" />
-            <OrganicPulse />
+            <div className="absolute inset-0 bg-emerald-400 rounded-full blur-[100px] opacity-20 group-hover:opacity-30 transition-opacity" />
+            <VisceralTriadAnimation />
           </div>
         </Reveal>
       </div>
