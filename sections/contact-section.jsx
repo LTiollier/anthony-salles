@@ -7,6 +7,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons/faMapMarkerAlt";
 import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons/faCalendarCheck";
 import dynamic from "next/dynamic";
+import DefaultMapLink from "@/components/default-map-link";
 
 // Leaflet needs to be dynamically imported with ssr: false
 const LeafletMap = dynamic(() => import("@/components/leaflet-map"), {
@@ -20,12 +21,13 @@ export default function ContactSection() {
       label: "Email",
       value: "anthony.salles@protonmail.com",
       href: "mailto:anthony.salles@protonmail.com",
+      isMap: false,
     },
     {
       icon: faMapMarkerAlt,
       label: "Cabinet",
       value: "1 rue Transval, 69008 Lyon",
-      href: "https://www.google.com/maps/place/1+Rue+du+Transvaal,+69008+Lyon/@45.7470705,4.8317887,13.94z/data=!4m6!3m5!1s0x47f4c1e5fcfa76d7:0xd5e55b6f22c80e19!8m2!3d45.7381121!4d4.8782562!16s%2Fg%2F11crvly0hw?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D",
+      isMap: true,
     },
   ];
 
@@ -68,33 +70,46 @@ export default function ContactSection() {
               Informations Pratiques
             </h3>
             <div className="grid gap-4">
-              {contactInfo.map((info, idx) => (
-                <m.a
-                  key={idx}
-                  href={info.href}
-                  target={info.icon === faMapMarkerAlt ? "_blank" : undefined}
-                  rel={
-                    info.icon === faMapMarkerAlt
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                  className="flex items-center gap-4 p-5 glass border-white/50 hover:bg-white/60 transition-all group rounded-2xl"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                >
-                  <div className="size-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
-                    <FontAwesomeIcon icon={info.icon} className="size-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                      {info.label}
-                    </p>
-                    <p className="text-slate-900 font-medium">{info.value}</p>
-                  </div>
-                </m.a>
-              ))}
+              {contactInfo.map((info, idx) => {
+                const innerContent = (
+                  <>
+                    <div className="size-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
+                      <FontAwesomeIcon icon={info.icon} className="size-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                        {info.label}
+                      </p>
+                      <p className="text-slate-900 font-medium">{info.value}</p>
+                    </div>
+                  </>
+                );
+
+                if (info.isMap) {
+                  return (
+                    <DefaultMapLink
+                      key={idx}
+                      className="flex items-center gap-4 p-5 glass border-white/50 hover:bg-white/60 transition-all group rounded-2xl cursor-pointer"
+                    >
+                      {innerContent}
+                    </DefaultMapLink>
+                  );
+                }
+
+                return (
+                  <m.a
+                    key={idx}
+                    href={info.href}
+                    className="flex items-center gap-4 p-5 glass border-white/50 hover:bg-white/60 transition-all group rounded-2xl"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                  >
+                    {innerContent}
+                  </m.a>
+                );
+              })}
 
               {/* Doctolib RDV Card */}
               <m.a
@@ -179,15 +194,13 @@ export default function ContactSection() {
               <LeafletMap />
             </div>
           </div>
-          <a
-            href="https://www.google.com/maps/place/1+Rue+du+Transvaal,+69008+Lyon/@45.7470705,4.8317887,13.94z/data=!4m6!3m5!1s0x47f4c1e5fcfa76d7:0xd5e55b6f22c80e19!8m2!3d45.7381121!4d4.8782562!16s%2Fg%2F11crvly0hw?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn w-full bg-slate-900 hover:bg-slate-800 text-white text-center py-3.5 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2"
-          >
-            <FontAwesomeIcon icon={faMapMarkerAlt} className="size-4" />
-            Ouvrir dans Google Maps
-          </a>
+          <DefaultMapLink className="btn w-full bg-slate-900 hover:bg-slate-800 text-white text-center py-3.5 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <FontAwesomeIcon
+              icon={faMapMarkerAlt}
+              className="size-4 text-blue-400"
+            />
+            Ouvrir l'itinéraire
+          </DefaultMapLink>
         </m.div>
       </div>
     </section>

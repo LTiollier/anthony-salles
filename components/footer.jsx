@@ -5,6 +5,7 @@ import { faClock } from "@fortawesome/free-solid-svg-icons/faClock";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/reveal";
+import DefaultMapLink from "@/components/default-map-link";
 
 export default function Footer() {
   const services = [
@@ -81,12 +82,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="https://www.google.com/maps/place/1+Rue+du+Transvaal,+69008+Lyon/@45.7470705,4.8317887,13.94z/data=!4m6!3m5!1s0x47f4c1e5fcfa76d7:0xd5e55b6f22c80e19!8m2!3d45.7381121!4d4.8782562!16s%2Fg%2F11crvly0hw?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-slate-500 hover:text-blue-600 transition-colors font-medium group"
-                >
+                <DefaultMapLink className="flex items-start gap-3 text-slate-500 hover:text-blue-600 transition-colors font-medium group cursor-pointer">
                   <div className="size-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
                     <FontAwesomeIcon
                       icon={faMapMarkerAlt}
@@ -98,7 +94,7 @@ export default function Footer() {
                     <br />
                     69008 Lyon
                   </span>
-                </a>
+                </DefaultMapLink>
               </li>
             </ul>
           </nav>
