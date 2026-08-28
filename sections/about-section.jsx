@@ -127,7 +127,7 @@ export default function AboutSection() {
         <Reveal y={40} className="text-center max-w-2xl mx-auto mb-12">
           <h3 className="text-3xl font-bold text-slate-900">Mon cabinet</h3>
           <p className="text-slate-600 text-lg mt-4">
-            Un espace accueillant et équipé à Lyon 7e, conçu pour vous
+            Un espace accueillant et équipé à Lyon 8e, conçu pour vous
             accompagner dans vos soins, votre rééducation et votre bien-être.
           </p>
         </Reveal>
