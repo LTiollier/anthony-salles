@@ -3,7 +3,7 @@ import ContactSection from "@/sections/contact-section";
 export const metadata = {
   title: "Contact",
   description:
-    "Contactez Anthony Salles pour une consultation à Lyon 7. Informations de contact, plan d'accès et prise de rendez-vous.",
+    "Contactez Anthony Salles pour une consultation à Lyon 8. Informations de contact, plan d'accès et moyens de transport.",
 };
 
 const jsonLd = {
@@ -13,18 +13,17 @@ const jsonLd = {
   image: "https://anthony-salles.vercel.app/logo.webp",
   "@id": "https://anthony-salles.vercel.app",
   url: "https://anthony-salles.vercel.app",
-  telephone: "0478724280",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "46 Rue de la Madeleine",
+    streetAddress: "1 Rue Transval",
     addressLocality: "Lyon",
-    postalCode: "69007",
+    postalCode: "69008",
     addressCountry: "FR",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 45.7477646,
-    longitude: 4.8474168,
+    latitude: 45.7381121,
+    longitude: 4.8756813,
   },
   openingHoursSpecification: [
     {

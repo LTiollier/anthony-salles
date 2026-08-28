@@ -43,7 +43,7 @@ export default function ConfidentialitePage() {
             <p className="text-slate-600 leading-relaxed mt-4">
               <strong>Anthony SALLES</strong>
               <br />
-              46 Rue de la Madeleine, 69007 Lyon
+              1 Rue Transval, 69008 Lyon
               <br />
               Email :{" "}
               <a

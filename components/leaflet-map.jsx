@@ -17,12 +17,12 @@ const icon = L.icon({
 });
 
 export default function LeafletMap() {
-  const position = [45.748, 4.846]; // Lyon 7e coordinates
+  const position = [45.7381121, 4.8756813]; // Lyon 8e coordinates (1 Rue Transval)
 
   return (
     <MapContainer
       center={position}
-      zoom={15}
+      zoom={16}
       scrollWheelZoom={false}
       className="h-full w-full rounded-lg z-0"
     >
@@ -32,7 +32,7 @@ export default function LeafletMap() {
       />
       <Marker position={position} icon={icon}>
         <Popup>
-          Cabinet Anthony Salles <br /> 46 Rue de la Madeleine, 69007 Lyon
+          Cabinet Anthony Salles <br /> 1 Rue Transval, 69008 Lyon
         </Popup>
       </Marker>
     </MapContainer>

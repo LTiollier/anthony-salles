@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons/faMapMarkerAlt";
 import { faClock } from "@fortawesome/free-solid-svg-icons/faClock";
@@ -72,17 +71,6 @@ export default function Footer() {
             <ul className="flex flex-col gap-5 text-sm">
               <li>
                 <a
-                  href="tel:0478724280"
-                  className="flex items-center gap-3 text-slate-500 hover:text-blue-600 transition-colors font-medium group"
-                >
-                  <div className="size-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
-                    <FontAwesomeIcon icon={faPhone} className="size-3.5" />
-                  </div>
-                  04 78 72 42 80
-                </a>
-              </li>
-              <li>
-                <a
                   href="mailto:anthony.salles@protonmail.com"
                   className="flex items-center gap-3 text-slate-500 hover:text-blue-600 transition-colors font-medium group"
                 >
@@ -94,7 +82,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.google.com/maps/place/Anthony+SALLES/@45.7477683,4.8448419,17z/data=!3m1!5s0x47f4ea41dd2764ff:0x4218a02dbae9f3ee!4m6!3m5!1s0x47f4eb1834469583:0xbfdb9316deb2b1be!8m2!3d45.7477646!4d4.8474168!16s%2Fg%2F11s974tf19?entry=ttu&g_ep=EgoyMDI2MDEyMC4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
+                  href="https://www.google.com/maps/place/1+Rue+Transval,+69008+Lyon/@45.7381121,4.8756813,16z"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 text-slate-500 hover:text-blue-600 transition-colors font-medium group"
@@ -106,9 +94,9 @@ export default function Footer() {
                     />
                   </div>
                   <span>
-                    46 Rue de la Madeleine
+                    1 Rue Transval
                     <br />
-                    69007 Lyon
+                    69008 Lyon
                   </span>
                 </a>
               </li>

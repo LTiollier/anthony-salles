@@ -39,7 +39,7 @@ export default function MentionsLegalesPage() {
               (le « Site »), est édité par :
             </p>
             <p className="text-slate-600 leading-relaxed mt-4">
-              Anthony SALLES, résidant 46 Rue de la Madeleine, 69007 Lyon, de
+              Anthony SALLES, résidant 1 Rue Transval, 69008 Lyon, de
               nationalité Française (France), né(e) le 28/09/1994, inscrite au
               R.C.S. de LYON sous le numéro 90136034700032.
             </p>
@@ -71,15 +71,6 @@ export default function MentionsLegalesPage() {
             </h2>
             <ul className="text-slate-600 leading-relaxed space-y-2">
               <li>
-                <strong>Par téléphone :</strong>{" "}
-                <a
-                  href="tel:+33478724280"
-                  className="text-blue-600 hover:text-blue-700"
-                >
-                  +33478724280
-                </a>
-              </li>
-              <li>
                 <strong>Par email :</strong>{" "}
                 <a
                   href="mailto:anthony.salles@protonmail.com"
@@ -89,8 +80,7 @@ export default function MentionsLegalesPage() {
                 </a>
               </li>
               <li>
-                <strong>Par courrier :</strong> 46 Rue de la Madeleine, 69007
-                Lyon
+                <strong>Par courrier :</strong> 1 Rue Transval, 69008 Lyon
               </li>
             </ul>
           </section>
