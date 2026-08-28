@@ -10,7 +10,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons/faHeart";
 /**
  * VisceralTriadAnimation Component
  * Minimalist, elegant & high-performance visualization.
- * Uses floating circular pearls and fluid energy paths without text clutter or square cards.
+ * Uses floating circular pearls, sleek text pill badges, and fluid energy paths.
  */
 export default function VisceralTriadAnimation() {
   const shouldReduceMotion = useReducedMotion();
@@ -25,6 +25,7 @@ export default function VisceralTriadAnimation() {
       cy: 110,
       color: "#10b981", // Emerald
       iconColorClass: "text-emerald-500",
+      pillBorderClass: "group-hover:border-emerald-300",
       glowColor: "rgba(16, 185, 129, 0.4)",
     },
     {
@@ -35,6 +36,7 @@ export default function VisceralTriadAnimation() {
       cy: 310,
       color: "#f59e0b", // Amber
       iconColorClass: "text-amber-500",
+      pillBorderClass: "group-hover:border-amber-300",
       glowColor: "rgba(245, 158, 11, 0.4)",
     },
     {
@@ -45,6 +47,7 @@ export default function VisceralTriadAnimation() {
       cy: 110,
       color: "#f43f5e", // Rose
       iconColorClass: "text-rose-500",
+      pillBorderClass: "group-hover:border-rose-300",
       glowColor: "rgba(244, 63, 94, 0.4)",
     },
   ];
@@ -217,7 +220,7 @@ export default function VisceralTriadAnimation() {
         />
       </svg>
 
-      {/* Central Glass Orb (Minimalist Center) */}
+      {/* Central Glass Orb */}
       <m.div
         className="absolute z-10 size-24 md:size-28 rounded-full glass border border-white/40 shadow-lg flex flex-col items-center justify-center p-2 text-center cursor-pointer group"
         initial={{ scale: 0.8, opacity: 0 }}
@@ -245,7 +248,7 @@ export default function VisceralTriadAnimation() {
         </span>
       </m.div>
 
-      {/* 3 Circular Floating Nodes (No Tooltips, Pure Clean Elegance) */}
+      {/* 3 Circular Floating Nodes with Clean Pill Text Badges */}
       {nodes.map((node) => {
         const isHovered = activeNode === node.id;
         const leftPct = (node.cx / 400) * 100;
@@ -254,7 +257,7 @@ export default function VisceralTriadAnimation() {
         return (
           <div
             key={node.id}
-            className="absolute z-20 -translate-x-1/2 -translate-y-1/2"
+            className="absolute z-20 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group"
             style={{ left: `${leftPct}%`, top: `${topPct}%` }}
           >
             <m.button
@@ -297,6 +300,21 @@ export default function VisceralTriadAnimation() {
                 }`}
               />
             </m.button>
+
+            {/* Clean Inline Label Pill */}
+            <m.span
+              className={`mt-2 whitespace-nowrap text-[10px] md:text-[11px] font-semibold tracking-tight px-2.5 py-0.5 rounded-full backdrop-blur-md border shadow-xs pointer-events-none transition-all duration-300 ${
+                isHovered
+                  ? "bg-slate-900/90 text-white border-slate-700 scale-105"
+                  : "bg-white/80 text-slate-700 border-white/70"
+              }`}
+              initial={{ opacity: 0, y: 4 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              {node.label}
+            </m.span>
           </div>
         );
       })}
