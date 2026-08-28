@@ -23,7 +23,7 @@ Defining core SEO tags in a layout or page.
 
 ```javascript
 export const metadata = {
-  title: "Anthony Salles | Kinésithérapeute à Lyon 7",
+  title: "Anthony Salles | Kinésithérapeute à Lyon 8",
   description:
     "Expertise en kinésithérapie, médecine chinoise et thérapie viscérale. Prenez rendez-vous en ligne.",
   openGraph: {

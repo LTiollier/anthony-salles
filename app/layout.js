@@ -6,15 +6,15 @@ import LenisScroll from "@/components/lenis-scroll";
 export const metadata = {
   metadataBase: new URL("https://anthony-salles.vercel.app"),
   title: {
-    default: "Anthony Salles - Kinésithérapeute | Lyon 7",
+    default: "Anthony Salles - Kinésithérapeute | Lyon 8",
     template: "%s | Anthony Salles",
   },
   description:
-    "Expertise en kinésithérapie, chaînes musculaires GDS et thérapie viscérale à Lyon 7. Accompagnement holistique et personnalisé.",
+    "Expertise en kinésithérapie, chaînes musculaires GDS et thérapie viscérale à Lyon 8. Accompagnement holistique et personnalisé.",
   keywords: [
     "Kinésithérapeute",
     "Lyon",
-    "Lyon 7",
+    "Lyon 8",
     "Chaînes musculaires GDS",
     "Thérapie Viscérale",
     "Santé",
@@ -35,7 +35,7 @@ export const metadata = {
     apple: "/logo.webp",
   },
   openGraph: {
-    title: "Anthony Salles - Kinésithérapeute à Lyon 7",
+    title: "Anthony Salles - Kinésithérapeute à Lyon 8",
     description:
       "Expertise en kinésithérapie, chaînes musculaires GDS et thérapie viscérale. Accompagnement holistique et personnalisé.",
     url: "https://anthony-salles.vercel.app",
@@ -47,7 +47,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Anthony Salles - Kinésithérapeute",
     description:
-      "Kinésithérapie, Chaînes Musculaires GDS & Thérapie Viscérale à Lyon 7.",
+      "Kinésithérapie, Chaînes Musculaires GDS & Thérapie Viscérale à Lyon 8.",
   },
   robots: {
     index: false,

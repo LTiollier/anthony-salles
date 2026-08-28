@@ -40,7 +40,7 @@ export default function AboutSection() {
             <p className="text-slate-600 text-lg leading-relaxed">
               Masseur-kinésithérapeute diplômé d'État, je suis passionné par la
               complexité du corps humain et sa capacité de résilience. J'exerce
-              à Lyon 7e, où je propose une approche basée sur l'écoute active et
+              à Lyon 8e, où je propose une approche basée sur l'écoute active et
               des techniques précises.
             </p>
             <p className="text-slate-600 text-lg leading-relaxed">
@@ -108,7 +108,7 @@ export default function AboutSection() {
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl animate-float-image">
               <Image
                 src="/images/portrait.webp"
-                alt="Portrait d'Anthony Salles, masseur-kinésithérapeute à Lyon 7"
+                alt="Portrait d'Anthony Salles, masseur-kinésithérapeute à Lyon 8"
                 width={600}
                 height={700}
                 className="w-full h-auto object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"

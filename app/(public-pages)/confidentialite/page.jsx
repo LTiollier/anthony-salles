@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Politique de Confidentialité",
   description:
-    "Politique de confidentialité du site Anthony Salles, masseur-kinésithérapeute à Lyon 7. Protection des données personnelles et respect de votre vie privée.",
+    "Politique de confidentialité du site Anthony Salles, masseur-kinésithérapeute à Lyon 8. Protection des données personnelles et respect de votre vie privée.",
 };
 
 export default function ConfidentialitePage() {

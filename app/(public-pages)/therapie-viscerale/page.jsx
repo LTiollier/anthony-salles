@@ -3,7 +3,7 @@ import VisceralTherapySection from "@/sections/visceral-therapy-section";
 export const metadata = {
   title: "Thérapie Viscérale",
   description:
-    "La thérapie viscérale pour soulager les tensions internes et améliorer la fonction des organes. Une spécialité d'Anthony Salles à Lyon 7.",
+    "La thérapie viscérale pour soulager les tensions internes et améliorer la fonction des organes. Une spécialité d'Anthony Salles à Lyon 8.",
 };
 
 export default function VisceralTherapyPage() {
