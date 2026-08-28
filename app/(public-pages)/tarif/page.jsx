@@ -1,9 +1,12 @@
 import PricingSection from "@/sections/pricing-section";
 
 export const metadata = {
-  title: "Tarifs et Remboursements | Anthony Salles",
+  title: "Tarifs & Remboursements Kinésithérapie Lyon 8 | Anthony Salles",
   description:
-    "Découvrez les tarifs et modalités de remboursement d'Anthony Salles, kinésithérapeute à Lyon 8. Thérapie viscérale et séances conventionnées.",
+    "Consultez les tarifs des soins de kinésithérapie, thérapie viscérale et bilans à Lyon 8. Prise en charge Sécurité Sociale et Mutuelle transparente.",
+  alternates: {
+    canonical: "https://anthony-salles.vercel.app/tarif",
+  },
 };
 
 export default function PricingPage() {

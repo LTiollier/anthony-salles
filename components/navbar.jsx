@@ -49,7 +49,7 @@ export default function Navbar() {
         >
           <Image
             src="/logo.webp"
-            alt=""
+            alt="Logo Anthony Salles Kinésithérapeute Lyon 8"
             className="size-8 object-contain rounded-full shadow-sm"
             width={32}
             height={32}

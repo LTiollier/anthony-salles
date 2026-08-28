@@ -1,18 +1,23 @@
 import ContactSection from "@/sections/contact-section";
 
 export const metadata = {
-  title: "Contact",
+  title: "Contact & Prise de Rendez-vous Kiné Lyon 8 | Anthony Salles",
   description:
-    "Contactez Anthony Salles pour une consultation à Lyon 8. Informations de contact, plan d'accès et moyens de transport.",
+    "Prenez rendez-vous avec Anthony Salles, kinésithérapeute à Lyon 8 (1 rue Transval). Accès Métro D Grange Blanche & Tram T2. Prise de RDV sur Doctolib.",
+  alternates: {
+    canonical: "https://anthony-salles.vercel.app/contact",
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  name: "Anthony Salles - Kinésithérapeute",
+  name: "Anthony Salles - Kinésithérapeute Lyon 8",
   image: "https://anthony-salles.vercel.app/logo.webp",
-  "@id": "https://anthony-salles.vercel.app",
-  url: "https://anthony-salles.vercel.app",
+  "@id": "https://anthony-salles.vercel.app/#cabinet",
+  url: "https://anthony-salles.vercel.app/contact",
+  telephone: "+33478724280",
+  priceRange: "€€",
   address: {
     "@type": "PostalAddress",
     streetAddress: "1 Rue Transval",
@@ -32,6 +37,9 @@ const jsonLd = {
       opens: "09:00",
       closes: "18:00",
     },
+  ],
+  sameAs: [
+    "https://www.doctolib.fr/masseur-kinesitherapeute/lyon/anthony-salles-lyon",
   ],
 };
 

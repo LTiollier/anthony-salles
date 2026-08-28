@@ -51,6 +51,7 @@ export default function ContactSection() {
   return (
     <section className="py-24 md:py-32 max-w-6xl mx-auto px-6">
       <SectionTitle
+        isH1={true}
         title="Contact & Accès"
         description="Retrouvez toutes les informations pratiques et les moyens d'accès pour vous rendre au cabinet."
       />

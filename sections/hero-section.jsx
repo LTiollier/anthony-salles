@@ -44,17 +44,9 @@ export default function HeroSection() {
         initial="hidden"
         animate="visible"
       >
-        <m.h1
-          className="text-center text-5xl/14 md:text-7xl/20 font-bold tracking-tight text-gray-900 flex flex-wrap justify-center gap-x-[0.25em]"
-          aria-label={title}
-        >
+        <m.h1 className="text-center text-5xl/14 md:text-7xl/20 font-bold tracking-tight text-gray-900 flex flex-wrap justify-center gap-x-[0.25em]">
           {words.map((word, i) => (
-            <m.span
-              key={i}
-              variants={wordVariants}
-              className="inline-block"
-              aria-hidden="true"
-            >
+            <m.span key={i} variants={wordVariants} className="inline-block">
               {word}
             </m.span>
           ))}

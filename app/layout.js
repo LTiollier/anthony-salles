@@ -5,9 +5,12 @@ import LenisScroll from "@/components/lenis-scroll";
 
 export const metadata = {
   metadataBase: new URL("https://anthony-salles.vercel.app"),
+  alternates: {
+    canonical: "./",
+  },
   title: {
     default: "Anthony Salles - Kinésithérapeute | Lyon 8",
-    template: "%s | Anthony Salles",
+    template: "%s | Anthony Salles - Kinésithérapeute Lyon 8",
   },
   description:
     "Expertise en kinésithérapie, chaînes musculaires GDS et thérapie viscérale à Lyon 8. Accompagnement holistique et personnalisé.",
@@ -37,26 +40,33 @@ export const metadata = {
   openGraph: {
     title: "Anthony Salles - Kinésithérapeute à Lyon 8",
     description:
-      "Expertise en kinésithérapie, chaînes musculaires GDS et thérapie viscérale. Accompagnement holistique et personnalisé.",
+      "Cabinet de kinésithérapie spécialisé en chaînes musculaires GDS et thérapie viscérale à Lyon 8. Prise en charge globale et personnalisée.",
     url: "https://anthony-salles.vercel.app",
-    siteName: "Anthony Salles",
+    siteName: "Anthony Salles Kinésithérapeute",
+    images: [
+      {
+        url: "/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Anthony Salles - Kinésithérapeute Lyon 8",
+      },
+    ],
     locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anthony Salles - Kinésithérapeute",
+    title: "Anthony Salles - Kinésithérapeute Lyon 8",
     description:
-      "Kinésithérapie, Chaînes Musculaires GDS & Thérapie Viscérale à Lyon 8.",
+      "Spécialiste en kinésithérapie, chaînes musculaires GDS & thérapie viscérale à Lyon 8.",
+    images: ["/logo.webp"],
   },
   robots: {
-    index: false,
-    follow: false,
-    noindex: true,
-    nofollow: true,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,

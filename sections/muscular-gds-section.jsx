@@ -31,6 +31,7 @@ export default function MuscularGDSSection() {
   return (
     <section className="py-24 md:py-32 max-w-6xl mx-auto px-6 overflow-hidden">
       <SectionTitle
+        isH1={true}
         title="La Méthode GDS"
         description="Une approche globale basée sur les chaînes musculaires et articulaires pour rééquilibrer votre corps."
       />

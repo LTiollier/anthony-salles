@@ -60,6 +60,7 @@ export default function PricingSection() {
   return (
     <section className="py-24 md:py-32 max-w-6xl mx-auto px-6 overflow-hidden">
       <SectionTitle
+        isH1={true}
         title="Tarifs des consultations"
         description="Transparence et engagement pour des soins de qualité adaptés à vos besoins."
       />

@@ -27,6 +27,7 @@ export default function AboutSection() {
   return (
     <section className="py-24 md:py-32 max-w-6xl mx-auto px-6 overflow-hidden">
       <SectionTitle
+        isH1={true}
         title="Qui suis-je ?"
         description="Découvrez mon parcours professionnel et ma philosophie de traitement centrée sur l'humain."
       />
@@ -141,7 +142,7 @@ export default function AboutSection() {
             <div className="relative aspect-[4/3] w-full overflow-hidden">
               <Image
                 src="/images/salle-pratique.webp"
-                alt="Salle de pratique et de soin d'Anthony Salles"
+                alt="Cabinet de kinésithérapie Anthony Salles Lyon 8 - Salle de soin"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -165,7 +166,7 @@ export default function AboutSection() {
             <div className="relative aspect-[4/3] w-full overflow-hidden">
               <Image
                 src="/images/salle-de-sport.webp"
-                alt="Espace de rééducation et de mouvement"
+                alt="Espace de rééducation et de mouvement - Cabinet kiné Lyon 8"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-700"

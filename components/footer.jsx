@@ -30,7 +30,7 @@ export default function Footer() {
             >
               <Image
                 src="/logo.webp"
-                alt=""
+                alt="Logo Anthony Salles Kinésithérapeute Lyon 8"
                 className="size-10 object-contain rounded-full bg-white shadow-sm"
                 width={40}
                 height={40}
