@@ -9,45 +9,47 @@ import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons/faCalendarChe
 import dynamic from "next/dynamic";
 import DefaultMapLink from "@/components/default-map-link";
 
+const MotionDefaultMapLink = m.create(DefaultMapLink);
+
 // Leaflet needs to be dynamically imported with ssr: false
 const LeafletMap = dynamic(() => import("@/components/leaflet-map"), {
   ssr: false,
 });
 
+const CONTACT_INFO = [
+  {
+    icon: faEnvelope,
+    label: "Email",
+    value: "anthony.salles@protonmail.com",
+    href: "mailto:anthony.salles@protonmail.com",
+    isMap: false,
+  },
+  {
+    icon: faMapMarkerAlt,
+    label: "Cabinet",
+    value: "1 rue Transval, 69008 Lyon",
+    isMap: true,
+  },
+];
+
+const TRANSPORTS = [
+  {
+    type: "metro",
+    line: "D",
+    lineBg: "bg-[#009a44]",
+    station: "Grange Blanche",
+    details: "à 9min à pied",
+  },
+  {
+    type: "tram",
+    line: "T2",
+    lineBg: "bg-[#702c8e]",
+    station: "Jean XXIII - M. Bastié",
+    details: "à 8min à pied",
+  },
+];
+
 export default function ContactSection() {
-  const contactInfo = [
-    {
-      icon: faEnvelope,
-      label: "Email",
-      value: "anthony.salles@protonmail.com",
-      href: "mailto:anthony.salles@protonmail.com",
-      isMap: false,
-    },
-    {
-      icon: faMapMarkerAlt,
-      label: "Cabinet",
-      value: "1 rue Transval, 69008 Lyon",
-      isMap: true,
-    },
-  ];
-
-  const transports = [
-    {
-      type: "metro",
-      line: "D",
-      lineBg: "bg-[#009a44]",
-      station: "Grange Blanche",
-      details: "à 9min à pied",
-    },
-    {
-      type: "tram",
-      line: "T2",
-      lineBg: "bg-[#702c8e]",
-      station: "Jean XXIII - M. Bastié",
-      details: "à 8min à pied",
-    },
-  ];
-
   return (
     <section className="py-24 md:py-32 max-w-6xl mx-auto px-6">
       <SectionTitle
@@ -60,8 +62,8 @@ export default function ContactSection() {
         {/* Left Column: Practical Info & Transport */}
         <m.div
           className="space-y-10"
-          initial={{ x: -30, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
@@ -71,7 +73,7 @@ export default function ContactSection() {
               Informations Pratiques
             </h3>
             <div className="grid gap-4">
-              {contactInfo.map((info, idx) => {
+              {CONTACT_INFO.map((info, idx) => {
                 const innerContent = (
                   <>
                     <div className="size-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
@@ -88,12 +90,16 @@ export default function ContactSection() {
 
                 if (info.isMap) {
                   return (
-                    <DefaultMapLink
+                    <MotionDefaultMapLink
                       key={idx}
                       className="flex items-center gap-4 p-5 glass border-white/50 hover:bg-white/60 transition-all group rounded-2xl cursor-pointer"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.1 }}
                     >
                       {innerContent}
-                    </DefaultMapLink>
+                    </MotionDefaultMapLink>
                   );
                 }
 
@@ -102,8 +108,8 @@ export default function ContactSection() {
                     key={idx}
                     href={info.href}
                     className="flex items-center gap-4 p-5 glass border-white/50 hover:bg-white/60 transition-all group rounded-2xl"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
                   >
@@ -118,8 +124,8 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-5 glass border-blue-200/60 bg-blue-50/40 hover:bg-blue-600 group transition-all rounded-2xl"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
@@ -145,12 +151,12 @@ export default function ContactSection() {
             </h3>
 
             <div className="grid gap-4">
-              {transports.map((item, idx) => (
+              {TRANSPORTS.map((item, idx) => (
                 <m.div
                   key={idx}
                   className="flex items-center gap-4 p-5 glass border-white/50 rounded-2xl"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                 >
@@ -182,8 +188,8 @@ export default function ContactSection() {
         {/* Right Column: Interactive Map */}
         <m.div
           className="space-y-6 flex flex-col justify-between"
-          initial={{ x: 30, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
