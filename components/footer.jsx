@@ -110,7 +110,7 @@ export default function Footer() {
                   icon={faClock}
                   className="text-blue-500 size-4"
                 />
-                <span>Lun - Ven: 08:30 - 19:30</span>
+                <span>Lun - Ven: 9h - 18h</span>
               </div>
               <a
                 href="https://www.doctolib.fr/masseur-kinesitherapeute/lyon/anthony-salles-lyon"
