@@ -8,9 +8,9 @@ import { faHandRock } from "@fortawesome/free-solid-svg-icons/faHandRock";
 import { faHeart } from "@fortawesome/free-solid-svg-icons/faHeart";
 
 /**
- * VisceralTriadAnimation Component (Option 2)
- * High-performance interactive SVG & Framer Motion visualization representing the
- * 3 pillars of Visceral Therapy connected via fascial energy network.
+ * VisceralTriadAnimation Component
+ * Minimalist, elegant & high-performance visualization.
+ * Uses floating circular pearls and fluid energy paths without text clutter or square cards.
  */
 export default function VisceralTriadAnimation() {
   const shouldReduceMotion = useReducedMotion();
@@ -19,48 +19,38 @@ export default function VisceralTriadAnimation() {
   const nodes = [
     {
       id: "organic",
-      title: "Fonction Organique",
-      subtitle: "Mobilité & Tissus",
+      label: "Fonction Organique",
       icon: faStethoscope,
       cx: 300,
       cy: 110,
-      color: "emerald",
-      bgClass: "bg-emerald-500",
-      textClass: "text-emerald-600",
-      borderClass: "border-emerald-300",
+      color: "#10b981", // Emerald
+      iconColorClass: "text-emerald-500",
       glowColor: "rgba(16, 185, 129, 0.4)",
     },
     {
       id: "structure",
-      title: "Douleurs Chroniques",
-      subtitle: "Libération Dos & Cou",
+      label: "Douleurs Chroniques",
       icon: faHandRock,
       cx: 200,
       cy: 310,
-      color: "amber",
-      bgClass: "bg-amber-500",
-      textClass: "text-amber-600",
-      borderClass: "border-amber-300",
+      color: "#f59e0b", // Amber
+      iconColorClass: "text-amber-500",
       glowColor: "rgba(245, 158, 11, 0.4)",
     },
     {
       id: "nervous",
-      title: "Équilibre Nerveux",
-      subtitle: "Système Vagal",
+      label: "Équilibre Nerveux",
       icon: faHeart,
       cx: 100,
       cy: 110,
-      color: "rose",
-      bgClass: "bg-rose-500",
-      textClass: "text-rose-600",
-      borderClass: "border-rose-300",
+      color: "#f43f5e", // Rose
+      iconColorClass: "text-rose-500",
       glowColor: "rgba(244, 63, 94, 0.4)",
     },
   ];
 
   // SVG Paths linking Center (200,200) to Nodes and Node-to-Node perimeters
   const connections = [
-    // Center to Nodes
     {
       id: "c-organic",
       from: "center",
@@ -88,7 +78,6 @@ export default function VisceralTriadAnimation() {
       duration: 3.8,
       delay: 0.2,
     },
-    // Perimeter links
     {
       id: "p-org-str",
       from: "organic",
@@ -119,31 +108,31 @@ export default function VisceralTriadAnimation() {
   ];
 
   const getPathOpacity = (conn) => {
-    if (!activeNode) return 0.4;
-    if (conn.from === activeNode || conn.to === activeNode) return 0.9;
-    return 0.15;
+    if (!activeNode) return 0.35;
+    if (conn.from === activeNode || conn.to === activeNode) return 0.85;
+    return 0.1;
   };
 
   const getPathWidth = (conn) => {
-    if (!activeNode) return 1.5;
-    if (conn.from === activeNode || conn.to === activeNode) return 2.5;
+    if (!activeNode) return 1.2;
+    if (conn.from === activeNode || conn.to === activeNode) return 2.2;
     return 1;
   };
 
   return (
-    <div className="relative size-80 md:size-[420px] flex items-center justify-center select-none">
-      {/* Dynamic Background Glow Layer (GPU accelerated, fixed position blur) */}
+    <div className="relative size-80 md:size-[380px] flex items-center justify-center select-none">
+      {/* Soft Background Glow Layer */}
       <div
-        className="absolute inset-4 rounded-full blur-[90px] opacity-25 transition-all duration-700 pointer-events-none"
+        className="absolute inset-6 rounded-full blur-[80px] opacity-20 transition-all duration-700 pointer-events-none"
         style={{
           background:
             activeNode === "organic"
-              ? "radial-gradient(circle, rgba(16,185,129,0.5) 0%, rgba(255,255,255,0) 70%)"
+              ? "radial-gradient(circle, rgba(16,185,129,0.6) 0%, transparent 70%)"
               : activeNode === "structure"
-                ? "radial-gradient(circle, rgba(245,158,11,0.5) 0%, rgba(255,255,255,0) 70%)"
+                ? "radial-gradient(circle, rgba(245,158,11,0.6) 0%, transparent 70%)"
                 : activeNode === "nervous"
-                  ? "radial-gradient(circle, rgba(244,63,94,0.5) 0%, rgba(255,255,255,0) 70%)"
-                  : "radial-gradient(circle, rgba(16,185,129,0.3) 0%, rgba(245,158,11,0.2) 40%, rgba(244,63,94,0.2) 80%)",
+                  ? "radial-gradient(circle, rgba(244,63,94,0.6) 0%, transparent 70%)"
+                  : "radial-gradient(circle, rgba(16,185,129,0.3) 0%, rgba(245,158,11,0.2) 50%, rgba(244,63,94,0.2) 100%)",
         }}
       />
 
@@ -152,30 +141,29 @@ export default function VisceralTriadAnimation() {
         viewBox="0 0 400 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full drop-shadow-md z-0 overflow-visible"
+        className="w-full h-full drop-shadow-sm z-0 overflow-visible"
       >
-        {/* Render Fascial Connections */}
         {connections.map((conn) => (
           <g key={conn.id}>
-            {/* Background Glow Path */}
+            {/* Soft Outer Glow Path */}
             <m.path
               d={conn.d}
               stroke={conn.color}
-              strokeWidth={getPathWidth(conn) + 3}
+              strokeWidth={getPathWidth(conn) + 2}
               strokeLinecap="round"
               initial={{ opacity: 0 }}
-              animate={{ opacity: getPathOpacity(conn) * 0.4 }}
+              animate={{ opacity: getPathOpacity(conn) * 0.3 }}
               transition={{ duration: 0.3 }}
               style={{ filter: "blur(3px)" }}
             />
 
-            {/* Main Interactive Path */}
+            {/* Main Fascial Path */}
             <m.path
               d={conn.d}
               stroke={conn.color}
               strokeWidth={getPathWidth(conn)}
               strokeLinecap="round"
-              strokeDasharray="6 4"
+              strokeDasharray="4 4"
               initial={{ pathLength: 0, opacity: 0 }}
               whileInView={{ pathLength: 1, opacity: getPathOpacity(conn) }}
               viewport={{ once: true }}
@@ -186,14 +174,14 @@ export default function VisceralTriadAnimation() {
               }}
             />
 
-            {/* Light Pulse Energy Particles */}
+            {/* Energy Flow Particles */}
             {!shouldReduceMotion && (
               <m.circle
                 r={
                   activeNode &&
                   (conn.from === activeNode || conn.to === activeNode)
-                    ? "3.5"
-                    : "2.5"
+                    ? "3"
+                    : "2"
                 }
                 fill={conn.color}
                 initial={{ opacity: 0, "--offset-dist": "0%" }}
@@ -210,57 +198,54 @@ export default function VisceralTriadAnimation() {
                 style={{
                   offsetPath: `path("${conn.d}")`,
                   offsetDistance: "var(--offset-dist)",
-                  filter: `drop-shadow(0 0 6px ${conn.color})`,
+                  filter: `drop-shadow(0 0 4px ${conn.color})`,
                 }}
               />
             )}
           </g>
         ))}
 
-        {/* Outer Glass Ring Frame */}
+        {/* Delicate Outer Ring */}
         <circle
           cx="200"
           cy="200"
-          r="165"
-          stroke="rgba(255, 255, 255, 0.4)"
+          r="160"
+          stroke="rgba(255, 255, 255, 0.3)"
           strokeWidth="1"
           strokeDasharray="2 6"
-          className="opacity-60"
+          className="opacity-50"
         />
       </svg>
 
-      {/* Central Equilibrium Node (Glassmorphism Core) */}
+      {/* Central Glass Orb (Minimalist Center) */}
       <m.div
-        className="absolute z-10 size-28 md:size-36 rounded-full glass border border-white/40 shadow-xl flex flex-col items-center justify-center p-3 text-center cursor-pointer group"
+        className="absolute z-10 size-24 md:size-28 rounded-full glass border border-white/40 shadow-lg flex flex-col items-center justify-center p-2 text-center cursor-pointer group"
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ type: "spring", stiffness: 120, damping: 18 }}
-        whileHover={{ scale: 1.06 }}
+        whileHover={{ scale: 1.08 }}
         onMouseEnter={() => setActiveNode("center")}
         onMouseLeave={() => setActiveNode(null)}
       >
-        {/* Soft Inner Pulsing Ring */}
+        {/* Concentric Breathing Pulse */}
         <m.div
-          className="absolute inset-1 rounded-full border border-emerald-400/30"
+          className="absolute inset-0 rounded-full border border-emerald-400/30 pointer-events-none"
           animate={
             shouldReduceMotion
               ? undefined
-              : { scale: [1, 1.08, 1], opacity: [0.3, 0.7, 0.3] }
+              : { scale: [1, 1.15, 1], opacity: [0.2, 0.6, 0.2] }
           }
-          transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
 
-        <div className="size-2.5 rounded-full bg-emerald-500 mb-1.5 animate-pulse shadow-[0_0_8px_#10b981]" />
-        <span className="text-xs font-bold text-slate-800 tracking-tight leading-tight">
+        <div className="size-2 rounded-full bg-emerald-500 mb-1 animate-pulse shadow-[0_0_8px_#10b981]" />
+        <span className="text-[11px] font-semibold text-slate-800 tracking-tight">
           Harmonie
-        </span>
-        <span className="text-[10px] text-slate-500 font-medium leading-tight">
-          Viscérale
         </span>
       </m.div>
 
-      {/* 3 Interactive Peripheral Nodes */}
+      {/* 3 Circular Floating Nodes (No Tooltips, Pure Clean Elegance) */}
       {nodes.map((node) => {
         const isHovered = activeNode === node.id;
         const leftPct = (node.cx / 400) * 100;
@@ -274,11 +259,11 @@ export default function VisceralTriadAnimation() {
           >
             <m.button
               type="button"
-              aria-label={node.title}
-              className={`relative size-14 md:size-16 rounded-2xl glass border flex items-center justify-center shadow-lg transition-all duration-300 ${
+              aria-label={node.label}
+              className={`relative size-12 md:size-14 rounded-full glass border flex items-center justify-center shadow-md transition-all duration-300 ${
                 isHovered
-                  ? `${node.borderClass} bg-white scale-110 shadow-2xl ring-4 ring-offset-2 ring-emerald-100`
-                  : "border-white/50 hover:border-slate-300"
+                  ? "bg-white border-white scale-115 shadow-xl ring-4 ring-emerald-100/50"
+                  : "border-white/60 hover:border-white"
               }`}
               initial={{ scale: 0, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
@@ -295,41 +280,23 @@ export default function VisceralTriadAnimation() {
                 setActiveNode(activeNode === node.id ? null : node.id)
               }
             >
-              {/* Outer Pulse effect on hover */}
+              {/* Soft Pulse Halo on Hover */}
               {isHovered && (
                 <m.span
-                  className={`absolute inset-0 rounded-2xl ${node.bgClass} opacity-20`}
-                  initial={{ scale: 1, opacity: 0.4 }}
-                  animate={{ scale: 1.3, opacity: 0 }}
+                  className="absolute inset-0 rounded-full bg-emerald-400/20"
+                  initial={{ scale: 1, opacity: 0.5 }}
+                  animate={{ scale: 1.4, opacity: 0 }}
                   transition={{ duration: 1, repeat: Infinity }}
                 />
               )}
 
               <FontAwesomeIcon
                 icon={node.icon}
-                className={`size-6 transition-colors duration-300 ${
-                  isHovered ? node.textClass : "text-slate-700"
+                className={`size-5 transition-colors duration-300 ${
+                  isHovered ? node.iconColorClass : "text-slate-700"
                 }`}
               />
             </m.button>
-
-            {/* Label Tooltip */}
-            <m.div
-              className={`absolute left-1/2 -translate-x-1/2 mt-2 w-32 px-2 py-1 rounded-lg text-center backdrop-blur-md border shadow-sm pointer-events-none transition-all duration-300 ${
-                isHovered
-                  ? "bg-slate-900/90 text-white border-slate-700 opacity-100 translate-y-0"
-                  : "bg-white/80 text-slate-700 border-white/60 opacity-80 translate-y-0.5"
-              }`}
-              initial={false}
-              animate={{ scale: isHovered ? 1.05 : 1 }}
-            >
-              <p className="text-[11px] font-bold leading-tight">
-                {node.title}
-              </p>
-              <p className="text-[9px] opacity-75 font-normal leading-tight mt-0.5">
-                {node.subtitle}
-              </p>
-            </m.div>
           </div>
         );
       })}
