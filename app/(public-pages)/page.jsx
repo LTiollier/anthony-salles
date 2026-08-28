@@ -3,7 +3,7 @@ import Features from "@/sections/features";
 import HeroSection from "@/sections/hero-section";
 
 export const metadata = {
-  title: "Accueil | Kinésithérapeute 8",
+  title: "Accueil | Kinésithérapeute Lyon 8",
   description:
     "Bienvenue au cabinet d'Anthony Salles. Kinésithérapie, médecine chinoise et thérapie viscérale à Lyon 8. Prenez rendez-vous en ligne.",
 };

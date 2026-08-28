@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Mentions Légales",
   description:
-    "Mentions légales du site Anthony Salles, masseur-kinésithérapeute à 8.",
+    "Mentions légales du site Anthony Salles, masseur-kinésithérapeute à Lyon 8.",
 };
 
 export default function MentionsLegalesPage() {
