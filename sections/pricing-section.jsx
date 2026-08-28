@@ -2,45 +2,61 @@ import SectionTitle from "@/components/section-title";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandSparkles } from "@fortawesome/free-solid-svg-icons/faHandSparkles";
 import { faHandHoldingMedical } from "@fortawesome/free-solid-svg-icons/faHandHoldingMedical";
+import { faFileMedical } from "@fortawesome/free-solid-svg-icons/faFileMedical";
 import { faClock } from "@fortawesome/free-solid-svg-icons/faClock";
 import { faShieldHeart } from "@fortawesome/free-solid-svg-icons/faShieldHeart";
 import Reveal from "@/components/reveal";
 
-export default function PricingSection() {
-  const pricingData = [
-    {
-      title: "Thérapie Viscérale",
-      icon: faHandSparkles,
-      price: "45€",
-      duration: "45 minutes",
-      description:
-        "Séance spécifique de thérapie viscérale pour le soulagement des tensions internes.",
-      details: [
-        "Approche manuelle douce",
-        "Rééquilibrage des organes",
-        "Amélioration de la fonction digestive",
-        "Réduction des tensions chroniques",
-      ],
-      highlight: true,
-    },
-    {
-      title: "Kinésithérapie & Autres",
-      icon: faHandHoldingMedical,
-      price: "18€ - 25€",
-      extra: "+3€ de dépassement",
-      duration: "30 minutes (en moyenne)",
-      description:
-        "Soins conventionnés de masso-kinésithérapie et méthodes de chaînes musculaires GDS.",
-      details: [
-        "Rééducation fonctionnelle",
-        "Chaînes musculaires GDS",
-        "Prise en charge personnalisée",
-        "Remboursé Sécurité Sociale & Mutuelle",
-      ],
-      highlight: false,
-    },
-  ];
+const pricingData = [
+  {
+    title: "Bilan kinésithérapie",
+    icon: faFileMedical,
+    price: "45€",
+    duration: "40 minutes",
+    description:
+      "Bilan initial complet pour évaluer vos besoins et établir un plan de traitement personnalisé.",
+    details: [
+      "Évaluation diagnostique kinésithérapique",
+      "Bilan postural et fonctionnel",
+      "Définition des objectifs thérapeutiques",
+      "Conseils et plan de soins personnalisé",
+    ],
+    highlight: false,
+  },
+  {
+    title: "Kinésithérapie & Autres",
+    icon: faHandHoldingMedical,
+    price: "22€ - 26€",
+    extra: "dont hors nomenclature de 5€ inclus",
+    duration: "20 minutes",
+    description:
+      "Soins conventionnés de masso-kinésithérapie et méthodes de chaînes musculaires GDS.",
+    details: [
+      "Rééducation fonctionnelle",
+      "Chaînes musculaires GDS",
+      "Prise en charge personnalisée",
+      "Remboursé Sécurité Sociale & Mutuelle",
+    ],
+    highlight: false,
+  },
+  {
+    title: "Thérapie Viscérale",
+    icon: faHandSparkles,
+    price: "45€",
+    duration: "40 minutes",
+    description:
+      "Séance spécifique de thérapie viscérale pour le soulagement des tensions internes.",
+    details: [
+      "Approche manuelle douce",
+      "Rééquilibrage des organes",
+      "Amélioration de la fonction digestive",
+      "Réduction des tensions chroniques",
+    ],
+    highlight: true,
+  },
+];
 
+export default function PricingSection() {
   return (
     <section className="py-24 md:py-32 max-w-6xl mx-auto px-6 overflow-hidden">
       <SectionTitle
@@ -48,11 +64,11 @@ export default function PricingSection() {
         description="Transparence et engagement pour des soins de qualité adaptés à vos besoins."
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-6xl mx-auto">
         {pricingData.map((item, index) => (
           <Reveal key={index} y={0} delay={index * 0.1} className="h-full">
             <div
-              className={`relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden h-full ${
+              className={`relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden h-full flex flex-col justify-between ${
                 item.highlight
                   ? "bg-white shadow-2xl shadow-blue-500/10 border-blue-200"
                   : "bg-white/40 backdrop-blur-sm border-slate-200 hover:border-blue-200"
@@ -64,53 +80,55 @@ export default function PricingSection() {
                 </div>
               )}
 
-              <div className="space-y-6">
-                <div
-                  className={`size-14 rounded-2xl flex items-center justify-center text-2xl ${
-                    item.highlight
-                      ? "bg-blue-600 text-white"
-                      : "bg-blue-50 text-blue-600"
-                  }`}
-                >
-                  <FontAwesomeIcon icon={item.icon} />
-                </div>
+              <div className="space-y-6 flex-1 flex flex-col justify-between">
+                <div className="space-y-6">
+                  <div
+                    className={`size-14 rounded-2xl flex items-center justify-center text-2xl ${
+                      item.highlight
+                        ? "bg-blue-600 text-white"
+                        : "bg-blue-50 text-blue-600"
+                    }`}
+                  >
+                    <FontAwesomeIcon icon={item.icon} />
+                  </div>
 
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
 
-                <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-extrabold text-slate-900">
-                    {item.price}
-                  </span>
-                  {item.extra && (
-                    <span className="text-blue-600 font-semibold text-sm">
-                      {item.extra}
+                  <div className="flex flex-col gap-1">
+                    <span className="text-4xl font-extrabold text-slate-900">
+                      {item.price}
                     </span>
-                  )}
-                </div>
+                    {item.extra && (
+                      <span className="text-blue-600 font-semibold text-xs">
+                        {item.extra}
+                      </span>
+                    )}
+                  </div>
 
-                <div className="flex items-center gap-3 text-slate-600 font-medium text-sm">
-                  <FontAwesomeIcon icon={faClock} className="text-blue-500" />
-                  <span>{item.duration}</span>
-                </div>
+                  <div className="flex items-center gap-3 text-slate-600 font-medium text-sm">
+                    <FontAwesomeIcon icon={faClock} className="text-blue-500" />
+                    <span>{item.duration}</span>
+                  </div>
 
-                <ul className="space-y-3 pt-4 border-t border-slate-100">
-                  {item.details.map((detail, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-center gap-3 text-slate-600 text-sm"
-                    >
-                      <div className="size-1.5 rounded-full bg-blue-400" />
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="space-y-3 pt-4 border-t border-slate-100">
+                    {item.details.map((detail, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center gap-3 text-slate-600 text-sm"
+                      >
+                        <div className="size-1.5 rounded-full bg-blue-400 shrink-0" />
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 <div className="pt-6">
                   <a
@@ -147,8 +165,8 @@ export default function PricingSection() {
             s'effectue sur la base des tarifs de la Sécurité Sociale (60%) et de
             votre Mutuelle (40%).
             <br />
-            Le dépassement d'honoraires de 3€ peut être pris en charge par
-            certaines mutuelles (hors CMU/AME).
+            Le montant hors nomenclature (5€) peut être pris en charge par
+            certaines mutuelles selon votre contrat.
           </p>
         </div>
       </Reveal>
