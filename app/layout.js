@@ -72,6 +72,9 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "2G9_JUg6F0VQQnOeh2niopPasqpDNKLsXzdDpAtPRdw",
+  },
 };
 
 const poppins = Poppins({
