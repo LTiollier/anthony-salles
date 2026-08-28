@@ -25,7 +25,7 @@ export default function ContactSection() {
       icon: faMapMarkerAlt,
       label: "Cabinet",
       value: "1 rue Transval, 69008 Lyon",
-      href: "https://www.google.com/maps/place/1+Rue+Transval,+69008+Lyon/@45.7381121,4.8756813,16z",
+      href: "https://www.google.com/maps/place/1+Rue+du+Transvaal,+69008+Lyon/@45.7470705,4.8317887,13.94z/data=!4m6!3m5!1s0x47f4c1e5fcfa76d7:0xd5e55b6f22c80e19!8m2!3d45.7381121!4d4.8782562!16s%2Fg%2F11crvly0hw?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D",
     },
   ];
 
@@ -180,7 +180,7 @@ export default function ContactSection() {
             </div>
           </div>
           <a
-            href="https://www.google.com/maps/place/1+Rue+Transval,+69008+Lyon/@45.7381121,4.8756813,16z"
+            href="https://www.google.com/maps/place/1+Rue+du+Transvaal,+69008+Lyon/@45.7470705,4.8317887,13.94z/data=!4m6!3m5!1s0x47f4c1e5fcfa76d7:0xd5e55b6f22c80e19!8m2!3d45.7381121!4d4.8782562!16s%2Fg%2F11crvly0hw?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             className="btn w-full bg-slate-900 hover:bg-slate-800 text-white text-center py-3.5 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2"
