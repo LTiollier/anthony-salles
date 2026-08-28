@@ -66,7 +66,9 @@ export default function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
-          Je vous accompagne via une approche holistique pour votre bien-être, combinant des techniques modernes et ancestrales pour une prise en charge personnalisée au cœur de Lyon 8.
+          Je vous accompagne via une approche holistique pour votre bien-être,
+          combinant des techniques modernes et ancestrales pour une prise en
+          charge personnalisée au cœur de Lyon 8.
         </m.p>
 
         <m.div

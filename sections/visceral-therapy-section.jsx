@@ -7,24 +7,30 @@ import VisceralTriadAnimation from "@/components/visceral-triad-animation";
 import Reveal from "@/components/reveal";
 
 export default function VisceralTherapySection() {
+  const objectives = [
+    "Libérer les tensions abdominales et profondes.",
+    "Favoriser une meilleure mobilité des tissus et améliorer le confort au quotidien.",
+    "Réduire l'impact de ces tensions sur l'ensemble de la structure corporelle (dos, posture).",
+  ];
+
   const benefits = [
     {
       icon: faStethoscope,
-      title: "Fonction Organique",
+      title: "Tensions Abdominales",
       description:
-        "Aide à restaurer la mobilité naturelle et le fonctionnement optimal des organes internes.",
+        "Libération des tensions abdominales et profondes pour un meilleur confort.",
     },
     {
       icon: faHandRock,
-      title: "Douleurs Chroniques",
+      title: "Mobilité Tissulaire",
       description:
-        "Réduit les tensions et les adhérences pouvant causer des douleurs au dos, au cou ou à la tête.",
+        "Amélioration de la mobilité des tissus et du confort au quotidien.",
     },
     {
       icon: faHeart,
-      title: "Équilibre Nerveux",
+      title: "Équilibre Postural",
       description:
-        "Contribue à une meilleure relaxation en agissant sur le système nerveux autonome (SNA).",
+        "Réduction de l'impact des tensions sur l'ensemble de la structure corporelle.",
     },
   ];
 
@@ -32,7 +38,7 @@ export default function VisceralTherapySection() {
     <section className="py-24 md:py-32 max-w-6xl mx-auto px-6 overflow-hidden">
       <SectionTitle
         title="La Thérapie Viscérale"
-        description="Une approche manuelle douce pour améliorer la santé de vos organes et votre équilibre global."
+        description="Une approche manuelle douce centrée sur la mobilité des organes internes et de leurs tissus de soutien."
       />
 
       <div className="flex flex-col lg:flex-row-reverse items-center gap-16 mt-16">
@@ -43,22 +49,36 @@ export default function VisceralTherapySection() {
               <span className="text-blue-600">le mouvement viscéral</span>
             </h3>
             <p className="text-slate-600 text-lg leading-relaxed">
-              La thérapie viscérale est une méthode manuelle douce qui évalue et
-              traite les restrictions de mouvement des organes internes
-              (viscères) et de leurs tissus conjonctifs. Ces restrictions
-              peuvent être à l'origine de divers troubles fonctionnels et
-              douleurs.
+              La thérapie viscérale est une approche manuelle douce centrée sur
+              la mobilité des organes internes (digestifs, thoraciques) et de
+              leurs tissus de soutien. Des tensions à ce niveau peuvent parfois
+              se répercuter sur la posture et entretenir des inconforts
+              durables.
             </p>
-            <p className="text-slate-600 text-lg leading-relaxed">
-              Mon objectif est de restaurer la mobilité naturelle des viscères,
-              d'améliorer leur vascularisation et innervation, et de libérer les
-              tensions qui peuvent impacter l'ensemble de votre structure.
-            </p>
-            <div className="p-6 glass border-green-100 bg-green-50/30">
-              <p className="text-slate-700 leading-relaxed italic">
-                Cette thérapie est indiquée pour une large gamme de
-                déséquilibres, allant des problèmes digestifs et gynécologiques
-                aux douleurs musculo-squelettiques chroniques.
+
+            <div className="space-y-4 pt-2">
+              <h4 className="font-semibold text-slate-900 text-lg">
+                Mon objectif à travers cette approche :
+              </h4>
+              <ul className="space-y-3">
+                {objectives.map((obj, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <span className="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-blue-600" />
+                    <span className="text-slate-700 text-base leading-relaxed">
+                      {obj}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="p-6 glass border-green-100 bg-green-50/40 rounded-2xl">
+              <p className="text-slate-700 leading-relaxed">
+                J'associe à cette pratique la lecture globale de la médecine
+                traditionnelle chinoise. Cette grille de lecture complémentaire
+                permet de mieux appréhender les liens complexes entre le
+                fonctionnement des organes, la circulation de l'énergie et
+                l'état général (fatigue, stress, douleurs récurrentes).
               </p>
             </div>
           </div>
