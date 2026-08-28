@@ -47,9 +47,9 @@ export default function Footer() {
 
           {/* Services */}
           <nav aria-label="Services secondaires">
-            <h4 className="text-slate-900 font-bold mb-6 text-sm uppercase tracking-wider">
+            <p className="text-slate-900 font-bold mb-6 text-sm uppercase tracking-wider">
               Services
-            </h4>
+            </p>
             <ul className="flex flex-col gap-4">
               {services.map((service, index) => (
                 <li key={index}>
@@ -66,9 +66,9 @@ export default function Footer() {
 
           {/* Direct Contact */}
           <nav aria-label="Contact rapide">
-            <h4 className="text-slate-900 font-bold mb-6 text-sm uppercase tracking-wider">
+            <p className="text-slate-900 font-bold mb-6 text-sm uppercase tracking-wider">
               Contact
-            </h4>
+            </p>
             <ul className="flex flex-col gap-5 text-sm">
               <li>
                 <a
@@ -101,9 +101,9 @@ export default function Footer() {
 
           {/* Opening Hours */}
           <div aria-label="Horaires d'ouverture">
-            <h4 className="text-slate-900 font-bold mb-6 text-sm uppercase tracking-wider">
+            <p className="text-slate-900 font-bold mb-6 text-sm uppercase tracking-wider">
               Horaires
-            </h4>
+            </p>
             <div className="p-5 glass border-white/60 bg-white/40 space-y-4">
               <div className="flex items-center gap-3 text-sm font-medium text-slate-600">
                 <FontAwesomeIcon

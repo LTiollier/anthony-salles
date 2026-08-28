@@ -69,9 +69,9 @@ export default function ContactSection() {
         >
           {/* Informations Pratiques */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-slate-900 border-l-4 border-blue-500 pl-4">
+            <h2 className="text-2xl font-bold text-slate-900 border-l-4 border-blue-500 pl-4">
               Informations Pratiques
-            </h3>
+            </h2>
             <div className="grid gap-4">
               {CONTACT_INFO.map((info, idx) => {
                 const innerContent = (
@@ -146,9 +146,9 @@ export default function ContactSection() {
 
           {/* Moyens d'Accès */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-slate-900 border-l-4 border-blue-500 pl-4">
+            <h2 className="text-2xl font-bold text-slate-900 border-l-4 border-blue-500 pl-4">
               Moyens d'Accès
-            </h3>
+            </h2>
 
             <div className="grid gap-4">
               {TRANSPORTS.map((item, idx) => (
@@ -194,9 +194,9 @@ export default function ContactSection() {
           transition={{ duration: 0.5 }}
         >
           <div className="space-y-6 flex-1 flex flex-col">
-            <h3 className="text-2xl font-bold text-slate-900 border-l-4 border-blue-500 pl-4">
+            <h2 className="text-2xl font-bold text-slate-900 border-l-4 border-blue-500 pl-4">
               Plan d'Accès
-            </h3>
+            </h2>
             <div className="w-full h-80 lg:h-full min-h-[320px] rounded-3xl overflow-hidden shadow-xl border border-white/40 ring-1 ring-slate-200/50">
               <LeafletMap />
             </div>

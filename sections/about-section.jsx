@@ -35,9 +35,9 @@ export default function AboutSection() {
       <div className="flex flex-col lg:flex-row items-center gap-16 mt-16">
         <Reveal y={50} className="lg:w-1/2 space-y-8">
           <div className="space-y-4">
-            <h3 className="text-3xl font-bold text-slate-900 leading-tight">
+            <h2 className="text-3xl font-bold text-slate-900 leading-tight">
               Mon parcours et ma passion pour le mouvement
-            </h3>
+            </h2>
             <p className="text-slate-600 text-lg leading-relaxed">
               Masseur-kinésithérapeute diplômé d'État, je vous accueille dans
               mon cabinet situé à Lyon 8e. Passionné par la complexité du corps
@@ -73,9 +73,9 @@ export default function AboutSection() {
                 key={index}
                 className="p-5 glass border-white/40 group hover:border-blue-200 transition-colors"
               >
-                <h4 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {skill.title}
-                </h4>
+                </h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
                   {skill.description}
                 </p>
@@ -84,9 +84,9 @@ export default function AboutSection() {
           </div>
 
           <div className="space-y-6 pt-4">
-            <h4 className="text-xl font-bold text-slate-900 border-l-4 border-blue-500 pl-4">
+            <h3 className="text-xl font-bold text-slate-900 border-l-4 border-blue-500 pl-4">
               Formations & Expertises
-            </h4>
+            </h3>
             <div className="space-y-4">
               {[
                 {
@@ -142,7 +142,7 @@ export default function AboutSection() {
       {/* Section Mon cabinet */}
       <div className="mt-24 pt-16 border-t border-slate-200/60">
         <Reveal y={40} className="text-center max-w-2xl mx-auto mb-12">
-          <h3 className="text-3xl font-bold text-slate-900">Mon cabinet</h3>
+          <h2 className="text-3xl font-bold text-slate-900">Mon cabinet</h2>
           <p className="text-slate-600 text-lg mt-4">
             Un espace accueillant et équipé à Lyon 8e, conçu pour vous
             accompagner dans vos soins, votre rééducation et votre bien-être.
@@ -165,7 +165,7 @@ export default function AboutSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h4 className="text-xl font-semibold">Espace de soin</h4>
+                <h3 className="text-xl font-semibold">Espace de soin</h3>
                 <p className="text-sm text-slate-200 mt-1">
                   Un cadre apaisant et individuel pour les bilans et thérapies
                   manuelles.
@@ -189,7 +189,7 @@ export default function AboutSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h4 className="text-xl font-semibold">Espace mouvement</h4>
+                <h3 className="text-xl font-semibold">Espace mouvement</h3>
                 <p className="text-sm text-slate-200 mt-1">
                   Équipements dédiés au renforcement, à la mobilité et au
                   travail postural.

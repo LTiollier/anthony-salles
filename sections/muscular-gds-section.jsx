@@ -39,10 +39,10 @@ export default function MuscularGDSSection() {
       <div className="flex flex-col lg:flex-row items-center gap-16 mt-16">
         <Reveal y={50} className="lg:w-1/2">
           <div className="space-y-6">
-            <h3 className="text-3xl font-bold text-slate-900 leading-tight">
+            <h2 className="text-3xl font-bold text-slate-900 leading-tight">
               Le corps comme un langage, <br />
               <span className="text-blue-600">la posture comme expression</span>
-            </h3>
+            </h2>
             <p className="text-slate-600 text-lg leading-relaxed">
               La méthode GDS (Godelieve Denys-Struyf) est une approche
               thérapeutique et préventive qui considère le corps comme un
@@ -79,9 +79,9 @@ export default function MuscularGDSSection() {
       </div>
 
       <div className="mt-24">
-        <h3 className="text-2xl font-bold text-slate-900 mb-12 text-center">
+        <h2 className="text-2xl font-bold text-slate-900 mb-12 text-center">
           Les trois piliers de l'équilibre
-        </h3>
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
           {principles.map((principle, index) => (
             <Reveal key={index} y={0} delay={index * 0.1} className="h-full">
@@ -93,9 +93,9 @@ export default function MuscularGDSSection() {
                     aria-hidden="true"
                   />
                 </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-4">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">
                   {principle.title}
-                </h4>
+                </h3>
                 <p className="text-slate-500 leading-relaxed">
                   {principle.description}
                 </p>

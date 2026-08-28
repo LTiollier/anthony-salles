@@ -94,9 +94,9 @@ export default function PricingSection() {
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                    <h2 className="text-2xl font-bold text-slate-900 mb-2">
                       {item.title}
-                    </h3>
+                    </h2>
                     <p className="text-slate-500 text-sm leading-relaxed">
                       {item.description}
                     </p>
@@ -158,9 +158,9 @@ export default function PricingSection() {
           <FontAwesomeIcon icon={faShieldHeart} />
         </div>
         <div className="space-y-2 text-center md:text-left">
-          <h4 className="font-bold text-slate-900">
+          <h2 className="font-bold text-slate-900">
             Remboursements & Sécurité Sociale
-          </h4>
+          </h2>
           <p className="text-slate-600 text-sm leading-relaxed">
             Les séances de kinésithérapie sont conventionnées. Le remboursement
             s'effectue sur la base des tarifs de la Sécurité Sociale (60%) et de

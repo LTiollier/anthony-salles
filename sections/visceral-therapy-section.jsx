@@ -45,10 +45,10 @@ export default function VisceralTherapySection() {
       <div className="flex flex-col lg:flex-row-reverse items-center gap-16 mt-16">
         <Reveal y={50} className="lg:w-1/2">
           <div className="space-y-6">
-            <h3 className="text-3xl font-bold text-slate-900 leading-tight">
+            <h2 className="text-3xl font-bold text-slate-900 leading-tight">
               L'harmonie intérieure par <br />
               <span className="text-blue-600">le mouvement viscéral</span>
-            </h3>
+            </h2>
             <p className="text-slate-600 text-lg leading-relaxed">
               La thérapie viscérale est une approche manuelle douce centrée sur
               la mobilité des organes internes (digestifs, thoraciques) et de
@@ -58,9 +58,9 @@ export default function VisceralTherapySection() {
             </p>
 
             <div className="space-y-4 pt-2">
-              <h4 className="font-semibold text-slate-900 text-lg">
+              <h3 className="font-semibold text-slate-900 text-lg">
                 Mon objectif à travers cette approche :
-              </h4>
+              </h3>
               <ul className="space-y-3">
                 {objectives.map((obj, idx) => (
                   <li key={idx} className="flex items-start gap-3">
@@ -98,9 +98,9 @@ export default function VisceralTherapySection() {
       </div>
 
       <div className="mt-24">
-        <h3 className="text-2xl font-bold text-slate-900 mb-12 text-center">
+        <h2 className="text-2xl font-bold text-slate-900 mb-12 text-center">
           Les bienfaits de l'approche
-        </h3>
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
           {benefits.map((benefit, index) => (
             <Reveal key={index} y={0} delay={index * 0.1} className="h-full">
@@ -112,9 +112,9 @@ export default function VisceralTherapySection() {
                     aria-hidden="true"
                   />
                 </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-4">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">
                   {benefit.title}
-                </h4>
+                </h3>
                 <p className="text-slate-500 leading-relaxed">
                   {benefit.description}
                 </p>
