@@ -9,11 +9,11 @@ export default function CallToAction() {
       className="flex flex-col max-w-5xl mt-40 px-4 mx-auto items-center justify-center text-center py-16 rounded-xl glass"
     >
       <h2 className="text-2xl md:text-4xl font-medium mt-2 text-gray-900">
-        Prêt à prendre soin de votre santé ?
+        Besoin d'une consultation ?
       </h2>
       <p className="mt-4 text-sm/7 max-w-md text-gray-700">
-        Contactez-moi pour une consultation personnalisée et commencez votre
-        chemin vers un mieux-être durable.
+        Prenez rendez-vous directement en ligne ou n'hésitez pas à me contacter
+        pour planifier votre séance.
       </p>
       <div>
         <a
